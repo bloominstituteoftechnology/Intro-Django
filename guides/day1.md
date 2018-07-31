@@ -37,7 +37,7 @@
 * Add config information to `settings.py` and `.env`
     
 
-## To Start a Django Project and App
+## Setting up a Virtual Environment
   
 Check Python version and install or upgrade if less than 3.5.x.
 
@@ -79,6 +79,7 @@ Activate pipenv with `pipenv shell`
   similar to npm/yarn. Easier to get into and out of shell.
 * To get back in, use `pipenv shell` from the root directory of the project.
     
+## To Start a Django Project and App
 
 Once you are in the virtual environment, install django:
 
@@ -92,8 +93,6 @@ pipenv install django
     
 Add `Pipfile` and `Pipfile.lock` to the repo with `git add Pipfile*` and commit
 with `git commit -m "added pipfiles"`.
-
-  
 
 Start a project with `django-admin startproject [name_of_project] .`
 
@@ -115,6 +114,7 @@ Create an app with `django-admin startapp [name_of_app]`
 * Name it differently as appropriate if you are following this to set up, but
   working on something else.
     
+## Start the Server
 
 Verify that the [name_of_app] subdirectory has been created
 
@@ -125,6 +125,9 @@ Test by navigating to the project folder root/[name_of_project] and running
 * Take note of the warning about unapplied migrations. We will fix that in a moment
     
 Django makes it easier to make changes to databases. This is called migration(s).
+
+
+# Mirgrations
 
 Run `./manage.py showmigrations`. This will show a list of outstanding
 changes that need to occur.
@@ -164,7 +167,7 @@ Check them by showing migrations again: `./manage.py showmigrations`
 Run the server again and confirm that the migration warning is not present.
 There won’t be a change to the actual page that renders.
 
-## Adding data and doing setup for the notes app
+## Adding Data Models
 
 In the `notes` folder, open `models.py`.
 
@@ -237,6 +240,8 @@ Show migrations again to make sure they appear, then do the migration:
 ./manage.py migrate
 ```
 
+## Adding Data with the Python Shell
+
 `manage.py` has its own shell. Run `./manage.py shell` to bring up a Python repl.
 
 * The input line should change to `>>>`
@@ -271,7 +276,7 @@ class: `Note.objects.all()`
 
 Use this to save the data back into a variable named `b` and explore.
 
-## Moving the secret key to `.env`  
+## Moving the Secret Key to `.env`  
 
 Take a look at that secret key in `settings.py`.
 
@@ -318,6 +323,8 @@ Don’t forget to add it to `.env` as well.
 Test to make sure it still works and debug as needed.
 
 Before moving on, verify that `.env` is in `.gitignore` and commit.
+
+## Creating New Secret Keys
 
 In case you've already committed a key earlier on accident, you can just
 generate a new one in any Python REPL with:
