@@ -298,12 +298,12 @@ from settings.
 
 Add the key your `.env` file (creating it if you have to):
 ```
-PRIVATE_KEY='...whatever it was in the settings file...'
+SECRET_KEY='...whatever it was in the settings file...'
 ```
 
 Then change the line in `settings.py` to:
 ```python
-PRIVATE_KEY = config('PRIVATE_KEY')
+SECRET_KEY = config('SECRET_KEY')
 ```
 
 We should also move `DEBUG` to the config file. Because the file is a string,
