@@ -83,7 +83,7 @@ Activate pipenv with `pipenv shell`
 Once you are in the virtual environment, install django:
 
 ```
-pipenv install django
+pip3 install django
 ```
 
 * We are using a virtual environment instead of installing globally because
