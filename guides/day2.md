@@ -147,7 +147,7 @@ Be _very_ careful with sql commands.  The command `DROP` will permanently delete
 a table and all of the data inside it without warning. _This language is
 powerful and has no mercy_.
 
-Type `exit` to get out of dbshell.
+Type `.exit` or `CTRL-D` to get out of dbshell.
 
 Back in the virtual environment, because we modified the model to add personal
 notes, we need to do another migration.
@@ -187,7 +187,7 @@ Import personal notes: `from notes.models import PersonalNote`
 
 Pull the list into a variable: `pn = PersonalNote.objects.all()`
 
-Take a look at the name of the 0th record: `pn[0].name`.  Try other fields as
+Take a look at the name of the 0th record: `pn[0].user`.  Try other fields as
 well.
 
 Django lets us access information that is in multiple tables relatively easily.
