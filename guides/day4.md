@@ -74,6 +74,12 @@ Windows (or other platform if the above doesn't work):
 curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"admin\", \"password\":\"PASSWORD\"}" http://127.0.0.1:8000/api-token-auth/
 ```
 
+PowerShell has its own thing independent of `curl`:
+
+```
+Invoke-WebRequest http://localhost:8000/api-token-auth/ -Method Post -ContentType "application/json" -Body '{"username":"USER", "password":"PASS"}' -UseBasicParsing
+```
+
 If you get back a very large amount of html and other text, you have an error.
 Scroll back up and google the error displayed just under your console command
 for help troubleshooting.  Many of the errors you can get here are easy to do,
