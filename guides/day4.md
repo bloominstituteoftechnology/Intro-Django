@@ -86,7 +86,7 @@ You should get back one line with a token, for example:
 Your token will be different.  Try it out with your token:
 
 ```
-curl -v -H ‘Authorization: Token da51ccf5274050cd7332d184246d7d0775dc79e2 http://127.0.0.1:8000/api/notes/
+curl -v -H 'Authorization: Token da51ccf5274050cd7332d184246d7d0775dc79e2' http://127.0.0.1:8000/api/notes/
 ```
 
 Note that the trailing `/` matters.  You will get a 301 redirect if you don’t
