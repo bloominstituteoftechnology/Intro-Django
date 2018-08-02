@@ -12,6 +12,8 @@ http://www.django-rest-framework.org/api-guide/authentication/#authentication
 
 Open `settings.py`.
 
+To `INSTALLED_APPS`, add `rest_framework.authtoken`.
+
 Immediately before the boilerplate for `REST_FRAMEWORK`, import `SessionAuthentication`, `BasicAuthentication`, and `TokenAuthentication` from `rest_framework.authentication`
 
 ```python
