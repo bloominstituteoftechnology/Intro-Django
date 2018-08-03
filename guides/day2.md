@@ -181,7 +181,7 @@ table. Run a `SELECT` query to look in that table, as well.
 
 ## Django ORM compared to SQL
 
-Drop out of the sqlite shell and open a Python shell.
+Drop out of the SQLite shell and open a Python shell with `./manage.py shell`.
 
 Import personal notes: `from notes.models import PersonalNote`
 
