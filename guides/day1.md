@@ -127,7 +127,7 @@ Test by navigating to the project folder root/[name_of_project] and running
 Django makes it easier to make changes to databases. This is called migration(s).
 
 
-# Mirgrations
+## Migrations
 
 Run `./manage.py showmigrations`. This will show a list of outstanding
 changes that need to occur.
