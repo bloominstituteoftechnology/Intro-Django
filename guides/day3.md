@@ -256,3 +256,17 @@ we can use a filter to return only the correct ones with
 
 Test, debug, and commit.
 
+## Set up CORS
+
+In order to get your site to run well with a front-end, you might need to set up CORS:
+
+https://github.com/ottoyiu/django-cors-headers
+
+After installation, setting:
+
+```python
+CORS_ORIGIN_ALLOW_ALL = True
+```
+
+should be enough.
+
