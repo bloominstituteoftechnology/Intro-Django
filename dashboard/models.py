@@ -4,6 +4,7 @@ from uuid import uuid4
 # Create your models here.
 class StudentReport(models.Model):
   student_report_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+  student_name = models.CharField(max_length=30)
   current_section = models.CharField(max_length=10)
   project_manager = models.CharField(max_length=30)
   submitted_sprints = models.PositiveSmallIntegerField()
