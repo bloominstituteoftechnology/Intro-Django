@@ -29,8 +29,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# add 'notes' or other apps that we created at the top of INSTALLED_APPS
+# Adding apps in this field, tells the project that the apps exist
 
 INSTALLED_APPS = [
+    'notes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
