@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 python-decouple = "*"
+"pysqlite3" = "*"
 
 [dev-packages]
 
