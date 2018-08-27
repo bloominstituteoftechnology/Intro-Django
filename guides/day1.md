@@ -38,7 +38,6 @@
     
 
 ## Setting up a Virtual Environment
-
   
 Check Python version and install or upgrade if less than 3.5.x.
 
