@@ -15,4 +15,12 @@ class PersonalVideoSerializer(serializers.HyperlinkedModelSerializer):
 
 class PersonalVideoViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalVideoSerializer
-    queryset = PersonalVideo.objects.all()
+    queryset = PersonalVideo.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return PersonalVideo.objects.none()
+        else:
+            return PersonalVideo.objects.filter(user=user)
