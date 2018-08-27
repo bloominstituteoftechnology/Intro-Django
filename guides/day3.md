@@ -25,7 +25,7 @@ REST_FRAMEWORK = {
 }
 ```
 
-This will allow read/write permissions for logged in users and write only for
+This will allow read/write permissions for logged in users and read only for
 anonymous users.
 
 Launch the server and make sure everything is working, debug, and commit.
