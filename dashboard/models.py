@@ -12,7 +12,7 @@ class StudentReport(models.Model):
 
 class Sprint(models.Model):
   sprint_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-  student_report_id = models.ForeignKey(StudentReport)
+  student_report_id = models.ForeignKey(StudentReport, on_delete=models.CASCADE)
   sprint_name = models.CharField(max_length=40)
   sprint_status = models.CharField(max_length=20)
   submission_self_rating = models.PositiveSmallIntegerField()
