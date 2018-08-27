@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\diveb\\.virtualenvs\\Craigslist_Scraper-gp128Xo4\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\diveb\\.virtualenvs\\Craigslist_Scraper-gp128Xo4\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": false
 }
