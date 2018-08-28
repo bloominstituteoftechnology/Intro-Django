@@ -63,7 +63,7 @@ Mac/Linux:
 ```
 # The following makes a POST request with the given JSON payload:
 
-curl -X POST -H "Content-Type: application/json" -d '{"username":"admin", "password":"PASSWORD"}' http://127.0.0.1:8000/api-token-auth/
+curl -X POST -H "Content-Type: application/json" -d '{"username":"<replace with your username>", "password":"<PASSWORD>"}' http://127.0.0.1:8000/api-token-auth/
 ```
 
 Windows (or other platform if the above doesn't work):
@@ -88,13 +88,13 @@ common, and relatively easy to google for information on how to fix.
 You should get back one line with a token, for example: 
 
 ```json
-{"token":"da51ccf5274050cd7332d184246d7d0775dc79e2"}
+{"token":"d7d98ce21693a8f10bb24ea18550f27c536dffef"}
 ```
 
-Your token will be different.  Try it out with your token:
+Your token will be different. (__note....this is my token that was generated__)  Try it out with your token:
 
 ```
-curl -v -H 'Authorization: Token da51ccf5274050cd7332d184246d7d0775dc79e2' http://127.0.0.1:8000/api/notes/
+curl -v -H 'Authorization: Token d7d98ce21693a8f10bb24ea18550f27c536dffef' http://127.0.0.1:8000/api/notes/
 ```
 
 Note that the trailing `/` matters.  You will get a 301 redirect if you don’t
@@ -105,7 +105,20 @@ When using Axios to send the request, set the header here:
 ```javascript
 axios.post('http://127.0.0.1:8000/api/notes/', data, {
   headers: {
-    'Authorization': 'Token da51ccf5274050cd7332d184246d7d0775dc79e2',
+    'Authorization': 'Token d7d98ce21693a8f10bb24ea18550f27c536dffef',
   }
 }
+```
+Response after entering in token info:
+```md
+HTTP/1.1 200 OK
+< Date: Tue, 28 Aug 2018 20:02:14 GMT
+< Server: WSGIServer/0.2 CPython/3.6.6
+< Content-Type: application/json
+< Vary: Accept, Cookie, Origin
+< Allow: GET, POST, HEAD, OPTIONS
+< X-Frame-Options: SAMEORIGIN
+< Content-Length: 2
+<
+* Connection #0 to host 127.0.0.1 left intact
 ```
