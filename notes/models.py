@@ -7,10 +7,14 @@ from uuid import uuid4
 # Primary key is how the database tracks records.
 # Default calls a function to randomly generate a unique identifier.
 # We make editable false because we never want to change the key.
-# Put it at the top of the list of fields because it’s sort of like the index for the record.
+# Put it at the top of the list of fields 
+# because it’s sort of like the index for the record.
+# `auto_now_add` only sets on create and `auto_now` for both create and update
+
 
 class Note(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True)
-
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
