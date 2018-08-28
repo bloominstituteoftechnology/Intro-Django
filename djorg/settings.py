@@ -28,7 +28,14 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permission.DjangoModelPermissionsOrAnonReadOnly',
+    ]
+}
+
 INSTALLED_APPS = [
+    'rest_framework',
     'tasks',
     'notes',
     'django.contrib.admin',
