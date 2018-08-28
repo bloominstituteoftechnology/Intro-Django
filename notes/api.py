@@ -6,6 +6,11 @@ class UserNoteSerializer(serializers.HyperlinkedModelSerializer):
         model = UserNote
         fields = ('title', 'content')
 
+    def create(self, validated_data):
+        user = self.context['request'].user
+        note = UserNote.objects.create(user=user, **validated_data)
+        return note
+
 class UserNoteViewSet(viewsets.ModelViewSet):
     serializer_class = UserNoteSerializer
     queryset = UserNote.objects.all()
