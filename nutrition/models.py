@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from datetime import datetime
 from uuid import uuid4
@@ -44,6 +45,23 @@ class Meal(models.Model):
     calories = models.IntegerField()
     carbs    = models.IntegerField()
     protein  = models.IntegerField()
+
+
+class PersonalMeal(Meal):
+    '''
+    Model for the PersonalMeal class
+
+    The PersonalMeal class is responsible for creating a new table and field
+    that a single user can perform CRUD operations on to more closely keep
+    track of their meals. The PersonalMeal class extends the Meal class
+    and contains all properties/methods as the Meal class
+
+    Attributes
+    ----------
+    user : user
+        key that corresponds to a user in the User table
+    '''
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 # class Drink(Meal):
