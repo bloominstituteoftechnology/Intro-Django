@@ -28,10 +28,10 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'blog',
     'notes',
     'django.contrib.admin',
     'django.contrib.auth',
