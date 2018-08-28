@@ -9,7 +9,9 @@ class StudentReport(models.Model):
   project_manager = models.CharField(max_length=30)
   submitted_sprints = models.PositiveSmallIntegerField()
   passed_sprints = models.PositiveSmallIntegerField()
-  sprint_pass_rate = models.PositiveSmallIntegerField()
+  sprint_pass_rate = models.FloatField()
+  created_at = models.DateTimeField(auto_now_add=True)
+  last_modified = models.DateTimeField(auto_now=True)
 
 class Sprint(models.Model):
   sprint_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -22,3 +24,5 @@ class Sprint(models.Model):
   review_rating = models.PositiveSmallIntegerField()
   review_great = models.TextField(blank=True)
   requested_improvements = models.TextField(blank=True)
+  created_at = models.DateTimeField(auto_now_add=True)
+  last_modified = models.DateTimeField(auto_now=True)
