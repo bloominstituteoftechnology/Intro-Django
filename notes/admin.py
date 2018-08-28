@@ -8,4 +8,3 @@ class NoteAdmin(admin.ModelAdmin):
 
 
 admin.site.register((Note, PersonalNote),NoteAdmin)
-
