@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'notes',
-    'sheetmusic',
+    'music',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
