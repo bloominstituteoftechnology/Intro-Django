@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import PersonalMusic
+from .models import PersonalMusic, Music
 
 class PersonalMusicSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -13,4 +13,15 @@ class PersonalMusicSerializer(serializers.HyperlinkedModelSerializer):
         
 class PersonalMusicViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalMusicSerializer
-    queryset = PersonalMusic.objects.all()
+    queryset = Music.objects.all()
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_anonymous:
+            return PersonalMusic.objects.none()
+        elif not user:
+            return PersonalMusic.objects.none
+
+        else:
+            return PersonalMusic.objects.filter(user=user)
+            
