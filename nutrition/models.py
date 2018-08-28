@@ -18,6 +18,9 @@ class Meal(models.Model):
     id : uuid.UUID
         ranomized identifier using `uuid4`
 
+    type : str
+        type of meal (Food, Drink, Alternative)
+
     name : str
         name of meal
 
@@ -35,6 +38,7 @@ class Meal(models.Model):
     '''
     
     id       = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    type     = models.CharField(max_length=50)
     name     = models.CharField(max_length=50)
     date     = models.DateTimeField(auto_now_add=True)
     calories = models.IntegerField()
@@ -42,38 +46,38 @@ class Meal(models.Model):
     protein  = models.IntegerField()
 
 
-class Drink(models.Model):
-    '''
-    Model for the Drink class
+# class Drink(Meal):
+#     '''
+#     Model for the Drink class
 
-    The Drink class is reponsible for creating new fields in the
-    nutrition.drinks table in the database. Drinks will contain nutrition facts
-    for all drinks
+#     The Drink class is reponsible for creating new fields in the
+#     nutrition.drinks table in the database. Drinks will contain nutrition facts
+#     for all drinks
 
-    Attributes
-    ----------
-    id : uuid.UUID
-        randomized identifier using `uuid4` 
+#     Attributes
+#     ----------
+#     id : uuid.UUID
+#         randomized identifier using `uuid4` 
 
-    name : str
-        name of the drink
+#     name : str
+#         name of the drink
 
-    date : datetime.datetime
-        date and time of drink
+#     date : datetime.datetime
+#         date and time of drink
 
-    calories : integer
-        number of calories from drink
+#     calories : integer
+#         number of calories from drink
 
-    carbs : integer
-        number of carbs from drink
+#     carbs : integer
+#         number of carbs from drink
 
-    protein : integer
-        amount of protein from drink
-    '''
+#     protein : integer
+#         amount of protein from drink
+#     '''
     
-    id       = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    name     = models.CharField(max_length=50)
-    date     = models.DateTimeField(auto_now_add=True)
-    calories = models.IntegerField()
-    carbs    = models.IntegerField()
-    protein  = models.IntegerField()
+#     id       = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+#     name     = models.CharField(max_length=50)
+#     date     = models.DateTimeField(auto_now_add=True)
+#     calories = models.IntegerField()
+#     carbs    = models.IntegerField()
+#     protein  = models.IntegerField()
