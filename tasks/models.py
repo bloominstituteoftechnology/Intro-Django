@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from uuid import uuid4
 
 class Task(models.Model):
@@ -6,5 +7,8 @@ class Task(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     isComplete = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
-# Create your models here.
+class PersonalTask(Task):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
