@@ -92,6 +92,18 @@ set, so use option 1 with suggested default of `timezone.now`.
 
 Do the migration: `./manage.py migrate`
 
+You might notice that the new fields aren't showing up in the admin interface. This is because when you use `auto_now`, the field gets set to read-only, and such fields aren't shown in the panel.
+
+To get the read-only fields to show up in the interface:
+
+```python
+class NoteAdmin(admin.ModelAdmin):
+	readonly_fields=('created_at', 'last_modified')
+
+# Register your models here.
+admin.site.register(Note, NoteAdmin)
+```
+
 ## Personal (per-user) Notes
 
 Next we want to add the ability to handle multiple users, and allow them to have
