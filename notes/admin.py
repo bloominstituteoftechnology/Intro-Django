@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Note
+from .models import Note, PersonalNote
 
 
 # show date and time in admin system
@@ -8,4 +8,4 @@ class NoteAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Note, NoteAdmin)
+admin.site.register((Note, PersonalNote), NoteAdmin)
