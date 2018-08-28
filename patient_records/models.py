@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 from uuid import uuid4
 
 class Record(models.Model):
@@ -13,5 +15,8 @@ class Record(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.patient_name
+    # def __str__(self):
+    #     return self.patient_name
+
+class PrivateRecord(Record): 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
