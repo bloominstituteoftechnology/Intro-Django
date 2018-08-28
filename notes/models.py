@@ -12,6 +12,9 @@ class Note(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"{self.__class__.__name__}: {self.title}"
+
 
 class PersonalNote(Note):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
