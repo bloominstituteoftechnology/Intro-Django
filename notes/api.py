@@ -13,4 +13,11 @@ class UserNoteSerializer(serializers.HyperlinkedModelSerializer):
 
 class UserNoteViewSet(viewsets.ModelViewSet):
     serializer_class = UserNoteSerializer
-    queryset = UserNote.objects.all()
+    queryset = UserNote.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_anonymous:
+            return UserNote.objects.none()
+        else:
+            return UserNote.objects.filter(user=user)
