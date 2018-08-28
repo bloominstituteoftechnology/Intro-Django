@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 from uuid import uuid4
@@ -21,4 +22,11 @@ class Music(models.Model):
         verbose_name="music"
         verbose_name_plural="music"
         ordering = ['composer_last_name', 'title']
-        
+    
+class PersonalMusic(Music):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name="personal music"
+        verbose_name_plural="personal music"
+        ordering = ['composer_last_name', 'title']
