@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+`# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -102,3 +102,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+db.sqlite3
