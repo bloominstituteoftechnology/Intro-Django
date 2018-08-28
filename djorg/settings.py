@@ -33,8 +33,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'notes',
-    'rest_framework',
     'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,10 +127,21 @@ STATIC_URL = '/static/'
 
 # REST Framework Permissions
 
+from rest_framework.authentication import (
+    SessionAuthentication,
+    BaseAuthentication,
+    TokenAuthentication
+)
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 # CORS Configuration
