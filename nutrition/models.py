@@ -36,7 +36,7 @@ class Meal(models.Model):
     
     id       = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name     = models.CharField(max_length=50)
-    date     = models.DateTimeField(default=datetime.now())
+    date     = models.DateTimeField(auto_now_add=True)
     calories = models.IntegerField()
     carbs    = models.IntegerField()
     protein  = models.IntegerField()
@@ -73,7 +73,7 @@ class Drink(models.Model):
     
     id       = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name     = models.CharField(max_length=50)
-    date     = models.DateTimeField(default=datetime.now())
+    date     = models.DateTimeField(auto_now_add=True)
     calories = models.IntegerField()
     carbs    = models.IntegerField()
     protein  = models.IntegerField()
