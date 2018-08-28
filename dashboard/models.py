@@ -19,6 +19,6 @@ class Sprint(models.Model):
   submission_self_rating = models.PositiveSmallIntegerField()
   what_went_well = models.TextField(blank=True)
   what_could_have_gone_better = models.TextField(blank=True)
-  review_rating: models.PositiveSmallIntegerField()
-  review_great: models.TextField(blank=True)
+  review_rating = models.PositiveSmallIntegerField()
+  review_great = models.TextField(blank=True)
   requested_improvements = models.TextField(blank=True)
