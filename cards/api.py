@@ -24,4 +24,15 @@ class UserCollectionSerializer(serializers.HyperlinkedModelSerializer):
 
 class UserCollectionViewSet(viewsets.ModelViewSet):
     serializer_class = UserCollectionSerializer
-    queryset = UserCollection.objects.all()
+    queryset = UserCollection.objects.none()
+    
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return UserCollection.objects.none()
+        else:
+            return UserCollection.objects.filter(user=user)
+
+
+
