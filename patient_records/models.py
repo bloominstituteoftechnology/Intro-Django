@@ -20,3 +20,4 @@ class Record(models.Model):
 
 class PrivateRecord(Record): 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    

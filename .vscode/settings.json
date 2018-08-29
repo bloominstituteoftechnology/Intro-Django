@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/Users/iqrajaved/.local/share/virtualenvs/djorg-cs10-q4YXHsnr/bin/python",
+    "python.pythonPath": "/usr/bin/python2.7",
     "python.linting.pylintEnabled": false
 }
