@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import routers
-from rest_framework.authtoken import views
+from rest_framework_jwt.views import obtain_jwt_token
+
 from notes.api import PersonalNoteViewSet
 from music.api import PersonalMusicViewSet
 
@@ -25,7 +26,11 @@ router.register(r'notes', PersonalNoteViewSet)
 router.register(r'music', PersonalMusicViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    re_path(r'^api-token-auth/', views.obtain_auth_token)
+    path('', include('music.urls')),
+    re_path(r'^api/', include(router.urls)),
+    path(r'token-auth/', obtain_jwt_token),
+    
+
+
     
 ]

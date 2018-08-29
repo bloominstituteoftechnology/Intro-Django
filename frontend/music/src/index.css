@@ -3,3 +3,79 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(./sheetmusic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login {
+  border: 1px solid black;
+  padding: 60px 30px;
+  background-color: rgb(225, 234, 236);
+}
+.username-wrapper{
+  display:flex;
+  justify-content: center;
+  width: 500px;
+  margin-bottom: 20px;
+}
+.password-wrapper{
+  display:flex;
+  justify-content: center;
+  width: 500px;
+}
+
+.user-id {
+  width: 100px;
+}
+
+.password {
+  width: 100px;
+}
+
+.input {
+  width: 200px;
+  border: 1px solid grey;
+}
+
+.submit-div {
+  display:flex;
+  justify-content: center;
+}
+.submit-button {
+  margin-top: 20px;
+  padding:10px;
+  background-color: white;
+  width: 50px;
+  border: 1px solid gray;
+}
+
+.link-submit {
+  text-decoration: none;
+}
+
+.submit-button:hover {
+  background-color: black;
+  color:white !important;
+}
+.account-sign-up {
+  text-align:center;
+  padding: 20px;
+}
+.try-again {
+  width:100%;
+  margin-top: 20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+

@@ -13,7 +13,7 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         
 class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
-    queryset = Note.objects.none()
+    queryset = PersonalNote.objects.none()
 
     def get_queryset(self):
         user = self.request.user
