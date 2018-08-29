@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import PersonalNote
+from .models import PersonalCard
 
 class PersonalCardSerializer(serializers.HyperlinkedModelSerializer):
 
@@ -7,23 +7,29 @@ class PersonalCardSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PersonalCard
         fields = (
-        'name', 
-        'cost', 
-        'color', 
-        'cmc', 
-        'cardType', 
-        'subType', 
-        'cardSet', 
-        'text',
-        'created_at',
-        'last_modified'
+            'name', 
+            'cost', 
+            'color', 
+            'cmc', 
+            'cardType', 
+            'subType', 
+            'cardSet', 
+            'text',
+            'created_at',
+            'last_modified'
         )
+    
+    def create(self, validated_data):
+        user = self.context['request'].user
+        # import pdb; pdb.set_trace()
+        card = PersonalCard.objects.create(user=user, **validated_data)
+        return card
 
-    class PersonalCardViewSet(viewsets.ModelViewSet):
-        serializer_class = PersonalCardSerializer
-        queryset = PersonalCard.objects.none()
+class PersonalCardViewSet(viewsets.ModelViewSet):
+    serializer_class = PersonalCardSerializer
+    queryset = PersonalCard.objects.none()
 
-        def get_query(self):
+    def get_query(self):
         user = self.request.user
 
         if user.is_anonymous:
