@@ -5,7 +5,7 @@ class PersonalTodoSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = PersonalTodo
-        fields = ('title', 'description')
+        fields = ('title', 'description', 'isDone')
 
 
 class PersonalTodoViewSet(viewsets.ModelViewSet):
