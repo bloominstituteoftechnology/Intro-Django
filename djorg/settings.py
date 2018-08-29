@@ -13,6 +13,13 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from rest_framework.authentication import (
+    SessionAuthentication,
+    BasicAuthentication,
+    TokenAuthentication,
+)
+
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -35,6 +42,12 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ]
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 
@@ -44,6 +57,7 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "rest_framework",
     "django.contrib.auth",
+    "rest_framework.authtoken",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
