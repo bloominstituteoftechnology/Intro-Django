@@ -15,4 +15,12 @@ class PersonalTodoSerializer(serializers.HyperlinkedModelSerializer):
 
 class PersonalTodoViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalTodoSerializer
-    queryset = PersonalTodo.objects.all()
+    queryset = PersonalTodo.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return PersonalTodo.objects.none()
+        else: 
+            return PersonalTodo.objects.filter(user=user)
