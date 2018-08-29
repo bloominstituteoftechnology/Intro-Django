@@ -3,16 +3,22 @@
 from rest_framework import serializers, viewsets
 from .models import PersonalNote
 
-class PersonalNoteSerializer(serializers.HyperLinkedModelSerializer): 
+class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer): 
 
     # A nested class to tell it what parts of the model we want to access:
     class Meta: 
         model = PersonalNote
         fields = ('title', 'content')
 
+    def create(self, validated_data):
+        # import pdb; pdb.set_trace() -> Debugger 
+        user = self.context['request'].user
+        note = PersonalNote.objects.create(user=user, **validated_data)
+        return note
+
 class PersonalNoteViewSet(viewsets.ModelViewSet): 
     # Link back to the serializer class 
     serializer_class = PersonalNoteSerializer
     # Next, add which records to search for. We could use filters here, but for now, grab all of them:
-    querset = PeronsalNote.objects.all()
+    queryset = PersonalNote.objects.all()
 
