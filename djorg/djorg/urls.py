@@ -27,7 +27,8 @@ router.register('notes', PersonalNoteViewSet)
 urlpatterns = [
     # path('polls/', include('polls.urls')),
 
-    # router.urls will take care of ALL the posible api endpoint we can add in the future. It is only needed this line for all posible APIS
+    # router.urls will take care of ALL the posible api endpoint we can add in
+    # the future. It is only needed this line for all posible APIS
     path('api/', include(router.urls)),
 
     path('admin/', admin.site.urls),
