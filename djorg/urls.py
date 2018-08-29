@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from nutrition.api import PersonalMealViewSet
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
+router.register('nutrition', PersonalMealViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
