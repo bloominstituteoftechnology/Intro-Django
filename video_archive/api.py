@@ -10,7 +10,7 @@ class PersonalVideoSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = PersonalVideo
-        fields = ("title", "lecturer", "cohort", "link")
+        fields = ("title", "lecturer", "cohort", "link", "created_at", "last_updated")
 
 
 class PersonalVideoViewSet(viewsets.ModelViewSet):
