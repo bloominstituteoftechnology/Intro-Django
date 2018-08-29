@@ -22,6 +22,6 @@ class PersonalMealViewSet(viewsets.ModelViewSet):
         user = self.request.user
 
         if user.is_anonymous:
-            return queryset
+            return self.queryset
         else:
             return PersonalMeal.objects.filter(user=user)
