@@ -14,11 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path
+from django.urls import path, include
 from django.contrib import admin
-# from django.conf.urls import include
+from rest_framework import routers
+from notes.api import PersonalNoteViewSet
+
+router = routers.DefaultRouter()
+
+# build an endpoint at /api/notes
+router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
     # path('polls/', include('polls.urls')),
+
+    # router.urls will take care of ALL the posible api endpoint we can add in the future. It is only needed this line for all posible APIS
+    path('api/', include(router.urls)),
+
     path('admin/', admin.site.urls),
 ]
