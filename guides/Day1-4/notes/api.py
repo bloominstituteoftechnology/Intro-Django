@@ -20,5 +20,13 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):
     # Link back to the serializer class 
     serializer_class = PersonalNoteSerializer
     # Next, add which records to search for. We could use filters here, but for now, grab all of them:
-    queryset = PersonalNote.objects.all()
+    queryset = PersonalNote.objects.none()
+
+    def get_queryset(self): 
+        user = self.request.user
+
+        if user.is_anonymous: 
+            return PersonalNote.objects.none()
+        else: 
+            return PersonalNote.objects.filter(user=user)
 
