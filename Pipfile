@@ -11,6 +11,7 @@ name = "pypi"
 django = "*"
 python-decouple = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.6"
