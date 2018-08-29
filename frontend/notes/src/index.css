@@ -1,5 +1,59 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Homemade Apple', cursive;
+  background-image: url(./art-artist-black-and-white-265047.jpg);
+  background-size: cover;
+  scroll-behavior: smooth
+}
+.main-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: rotate(-15deg);
+  height: 100vh;
+  width: 100%;
+  padding-right: 10px;
+}
+.header-link {
+  text-decoration: underline;
+  color: black;
+}
+.main-note-container {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  height: 450px;
+  width: 100%;
+  line-height: 10px;
+  margin-top: -10px;
+  margin-left: 30px;
+  transform:rotate(-5deg);
+}
+
+.note-indiv {
+  width: 600px;
+  height: 250px;
+  line-height: 19px;
+  padding-right:90px;
+}
+
+.house-pic {
+  width:50px;
+  height:auto;
+  transform: rotate(-30deg);
+  margin-top:150px;
+  margin-left: 170px;
+}
+.create-link {
+display:flex;
+justify-content: flex-end;
+transform: rotate(10deg);
+padding-right:150px;
+padding-bottom:300px;
+font-size: 20px;
+color:black;
+text-decoration: underline;
 }
