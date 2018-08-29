@@ -7,6 +7,11 @@ class PersonalTodoSerializer(serializers.HyperlinkedModelSerializer):
         model = PersonalTodo
         fields = ('title', 'description', 'isDone')
 
+    def create(self, validated_data):
+        user = self.context['request'].user
+        todo = PersonalTodo.objects.create(user=user, **validated_data)
+        return todo
+
 
 class PersonalTodoViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalTodoSerializer
