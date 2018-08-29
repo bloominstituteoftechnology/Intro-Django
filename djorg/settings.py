@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'notes',
     'rest_framework',
     'corsheaders',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,12 +136,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # Boilerplate to set up the permissions
-# This will allow read/write permissions 
+# This will allow read/write permissions
 # for logged in users and read only for anonymous users.
+
+# Import token. Need to add this immediately before REST_FRAMEWORK
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ]
 }
