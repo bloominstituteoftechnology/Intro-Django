@@ -3,8 +3,7 @@ body {
   padding: 0;
   font-family: 'Homemade Apple', cursive;
   background-image: url(./art-artist-black-and-white-265047.jpg);
-  background-size: cover;
-  scroll-behavior: smooth
+  background-size:cover;
 }
 .main-container {
   display:flex;
@@ -28,7 +27,7 @@ body {
   height: 450px;
   width: 100%;
   line-height: 10px;
-  margin-top: -10px;
+  margin-top: -100px;
   margin-left: 30px;
   transform:rotate(-5deg);
 }
@@ -45,14 +44,14 @@ body {
   height:auto;
   transform: rotate(-30deg);
   margin-top:150px;
-  margin-left: 170px;
+  margin-left: 150px;
 }
 .create-link {
 display:flex;
 justify-content: flex-end;
 transform: rotate(10deg);
-padding-right:150px;
-padding-bottom:300px;
+margin-right:200px;
+margin-bottom:250px;
 font-size: 20px;
 color:black;
 text-decoration: underline;
