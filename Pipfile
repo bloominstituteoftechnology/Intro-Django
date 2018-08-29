@@ -10,6 +10,7 @@ name = "pypi"
 [packages]
 django = "*"
 python-decouple = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.6"
