@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import PersonalCard
+from .models import PersonalCard, Card
 
 class PersonalCardSerializer(serializers.HyperlinkedModelSerializer):
 
@@ -30,7 +30,7 @@ class PersonalCardViewSet(viewsets.ModelViewSet):
     queryset = PersonalCard.objects.none()
 
     # if user is logged in they can see their card otherwise they can't
-    def get_query(self): 
+    def get_queryset(self): 
         user = self.request.user
 
         if user.is_anonymous:

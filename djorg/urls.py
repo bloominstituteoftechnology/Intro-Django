@@ -28,3 +28,8 @@ urlpatterns = [
     path('api/', include(router.urls)),
     re_path(r'^api-token-auth/', views.obtain_auth_token),
 ]
+
+# {"token":"d808f5e2be7ff087ab5481cd80da53508514eb14"}
+# curl -v -H 'Authorization: Token d808f5e2be7ff087ab5481cd80da53508514eb14' http://127.0.0.1:8000/api/cards/
+# {"token":"d6bc15574afd72c50908ed3cfa5406182b32e2c8"}(Intro-Django-dLu91mvy)
+# curl -v -H 'Authorization: Token d6bc15574afd72c50908ed3cfa5406182b32e2c8' http://127.0.0.1:8000/api/cards/
