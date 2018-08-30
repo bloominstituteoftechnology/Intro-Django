@@ -22,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DATABASES = {"default": dj_database_url.config(default=config("DATABASE_URL"))}
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Quick-start development settings - unsuitable for production
@@ -53,9 +53,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definitSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')ion
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-INSTALLED_APPS = [STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    "django.contrib.aSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')dmin",
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+INSTALLED_APPS = [
+    "django.contrib.admin",
     "rest_framework",
     "django.contrib.auth",
     "rest_framework.authtoken",
@@ -73,7 +73,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middlewarSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')e.csrf.CsrfViewMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
