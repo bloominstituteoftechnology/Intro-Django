@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'notes', 
     'rest_framework', 
+    'rest_framework.authtoken', 
     'corsheaders', 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -127,11 +128,19 @@ STATIC_URL = '/static/'
 
 # Biolerplate to set up permissions for the rest framework
 
+from rest_framework.authentication import TokenAuthentication, SessionAuthentication, BasicAuthentication
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         # This will allow read/write permissions for logged in users and read only for anonymous users.
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    ]
+    ], 
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication', 
+        'rest_framework.authentication.SessionAuthentication', 
+        'rest_framework.authentication.TokenAuthentication', 
+    ), 
 }
 
 CORS_ORIGIN_ALLOW_ALL = True 
@@ -144,8 +153,6 @@ CORS_ORIGIN_WHITELIST =  (
 )
 
 CORS_ORIGIN_REGEX_WHITELIST = (r'^(https?://)?(\w+\.)?google\.com$', )
-
-CORS_URLS_REGEX = r'^/api/.*$'
 
 CORS_ALLOW_METHODS = (
     'DELETE',
