@@ -27,10 +27,10 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
-
+dj_database_url.config(default=config('DATABASE_URL'))
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-dj_database_url.config(default=config('DATABASE_URL'))
+
 
 
 # Application definition
