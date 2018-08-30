@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Added rest_framework so we could use the Django REST framework. 
     'corsheaders',
     'rest_framework',
     'gifter',
@@ -77,7 +78,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Boilerplate to set up permissions.
-
+# This allows read and write permissions for logged in users and read-only for anonymous users.
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',

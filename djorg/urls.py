@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# Imported "routers" to add router functionality for Django.
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 from gifter.api import WishlistViewSet
