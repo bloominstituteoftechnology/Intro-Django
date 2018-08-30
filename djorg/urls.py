@@ -19,7 +19,6 @@ from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 from video_archive.api import PersonalVideoViewSet
 from rest_framework.authtoken import views
-from . import views as view
 
 
 router = routers.DefaultRouter()
@@ -27,7 +26,7 @@ router.register(r"notes", PersonalNoteViewSet)
 router.register(r"video_archive", PersonalVideoViewSet)
 
 urlpatterns = [
-    path("", view.HomePageView.as_view(), name="home"),
+    path("/", include(router.urls)),
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
     re_path(r"^api-token-auth/", views.obtain_auth_token),
