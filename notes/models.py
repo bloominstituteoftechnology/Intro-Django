@@ -15,6 +15,7 @@ class Note(models.Model):
 
 class PersonalNote(Note):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    '''on_delete=models.CASCADE: if a user gets deleted, all of their stuff will get deleted as well'''
 
     
 

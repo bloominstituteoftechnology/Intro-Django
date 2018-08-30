@@ -18,9 +18,11 @@ from django.urls import path, include
 
 from rest_framework import routers 
 from notes.api import PersonalNoteViewSet
+from patient_records.api import PrivateRecordViewSet
 
 router = routers.DefaultRouter()
-router.register('notes', PersonalNoteViewSet)
+router.register('personal_notes', PersonalNoteViewSet)
+router.register('private_records', PrivateRecordViewSet)
 
 urlpatterns = [
     path('records/', include('patient_records.urls')),
