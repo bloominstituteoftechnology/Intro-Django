@@ -145,3 +145,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
