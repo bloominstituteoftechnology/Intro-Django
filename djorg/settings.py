@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # Added rest_framework so we could use the Django REST framework. 
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     'gifter',
     'notes',
     'django.contrib.admin',
@@ -77,12 +78,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djorg.wsgi.application'
 
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+
 # Boilerplate to set up permissions.
 # This allows read and write permissions for logged in users and read-only for anonymous users.
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 # Database
