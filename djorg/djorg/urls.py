@@ -19,6 +19,8 @@ from django.contrib import admin
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 
+from rest_framework.authtoken import views
+
 router = routers.DefaultRouter()
 
 # build an endpoint at /api/notes
@@ -30,6 +32,9 @@ urlpatterns = [
     # router.urls will take care of ALL the posible api endpoint we can add in
     # the future. It is only needed this line for all posible APIS
     path('api/', include(router.urls)),
+
+    # Token auth endpoint -> this enpoint 'return' a token.
+    path('api-token-auth/', views.obtain_auth_token),
 
     path('admin/', admin.site.urls),
 ]
