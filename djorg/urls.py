@@ -19,7 +19,7 @@ from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 from video_archive.api import PersonalVideoViewSet
 from rest_framework.authtoken import views
-from . import HomePageView
+from views import HomePageView
 
 
 router = routers.DefaultRouter()
