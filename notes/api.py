@@ -18,7 +18,7 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
     queryset = PersonalNote.objects.all()
 
-        def get_queryset(self):
+    def get_queryset(self):
         user = self.request.user
 
         if user.is_anonymous:
