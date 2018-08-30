@@ -1,1 +1,1 @@
-web: gunicorn djorg
+web: gunicorn djorg.wsgi
