@@ -19,18 +19,13 @@ from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token
 
 from notes.api import PersonalNoteViewSet
-from music.api import PersonalMusicViewSet
+from music.api import MusicViewSet
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
-router.register(r'music', PersonalMusicViewSet)
+router.register(r'music', MusicViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('music.urls')),
     re_path(r'^api/', include(router.urls)),
-    path(r'token-auth/', obtain_jwt_token),
-    
-
-
-    
+    path('', include("music.urls")),
 ]

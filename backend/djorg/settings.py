@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.authentication import  TokenAuthentication
 
 
 REST_FRAMEWORK = {
@@ -53,9 +53,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
 }
 

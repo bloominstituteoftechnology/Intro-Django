@@ -12,9 +12,9 @@ class MusicList extends Component {
     componentDidMount() {
         let promise = axios.get(`http://localhost:8000/api/music/`);
         promise.then((response) => {
-            console.log("CDM music", response);
+            console.log("CDM music", response.data);
             this.setState({
-                response
+                music: response.data
             });
             })
             .catch((error) => {
@@ -23,23 +23,22 @@ class MusicList extends Component {
     }
     render() {
         console.log(this.state.music);
-        return(
-            <div>I'm a musiclist</div>
-        )
-        // return (
-        //     <div>
-        //         <div className="main-note-container">
-        //             {this.state.music.map(music => {
-        //                 return (
-        //                     <div key={music.id} className="note-indiv">
-        //                         <h1>{music.title}</h1>   
-        //                         <h3>{music.composer_first_name}</h3>
-        //                         <h3>{music.composer_last_name}</h3>
-        //                     </div>              )
-        //             })}
-        //         </div>
-        //     </div>
-        // );
+        return (
+            <div>
+                <div className="main-note-container">
+                    {this.state.music.map(music => {
+                        return (
+                            <div key={music.id} className="note-indiv">
+                                <h1 className="note-title">{music.title}</h1>   
+                                <h3 className="note-composer">{music.composer_first_name}</h3>
+                                <h3 className="note-composer">{music.composer_last_name}</h3>
+                                <h5 className="note-publisher">{music.publisher}</h5>
+                                <p className="note-notes">{music.notes}</p>
+                            </div>              )
+                    })}
+                </div>
+            </div>
+        );
     }
     }
     

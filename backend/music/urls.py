@@ -1,8 +1,12 @@
-from django.urls import path
+from django.urls import path, include, re_path
+from rest_framework import routers
+from rest_framework_jwt.views import obtain_jwt_token
+from .views import index
 
-from . import views
+from music.api import MusicViewSet
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('music/', views.view_all_music, name='music'),
+    path('', index),
+    path('api/login/', obtain_jwt_token),
+    path('api/music/', MusicViewSet)
 ]

@@ -2,6 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  background-image: url(./sheetmusic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main-container {
@@ -10,9 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(./sheetmusic.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+
 }
 
 .login {
@@ -76,6 +77,44 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.main-note-container {
+  display:flex;
+  flex-wrap:wrap;
+}
+.note-indiv {
+  width: 150px;
+  height: 175px;
+  background-color: rgb(225, 234, 236);
+  display:flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 30px;
+  overflow: hidden;
+
+}
+
+.note-title {
+  font-size: 1rem;
+}
+
+.note-composer {
+  font-size: .9rem;
+  line-height: 15px;
+  font-weight: lighter;
+}
+
+.note-publisher {
+  font-size: .7rem;
+  line-height: 1px;
+  font-weight: lighter;
+}
+
+.note-notes {
+  font-size: .5rem;
+  line-height: 5px;
+  font-weight: lighter;
 }
 
 

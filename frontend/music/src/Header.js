@@ -17,12 +17,12 @@ class Header extends Component {
     }
 
     handleClick = (e) => {
-        let promise = axios.post("http://localhost:8000/token-auth/", this.state);
+        let promise = axios.post("http://localhost:8000/api/login/", this.state);
 
         promise
             .then(response => {
                 localStorage.setItem("token", response.data.token);
-                this.props.history.push(`/${this.state.username}/music`);
+                this.props.history.push(`/music`);
             })
             .catch(err => {
                 console.error(err);

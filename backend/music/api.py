@@ -1,27 +1,28 @@
 from rest_framework import serializers, viewsets
 from .models import PersonalMusic, Music
+from django.db import models
 
-class PersonalMusicSerializer(serializers.HyperlinkedModelSerializer):
+class MusicSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = PersonalMusic
+        model = Music
         fields = ('title', 'composer_last_name', 'composer_first_name', 'publisher', 'notes')
 
     def create(self, validated_data):
         user = self.context['request'].user
-        note = PersonalMusic.objects.create(user=user, **validated_data)
+        note = Music.objects.create(user=user, **validated_data)
         return note
         
-class PersonalMusicViewSet(viewsets.ModelViewSet):
-    serializer_class = PersonalMusicSerializer
+class MusicViewSet(viewsets.ModelViewSet):
+    serializer_class = MusicSerializer
     queryset = Music.objects.all()
 
     def get_queryset(self):
         user = self.request.user
         if user.is_anonymous:
-            return PersonalMusic.objects.none()
+            return Music.objects.all()
         elif not user:
-            return PersonalMusic.objects.none
+            return Music.objects.all()
 
         else:
-            return PersonalMusic.objects.filter(user=user)
+            return Music.objects.filter(user=user)
             
