@@ -42,6 +42,8 @@ REST_FRAMEWORK = {
     ),
 }
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 # Application definition
 
@@ -56,6 +58,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "notes",
     "thingies",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "djorg.urls"
