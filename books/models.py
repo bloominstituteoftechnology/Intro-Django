@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=200)
-    genre = models.TextField()
+    genre = models.TextField(max_length=25)
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
