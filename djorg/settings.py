@@ -25,7 +25,7 @@ DEBUG = config('DEBUG', cast=bool)
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',') #may need to be changed
-DATBASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Application definition
 
