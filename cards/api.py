@@ -21,7 +21,7 @@ class PersonalCardSerializer(serializers.HyperlinkedModelSerializer):
     
     def create(self, validated_data):
         user = self.context['request'].user
-        # import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace() //this is a debugger
         card = PersonalCard.objects.create(user=user, **validated_data)
         return card
 
@@ -29,7 +29,8 @@ class PersonalCardViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalCardSerializer
     queryset = PersonalCard.objects.none()
 
-    def get_query(self):
+    # if user is logged in they can see their card otherwise they can't
+    def get_query(self): 
         user = self.request.user
 
         if user.is_anonymous:
