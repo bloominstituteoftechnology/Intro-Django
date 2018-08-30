@@ -131,10 +131,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#Todo not implemented
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Day 3:
 # We also need to add some boilerplate to set up permissions:
