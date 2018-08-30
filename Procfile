@@ -1,0 +1,1 @@
+web: djorg gettingstarted.wsgi
