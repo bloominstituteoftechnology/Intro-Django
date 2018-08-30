@@ -2,6 +2,7 @@ from django.db import models
 from uuid import uuid4
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Note(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -10,5 +11,11 @@ class Note(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'<Note: {self.id} {self.title}>'
+
 class PersonalNote(Note):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f'<PersonalNote: {self.id} {self.title}>'
