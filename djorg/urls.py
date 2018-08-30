@@ -18,11 +18,13 @@ from django.urls import path
 
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from gifter.api import WishlistViewSet
 
 from django.urls import path, include
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
+router.register(r'gifter', WishlistViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

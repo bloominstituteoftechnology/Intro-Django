@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
+    'gifter',
     'notes',
     'django.contrib.admin',
     'django.contrib.auth',
