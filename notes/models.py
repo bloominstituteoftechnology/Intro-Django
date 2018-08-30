@@ -13,8 +13,9 @@ class Note(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     category = models.CharField(max_length=20)
 
-    def __str__(self):
-        return f'<{self.__class__.__name__}: {self.id} {self.title}>'
+    # below was overwritten inside admin.py
+    # def __str__(self):
+    #     return f'<{self.__class__.__name__}: {self.id} {self.title}>'
 
 class PersonalNote(Note):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
