@@ -8,6 +8,10 @@ django = "*"
 python-decouple = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+dj-database-url = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+whitenoise = "*"
 
 [dev-packages]
 
