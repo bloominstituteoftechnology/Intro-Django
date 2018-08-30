@@ -1,5 +1,7 @@
 from decouple import config
 
+import dj_database_url
+
 """
 Django settings for djorg project.
 
@@ -17,6 +19,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATABASES = {"default": dj_database_url.config(default=config("DATABASE_URL"))}
 
 
 # Quick-start development settings - unsuitable for production
@@ -63,6 +67,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
