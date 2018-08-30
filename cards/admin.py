@@ -6,6 +6,7 @@ from .models import Card
 from .models import UserCollection
 
 class CardAdmin(admin.ModelAdmin):
+    exclude = ('cmc',)
     readonly_fields=('created_at', 'last_modified')
 
 # Register your models here.

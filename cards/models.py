@@ -37,6 +37,23 @@ class Card(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
+    def save(self, *args, **kwargs):
+        # Do you shady things
+        self.cmc = self.convertCostToCmc(self.cost)
+        super(Card, self).save(*args, **kwargs) # The real save method
+        # Thanks,  https://stackoverflow.com/a/22157648
+
+    def convertCostToCmc(self, cost):
+        ans = 0
+        if not cost[0] == 'x' or not cost[0] == 'X':
+            ans += int(cost[0])
+        for char in cost[1:]:
+            ans += 1
+        return ans
+
+    def convertCostToColor(self, cost):
+        pass
+
     def __str__(self):
         return self.name
 
