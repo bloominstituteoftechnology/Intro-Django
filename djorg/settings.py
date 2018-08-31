@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-DATABASES['default'] = dj_database_url.config(default='postgres://...')
+DATABASES['default'] = dj_database_url.config(default='postgres://oouiiekenqgpgp:07a308db8a91b6b2ed9520f51eb2d451bfebad357483dccd4ab182688d6b4d77@ec2-54-235-86-226.compute-1.amazonaws.com:5432/dbvm6ke2t80j6b')
 
 
 # Password validation
