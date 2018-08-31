@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 
 from rest_framework import routers 
-from notes.api import PersonalNoteViewSet
+from notes.api import NoteViewSet, PersonalNoteViewSet
 from patient_records.api import PrivateRecordViewSet
 from rest_framework.authtoken import views 
 
 router = routers.DefaultRouter()
+router.register('notes', NoteViewSet)
 router.register('personal_notes', PersonalNoteViewSet)
 router.register('private_records', PrivateRecordViewSet)
 
