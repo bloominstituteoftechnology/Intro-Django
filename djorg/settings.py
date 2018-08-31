@@ -123,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-CORS_ORIGIN_WHITELIST = "https://mykealkennydjangofrontend.herokuapp.com/"
+# CORS_ORIGIN_WHITELIST = "https://mykealkennydjangofrontend.herokuapp.com/"
 # https://mykealkennydjangofrontend.herokuapp.com/
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
