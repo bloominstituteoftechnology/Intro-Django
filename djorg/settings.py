@@ -19,16 +19,17 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.spl
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'notes',
-    'rest_framework',
-    'rest_framework.authtoken'
+INSTALLED_APPS = [ 
+   'notes',
+   'rest_framework',
+   'corsheaders',
+   'rest_framework.authtoken',
+   'django.contrib.admin',
+   'django.contrib.auth',
+   'django.contrib.contenttypes',
+   'django.contrib.sessions',
+   'django.contrib.messages',
+   'django.contrib.staticfiles',
 ]
  
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
@@ -46,7 +47,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheader.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -79,14 +80,9 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-    'default': dj_database_url.config('DATABASE_URL', default='sqlite:///db.sqlite3')
-}
+ 'default': dj_database_url.config('DATABASE_URL', default='sqlite:///db.sqlite3')
+ }
 
 
 # Password validation
