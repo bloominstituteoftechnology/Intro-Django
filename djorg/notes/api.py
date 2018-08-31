@@ -6,6 +6,7 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PersonalNote
         fields = ('title', 'content')
+        
     def create(self, validated_data):
        #import pdb; pdb.set_trace()
        #pass

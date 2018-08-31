@@ -1,0 +1,16 @@
+bokeh==0.13.0
+Django==2.1
+djangorestframework==3.8.2
+gunicorn==19.9.0
+Jinja2==2.10
+MarkupSafe==1.0
+numpy==1.15.1
+packaging==17.1
+Pillow==5.2.0
+pyparsing==2.2.0
+python-dateutil==2.7.3
+python-decouple==3.1
+pytz==2018.5
+PyYAML==3.13
+six==1.11.0
+tornado==5.1
