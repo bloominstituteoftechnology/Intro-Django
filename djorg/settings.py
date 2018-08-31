@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "notes",
     "rest_framework",
     "rest_framework.authtoken",
+    "corsheaders",
 ]
 
 from rest_framework.authentication import (
@@ -63,6 +64,8 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -120,6 +123,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+CORS_ORIGIN_WHITELIST = "https://mykealkennydjangofrontend.herokuapp.com/"
+# https://mykealkennydjangofrontend.herokuapp.com/
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
