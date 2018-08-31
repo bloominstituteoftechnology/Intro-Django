@@ -96,12 +96,12 @@ WSGI_APPLICATION = "djorg.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}
 
 DATABASES["default"] = dj_database_url.parse(
     "postgres://ovuftreymyfnsa:bdce0da280cb53d88afdfa7bb03a010120ce3554efcfceb05fa39d840c4f3e2e@ec2-50-16-196-57.compute-1.amazonaws.com:5432/ddbm0ve5gd11po",
@@ -137,3 +137,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = "/static/"
+
+# Add heroku functionality
+django_heroku.settings(locals())
