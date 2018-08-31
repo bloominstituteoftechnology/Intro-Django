@@ -14,7 +14,7 @@ import os
 from decouple import config,Csv
 import dj_database_url
 
-dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -87,8 +87,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': dj_database_url.config('DATABASE_URL', default='sqlite:///db.sqlite3')
     }
 }
 
