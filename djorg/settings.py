@@ -142,8 +142,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 from rest_framework.authentication import SessionAuthentication, BaseAuthentication, TokenAuthentication
 
 REST_FRAMEWORK = {
