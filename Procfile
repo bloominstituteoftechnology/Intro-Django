@@ -1,1 +1,1 @@
-web: djorg gettingstarted.wsgi
+web: gunicorn djorg.wsgi
