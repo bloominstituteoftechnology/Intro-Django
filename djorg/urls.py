@@ -30,6 +30,6 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("accounts/", include("django.contrib.auth.urls")),
     path("admin/", admin.site.urls),
-    path("api/", include(router.urls)),
+    path("api/", include(router.urls), name="api"),
     re_path(r"^api-token-auth/", views.obtain_auth_token),
 ]
