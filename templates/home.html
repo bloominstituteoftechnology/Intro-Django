@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content %} {% if user.is_authenticated %} Welcome
 back, friend!
-<p><a href="{% url '/api' %}">Head Into the App</a></p>
+<p><a href="{% url 'logout' %}">Head Into the App</a></p>
 {% else %}
 <p>You are not logged in.</p>
 <a href="{% url 'login' %}">Log in</a>
