@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
+    "rest_auth",
 ]
 
 from rest_framework.authentication import (
@@ -107,10 +108,10 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse(
-    "postgres://ovuftreymyfnsa:bdce0da280cb53d88afdfa7bb03a010120ce3554efcfceb05fa39d840c4f3e2e@ec2-50-16-196-57.compute-1.amazonaws.com:5432/ddbm0ve5gd11po",
-    conn_max_age=600,
-)  # Password validation
+# DATABASES["default"] = dj_database_url.parse(
+#     "postgres://ovuftreymyfnsa:bdce0da280cb53d88afdfa7bb03a010120ce3554efcfceb05fa39d840c4f3e2e@ec2-50-16-196-57.compute-1.amazonaws.com:5432/ddbm0ve5gd11po",
+#     conn_max_age=600,
+# )  # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
