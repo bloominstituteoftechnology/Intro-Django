@@ -11,6 +11,7 @@ djangorestframework = "*"
 gunicorn = "*"
 dj-database-url = "*"
 whitenoise = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
