@@ -68,9 +68,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',        # for listen the response.
-    'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',        # Listen the response, need to be the top.
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',   # Above all the others but after security
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -151,11 +152,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+"""
+Static files (CSS, JavaScript, Images)
+https://docs.djangoproject.com/en/2.1/howto/static-files/
+WhiteNoise allows your web app to serve its own static files, making it a self-contained unit
+http://whitenoise.evans.io/en/stable/
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
+"""
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Boilerplate to set up the permissions
