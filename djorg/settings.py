@@ -133,10 +133,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 # from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -151,3 +147,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
