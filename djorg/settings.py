@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-    config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+    'default': dj_database_url.config('DATABASE_URL', default='sqlite:///db.sqlite3')
 }
 
 
