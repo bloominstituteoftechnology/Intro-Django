@@ -83,6 +83,8 @@ WSGI_APPLICATION = 'django1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+DATABASES = {}
+
 DATABASES['default'] = dj_database_url.config('DATABASE_URL', conn_max_age=600)
 
 
