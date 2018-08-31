@@ -22,7 +22,7 @@ from django.urls import path, include
 from rest_framework.authtoken import views 
 
 router = routers.DefaultRouter()
-router.register(r'notes', PersonalNoteViewSet)
+router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
