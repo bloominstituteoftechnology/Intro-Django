@@ -143,6 +143,8 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
 from rest_framework.authentication import SessionAuthentication, BaseAuthentication, TokenAuthentication
 
 REST_FRAMEWORK = {
