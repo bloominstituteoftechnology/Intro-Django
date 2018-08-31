@@ -1,0 +1,9 @@
+# Example env vars - rename to .env and customize (don't check in)
+ALLOWED_HOSTS=localhost,127.0.0.1
+DATABASE_URL="sqlite:///db.sqlite3"
+# Change the secret key! In your Django shell:
+# from django.utils.crypto import get_random_string
+# chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+# get_random_string(50, chars)
+SECRET_KEY="16job-7!nzuwtunsxa*d6#6_j(u4x!c5*8w&3b_^!nqot-xabt"
+DEBUG=True
