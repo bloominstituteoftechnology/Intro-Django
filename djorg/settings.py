@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
-dj_database_url.config(default=config('DATABASE_URL'))
+dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
