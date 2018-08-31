@@ -1,1 +1,1 @@
-web: gunicorn python djorg/manage.py.wsgi
+web: gunicorn djorg.wsgi
