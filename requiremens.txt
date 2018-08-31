@@ -1,0 +1,14 @@
+autopep8==1.3.5
+dj-database-url==0.5.0
+Django==2.1.1
+django-cors-headers==2.4.0
+djangorestframework==3.8.2
+flake8==3.5.0
+gunicorn==19.9.0
+mccabe==0.6.1
+psycopg2-binary==2.7.5
+pycodestyle==2.3.1
+pyflakes==1.6.0
+python-decouple==3.1
+pytz==2018.5
+whitenoise==4.0
