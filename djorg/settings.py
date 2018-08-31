@@ -143,6 +143,8 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 from rest_framework.authentication import SessionAuthentication, BaseAuthentication, TokenAuthentication
 
 REST_FRAMEWORK = {
