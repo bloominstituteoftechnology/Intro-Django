@@ -13,7 +13,6 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         note = PersonalNote.objects.create(user=user, **validated_data)
         return note
 
-
 class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
     queryset = PersonalNote.objects.all()
