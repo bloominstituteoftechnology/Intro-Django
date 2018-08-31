@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': dj_database_url.config(default='postgres://...'),
+        'ENGINE': dj_database_url.config(default='postgresql'),
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
