@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+"flake8" = "*"
+"autopep8" = "*"
+
+[packages]
+django = "*"
+python-decouple = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+
+[requires]
+python_version = "3.6"
