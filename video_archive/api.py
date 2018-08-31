@@ -1,5 +1,6 @@
 from rest_framework import serializers, viewsets
 from .models import PersonalVideo
+from rest_framework import permissions
 
 
 class PersonalVideoSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,6 +17,7 @@ class PersonalVideoSerializer(serializers.HyperlinkedModelSerializer):
 class PersonalVideoViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalVideoSerializer
     queryset = PersonalVideo.objects.none()
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
         user = self.request.user

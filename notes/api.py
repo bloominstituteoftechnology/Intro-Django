@@ -1,5 +1,6 @@
 from rest_framework import serializers, viewsets
 from .models import PersonalNote
+from rest_framework import permissions
 
 
 class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
@@ -15,7 +16,8 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
-    queryset = PersonalNote.objects.none()
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    queryset = PersonalNote.objects.all()
 
     def get_queryset(self):
         user = self.request.user
