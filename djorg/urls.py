@@ -26,7 +26,7 @@ router.register(r"notes", PersonalNoteViewSet)
 router.register(r"video_archive", PersonalVideoViewSet)
 
 urlpatterns = [
-    path("", include("django.contrib.auth.urls")),
+    path("/", include("django.contrib.auth.urls")),
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
     re_path(r"^api-token-auth/", views.obtain_auth_token),
