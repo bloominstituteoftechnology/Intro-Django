@@ -20,7 +20,9 @@ from notes.api import PersonalNoteViewSet
 from video_archive.api import PersonalVideoViewSet
 from django.views.generic.base import TemplateView
 from rest_framework.authtoken import views
-
+from django.views.generic.edit import CreateView
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
 
 router = routers.DefaultRouter()
 router.register(r"notes", PersonalNoteViewSet)
@@ -28,6 +30,15 @@ router.register(r"video_archive", PersonalVideoViewSet)
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path(
+        "accounts/register/",
+        CreateView.as_view(
+            template_name="register.html",
+            form_class=UserCreationForm,
+            success_url=reverse_lazy("login"),
+        ),
+        name="register",
+    ),
     path("accounts/", include("django.contrib.auth.urls")),
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),

@@ -1,4 +1,17 @@
 /* LOGIN FORM */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+form {
+    margin: auto;
+}
 
 body.login {
     background: #f8f8f8;

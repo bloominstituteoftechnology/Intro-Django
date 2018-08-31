@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content %} {% if user.is_authenticated %} Hello {{
-user.username }}!
-<p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-<p>You are not logged in.</p>
-<a href="{% url 'login' %}">login</a>
-{% endif %} {% endblock %}
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content %}
+<h1>Welcome to Django-Sprint-I!</h1>
+<a href="{% url 'register' %}">Click to Register</a>
+
+<h4>If you already have an account, click here to log in!</h4>
+<a href="{% url 'login' %}">Log in</a>
+{% endblock %}
