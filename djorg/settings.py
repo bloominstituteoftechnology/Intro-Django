@@ -10,6 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+"""
+Decouple 
+https://github.com/henriquebastos/python-decouple/blob/master/README.rst#understanding-the-cast-argument
+"""
+
+"""
+Database
+dj_database_url.config method returns a Django database connection dictionry, populated with all the data specified in your URL.
+https://github.com/kennethreitz/dj-database-url
+"""
+
 import os
 from decouple import config
 import dj_database_url
@@ -31,6 +42,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
+# Casting argument for ALLOWED_HOST is expected a list of hostnames
 ALLOWED_HOSTS = []
 
 # Configuration
@@ -93,7 +105,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3', # Django backend using sqlite
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
