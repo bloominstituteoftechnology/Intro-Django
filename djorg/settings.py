@@ -43,7 +43,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 # Casting argument for ALLOWED_HOST is expected a list of hostnames
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 # Configuration
 # allow all host to do cross-site requests
@@ -102,12 +102,20 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
+"""
+# Django backend using sqlite
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Django backend using sqlite
+        'ENGINE': 'django.db.backends.sqlite3', 
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+"""
+# Database using URL. sqlite:///PATH
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')  
+    )
 }
 
 
