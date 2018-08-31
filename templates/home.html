@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content %} {% if user.is_authenticated %} Welcome
-back, friend!
-<p><a href="{% url 'logout' %}">Head Into the App</a></p>
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content %} {% if user.is_authenticated %} Hello {{
+user.username }}!
+<p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
 <p>You are not logged in.</p>
-<a href="{% url 'login' %}">Log in</a>
+<a href="{% url 'login' %}">login</a>
 {% endif %} {% endblock %}
