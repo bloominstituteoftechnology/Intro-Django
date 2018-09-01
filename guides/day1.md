@@ -2,14 +2,14 @@
 
 ## Summary
 
-* Get pipenv installed
-* Clone your repo
-  * (If you cloned the Hello-Django repo, delete the file `requirements.txt`!)
-* Go to your repo root directory
-* `pipenv --three`
-* `pipenv install`
-* `pipenv shell`
-* `pipenv install django`
+* [x]Get pipenv installed
+* [x]Clone your repo
+  *[x] (If you cloned the Hello-Django repo, delete the file `requirements.txt`!)
+* [x]Go to your repo root directory
+* [x]`pipenv --three`
+* [x]`pipenv install`
+* [x]`pipenv shell`
+* `[x]pipenv install django`
 * `django-admin startproject djorg .`
 * `django-admin startapp notes`
 * `./manage.py runserver`
