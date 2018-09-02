@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import PersonalNote
+from .models import PersonalNote, Post
 
 class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

@@ -41,16 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'techblog',
     'rest_framework',
+    'corsheaders',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',  
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -123,8 +126,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
