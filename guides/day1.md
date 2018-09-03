@@ -112,7 +112,7 @@ Create an app with `django-admin startapp [name_of_app]`
 
 * For the first project, we are naming the app notes
 * Name it differently as appropriate if you are following this to set up, but
-  working on something else.
+  working on something else.cd
     
 ## Start the Server
 
