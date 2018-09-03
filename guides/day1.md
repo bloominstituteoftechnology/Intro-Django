@@ -1,4 +1,4 @@
-# Day 1: Intro
+p# Day 1: Intro
 
 ## Summary
 
@@ -10,8 +10,8 @@
 * [x]`pipenv install`
 * [x]`pipenv shell`
 * `[x]pipenv install django`
-* `django-admin startproject djorg .`
-* `django-admin startapp notes`
+* [x]`django-admin startproject djorg .`
+* `[x]django-admin startapp notes`
 * `./manage.py runserver`
 * `./manage.py showmigrations`
 * `./manage.py migrate`
@@ -98,7 +98,7 @@ Start a project with `django-admin startproject [name_of_project] .`
 
 * Replace [nameofproject] with the name of your project
 * The . tells it to create the project in the current directory. Otherwise, it
-  would create a project in a subdirectory called [name_of_project]. We don’t
+  would create a project in a subdirectory called [name_of_project]. We don’tcd
   need that because we want the repo folder to be the root
     
 Verify that the [name_of_project] folder was created and has boilerplate files
