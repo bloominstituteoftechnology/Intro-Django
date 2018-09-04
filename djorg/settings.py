@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "rest_auth",
+    "graphene_django",
 ]
 
 from rest_framework.authentication import (
@@ -151,5 +152,32 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+# CORS SET UP
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:3000',
+# )
+
+CORS_ALLOW_METHODS = ("DELETE", "GET", "OPTIONS", "PATCH", "POST", "PUT")
+
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "token",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+)
+
+## GRAPHENE SETTINGS
+GRAPHENE = {
+    # folder, file, name of variable schema...
+    "SCHEMA": "notes.schema.schema"
+}
 # Add heroku functionality
 django_heroku.settings(locals())

@@ -15,6 +15,7 @@ django-heroku = "*"
 django-cors-headers = "*"
 django-rest-auth = "*"
 django-webpack-loader = "*"
+graphene-django = "*"
 
 [dev-packages]
 
