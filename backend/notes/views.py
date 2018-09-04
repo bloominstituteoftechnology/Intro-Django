@@ -5,7 +5,9 @@ from django.shortcuts import render, get_object_or_404
 # from django.template import loader
 from django.urls import reverse, reverse_lazy
 from django.utils import timezone
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, FormView, CreateView
+from django.contrib.auth.forms import UserCreationForm
+
 from .models import PersonalNote, Note
 
 class IndexView(ListView):
@@ -21,4 +23,6 @@ class ViewDetail(DetailView):
     model = Note
     template_name = 'notes/detail.html'
 
+
+    
 

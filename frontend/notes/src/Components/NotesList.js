@@ -29,7 +29,8 @@ class NotesList extends Component {
         console.log(this.state.notes);
         return (
             <div>
-                <div className="home-link"><Link to="/"><img className="house-pic"src={house} alt="home"/></Link></div>
+                <div className="home-link"><Link exact to="/">
+                <img className="house-pic"src={house} alt="home"/></Link></div>
                 <div className="main-note-container">
                     {this.state.notes.map(note => {
                         return (

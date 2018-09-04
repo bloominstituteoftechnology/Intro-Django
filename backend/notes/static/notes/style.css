@@ -1,5 +1,6 @@
 .notes-container {
     list-style-type: none;
+    height: 70vh;
 }
 a {
     color: white;

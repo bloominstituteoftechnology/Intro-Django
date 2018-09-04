@@ -8,7 +8,9 @@ var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
 </script>
 
 {% if latest_note_list %}
-<ul class="notes-container" style="background-color:aqua; height: 50vh; padding: 10px;">
+<p class="token" style="display:none">{ csrftoken }</p>
+<ul class="notes-container" style="background-color:aqua; padding: 10px;">
+
 {% for note in latest_note_list %}
     <li class="note" style="background-color: white; margin:10px; box-shadow: 4px 2px grey";>
         <a href="{% url 'notes:detail' note.id %}" style="color:black;">{{ note.title}}</a>
@@ -18,6 +20,7 @@ var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
         <br/>
     </li>
 {% endfor %}
+
 </ul>
 <a href="http://127.0.0.1:8000/admin" style="color:black">Visit the Admin page</a><br/>
 <a href="http://127.0.0.1:8000/api"style="color:black">Visit the Notes API</a>
