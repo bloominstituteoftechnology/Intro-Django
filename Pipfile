@@ -4,10 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [dev-packages]
+pylint = "*"
 
 [packages]
 django = "*"
 python-decouple = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+whitenoise = "*"
+djangorestframework = "*"
 
 [requires]
-python_version = "3.5"
+python_version = "3.6"
