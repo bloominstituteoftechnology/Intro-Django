@@ -14,6 +14,7 @@ whitenoise = "*"
 django-heroku = "*"
 django-cors-headers = "*"
 django-rest-auth = "*"
+django-webpack-loader = "*"
 
 [dev-packages]
 
