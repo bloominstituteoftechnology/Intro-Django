@@ -36,7 +36,8 @@ ALLOWED_HOSTS =  config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.sp
 
 INSTALLED_APPS = [
     'notes', 
-    'corheaders',
+    'corsheaders',
+    'whitenoise',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -45,13 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,16 +144,16 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-from rest_framework.authentication import
-SessionAuthentication, BasicAuthentication, TokenAuthentication
+#from rest_framework.authentication import
+#SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    ]
+    )
 }

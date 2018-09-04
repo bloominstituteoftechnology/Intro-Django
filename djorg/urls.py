@@ -21,10 +21,10 @@ from rest_framework.authtoken import views
 from notes.api import PersonalNoteViewSet
 
 router = routers.DefaultRouter()
-router.register(r'notes', PersonalNoteViewSet)
+router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    re_path(r'^api-token-auth/', views.obtain_auth_token)
+    re_path('api-token-auth/', views.obtain_auth_token)
 ]
