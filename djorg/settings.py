@@ -40,12 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "webpack_loader",
-    "notes",
     "rest_framework",
     "rest_framework.authtoken",
-    "corsheaders",
-    "rest_auth",
+    "notes",
+    "corsheaders",  # CORS HEADERS
     "graphene_django",
 ]
 
