@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from uuid import uuid4
 
 # Create your models here.
@@ -12,4 +13,8 @@ class Note(models.Model):
 
     def __str__(self):
         # formats it to not show ID
-        return f'<Note: {self.title}>'
+        return f'<{self.__class__.__name__}: {self.title}, ID: {self.id}>'
+
+
+class PersonalNote(Note):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
