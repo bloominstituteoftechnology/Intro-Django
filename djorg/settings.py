@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",
+    "graphene_django",
     "django.contrib.staticfiles",
     "notes",
     "video_archive",
@@ -98,6 +99,7 @@ TEMPLATES = [
     }
 ]
 
+GRAPHENE = {"SCHEMA": "djorg.schema.schema"}
 WSGI_APPLICATION = "djorg.wsgi.application"
 
 

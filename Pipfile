@@ -12,6 +12,7 @@ dj-database-url = "*"
 gunicorn = "*"
 "psycopg2-binary" = "*"
 whitenoise = "*"
+graphene-django = "*"
 
 [dev-packages]
 
