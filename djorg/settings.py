@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'polls.apps.PollsConfig',
+    'lcai',
     'notes',
     'corsheaders',
     'django.contrib.admin',
@@ -83,16 +84,26 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+''' ALTERNATIVE 1  => The more compact way to do it.
+DATABASES = {
+    'default': dj_database_url.config('DATABASE_URL', default='sqlite:///db.sqlite3')
+}
+'''
 
+''' ALTERNATIVE 2  => here, it is NOT neccesary to define DATABASE_URL in .env
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'].update(db_from_env)  # this works if the DATABASE['default'] was previously defined!
+'''
+
+DATABASES = {}  # Only do thAt if DATABASE_URL is defined in .env ELSE not
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'] = db_from_env
 
 
 # Password validation

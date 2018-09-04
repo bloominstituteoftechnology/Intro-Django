@@ -7,8 +7,6 @@ SECTION_NAMES = (
     'miembros',
 )
 
-#  FIRST ATTEMPT
-
 
 class Home(models.Model):
     texto_es = models.TextField(blank=True)
@@ -18,7 +16,7 @@ class Home(models.Model):
     # foto_3 = PENDING
 
     def __str__(self):
-        return "Home page model."
+        return "Home page info."
 
 
 class Project(models.Model):

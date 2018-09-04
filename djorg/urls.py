@@ -18,20 +18,24 @@ from django.urls import path, include
 from django.contrib import admin
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from lcai.api import HomeViewSet
 
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
+lcai = routers.DefaultRouter()
 
 # build an endpoint at /api/notes
 router.register('notes', PersonalNoteViewSet)
+lcai.register('home', HomeViewSet)
 
 urlpatterns = [
-    # path('polls/', include('polls.urls')),
+    path('polls/', include('polls.urls')),
 
     # router.urls will take care of ALL the posible api endpoint we can add in
     # the future. It is only needed this line for all posible APIS
     path('api/', include(router.urls)),
+    path('api/lcai/', include(lcai.urls)),
 
     # Token auth endpoint -> this enpoint 'return' a token.
     path('api-token-auth/', views.obtain_auth_token),
