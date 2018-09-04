@@ -31,6 +31,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 
 print(f"Allowed_hosts {ALLOWED_HOSTS}")
+print(f"DB Url {config('DATABASE_URL')}")
 
 # Application definition
 

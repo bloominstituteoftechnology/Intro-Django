@@ -47,26 +47,37 @@ class Evento(models.Model):
         return self.evento_es
 
 
-# class Miembro(models.Model):
-#     ROLES = {
-#         'directora': ("Coordinadora", "Coordinator"),
-#         'investigadores': ("Investigador", "Researcher"),
-#         'doctorandos': 1,
-#         'phpthesis': 1,
-#         'colaboradores': 1,
-#     }
+class Role(models.Model):
+    ROLES = (
+        ('role_dir', 'directora'),
+        ('role_inv', 'investigadores'),
+        ('role_doc', 'doctorandos'),
+        ('role_phd', 'phpthesis'),
+        ('role_col', 'colaboradores'),
+    )
 
-#     nombre
-#     descrip_en
-#     descrip_es
-#     email
-#     enlace_a_web
-#     enlace_a_web_personal
-#     foto
-#     title_en
-#     title_es
-#     universidad_en
-#     universidad_es
+    role = models.CharField(
+        max_length=24,
+        choices=ROLES,
+        default='role_inv',
+    )
+
+
+class Miembro(Role):
+    nombre = models.CharField(max_length=128, blank=False)
+    email = models.EmailField(max_length=254)
+    # descrip_es
+    # descrip_en
+    # enlace_a_web
+    # enlace_a_web_personal
+    # title_en
+    # title_es
+    # universidad_en
+    # universidad_es
+    # foto
+
+    def __str__(self):
+        return self.nombre
 
 
 ''' SECOND ATTEMPT
@@ -84,19 +95,4 @@ class Section(models.Model):
         default='proyectos',
     )
 
-
-class Roles(models.Model):
-    ROLES = (
-        ('role_dir', 'directora'),
-        ('role_inv', 'investigadores'),
-        ('role_doc', 'doctorandos'),
-        ('role_phd', 'phpthesis'),
-        ('role_col', 'colaboradores'),
-    )
-
-    role = models.CharField(
-        max_length=24,
-        choices=ROLES,
-        # default='investigadores',
-    )
 '''

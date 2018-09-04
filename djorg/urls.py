@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.contrib import admin
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
-from lcai.api import HomeViewSet
+from lcai.api import HomeViewSet, DirectoraViewSet
 
 from rest_framework.authtoken import views
 
@@ -28,6 +28,7 @@ lcai = routers.DefaultRouter()
 # build an endpoint at /api/notes
 router.register('notes', PersonalNoteViewSet)
 lcai.register('home', HomeViewSet)
+lcai.register('directora', DirectoraViewSet)
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
