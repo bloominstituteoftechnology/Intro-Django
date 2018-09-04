@@ -1,7 +1,10 @@
+from django.contrib.auth.models import User
+from django.db import models
 from rest_framework import serializers, viewsets
 from .models import PersonalNote, Note
+import requests
 
-class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
+class NoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PersonalNote
         fields = ('title', 'content')
@@ -11,17 +14,16 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         note = PersonalNote.objects.create(user=user, **validated_data)
         return note
         
-class PersonalNoteViewSet(viewsets.ModelViewSet):
-    serializer_class = PersonalNoteSerializer
-    queryset = PersonalNote.objects.none()
-
+class NoteViewSet(viewsets.ModelViewSet):
+    serializer_class = NoteSerializer
+    queryset = Note.objects.none()
+ 
     def get_queryset(self):
         user = self.request.user
-        if user.is_anonymous:
-            return PersonalNote.objects.all()
-        elif not user:
-            return PersonalNote.objects.all()
-
+        print(self.request.user)
+        if user.is_anonymous: 
+            return Note.objects.all()
+        elif user:
+             return PersonalNote.objects.filter(user=user)()
         else:
-            return PersonalNote.objects.filter(user=user)
-            
+            return Note.objects.none()   

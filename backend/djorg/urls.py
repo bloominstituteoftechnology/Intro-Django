@@ -18,14 +18,12 @@ from django.urls import path, include, re_path
 from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token
 
-from notes.api import PersonalNoteViewSet
-from music.api import MusicViewSet
+from notes.api import NoteViewSet
 
 router = routers.DefaultRouter()
-router.register(r'notes', PersonalNoteViewSet)
-router.register(r'music', MusicViewSet)
+router.register(r'notes', NoteViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^api/', include(router.urls)),
-    path('', include("music.urls")),
+    path('', include("notes.urls")),
 ]

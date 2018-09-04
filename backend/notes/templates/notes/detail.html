@@ -1,0 +1,16 @@
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static './notes/style.css' %}">
+
+<h1>{{ note.title }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% csrf_token %}
+    <li class="note" style="list-style-type: none; width: 400px;">
+        <br/>
+        <p style="font-size:20px; color:blueviolet">{{ note.content }}</p>
+        <p style="font-size:14px">&emsp;&emsp;{{ note.created_on }}</p>
+        <br/>
+        <br/>
+    </li>
+    <a href="http://127.0.0.1:8000">Back to List</a>
