@@ -24,6 +24,6 @@ router.register(r'notes', PersonalNoteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    # path('api/', include(router.urls)),
     # re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
