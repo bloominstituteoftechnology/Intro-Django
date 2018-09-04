@@ -18,7 +18,12 @@ from django.urls import path, include
 from django.contrib import admin
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
-from lcai.api import HomeViewSet, DirectoraViewSet
+from lcai.api import (HomeViewSet,
+                      DirectoraViewSet,
+                      InvestigadoresViewSet,
+                      DoctorandosViewSet,
+                      PhdThesisViewSet,
+                      ColaboradoresViewSet)
 
 from rest_framework.authtoken import views
 
@@ -29,6 +34,10 @@ lcai = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 lcai.register('home', HomeViewSet)
 lcai.register('directora', DirectoraViewSet)
+lcai.register('investigadores', InvestigadoresViewSet)
+lcai.register('doctorandos', DoctorandosViewSet)
+lcai.register('phd-thesis', PhdThesisViewSet)
+lcai.register('colaboradores', ColaboradoresViewSet)
 
 urlpatterns = [
     path('polls/', include('polls.urls')),

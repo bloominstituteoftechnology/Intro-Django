@@ -49,11 +49,11 @@ class Evento(models.Model):
 
 class Role(models.Model):
     ROLES = (
-        ('role_dir', 'directora'),
-        ('role_inv', 'investigadores'),
-        ('role_doc', 'doctorandos'),
-        ('role_phd', 'phpthesis'),
-        ('role_col', 'colaboradores'),
+        ('role_dir', 'Directora'),
+        ('role_inv', 'Investigadores'),
+        ('role_doc', 'Doctorandos'),
+        ('role_phd', 'Phd / Thesis'),
+        ('role_col', 'Colaboradores'),
     )
 
     role = models.CharField(
@@ -65,16 +65,16 @@ class Role(models.Model):
 
 class Miembro(Role):
     nombre = models.CharField(max_length=128, blank=False)
-    email = models.EmailField(max_length=254)
-    # descrip_es
-    # descrip_en
-    # enlace_a_web
-    # enlace_a_web_personal
-    # title_en
-    # title_es
-    # universidad_en
-    # universidad_es
+    email = models.EmailField()
+    descrip_es = models.TextField()
+    descrip_en = models.TextField()
+    enlace_a_web = models.URLField()
+    enlace_a_web_personal = models.URLField()
+    universidad_en = models.CharField(max_length=256)
+    universidad_es = models.CharField(max_length=256)
     # foto
+    # title_en DESCARTAR - ESTE CAMPO ES 'ROLE'
+    # title_es DESCARTAR - ESTE CAMPO ES 'ROLE'
 
     def __str__(self):
         return self.nombre

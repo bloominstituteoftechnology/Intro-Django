@@ -24,9 +24,53 @@ class HomeViewSet(viewsets.ModelViewSet):
 class DirectoraSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Miembro
-        fields = ("nombre", "email")
+        fields = '__all__'
 
 
 class DirectoraViewSet(viewsets.ModelViewSet):
     serializer_class = DirectoraSerializer
     queryset = Miembro.objects.all().filter(role='role_dir')
+
+
+class InvestigadoresSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Miembro
+        fields = '__all__'
+
+
+class InvestigadoresViewSet(viewsets.ModelViewSet):
+    serializer_class = DirectoraSerializer
+    queryset = Miembro.objects.all().filter(role='role_inv')
+
+
+class DoctorandosSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Miembro
+        fields = '__all__'
+
+
+class DoctorandosViewSet(viewsets.ModelViewSet):
+    serializer_class = DoctorandosSerializer
+    queryset = Miembro.objects.all().filter(role='role_doc')
+
+
+class PhdThesisSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Miembro
+        fields = '__all__'
+
+
+class PhdThesisViewSet(viewsets.ModelViewSet):
+    serializer_class = PhdThesisSerializer
+    queryset = Miembro.objects.all().filter(role='role_phd')
+
+
+class ColaboradoresSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Miembro
+        fields = '__all__'
+
+
+class ColaboradoresViewSet(viewsets.ModelViewSet):
+    serializer_class = ColaboradoresSerializer
+    queryset = Miembro.objects.all().filter(role='role_col')
