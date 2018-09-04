@@ -42,6 +42,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
 }
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,6 +59,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -94,8 +97,6 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-#DATABASES = {}
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 DATABASES = {
      'default': dj_database_url.config('DATABASE_URL', default='sqlite:///db.sqlite3')
 #    'default': {
@@ -137,6 +138,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
