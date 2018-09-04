@@ -92,8 +92,7 @@ set, so use option 1 with suggested default of `timezone.now`.
 
 Do the migration: `./manage.py migrate`
 
-You might notice that the new fields aren't showing up in the admin interface. This is because when you use `auto_now`, the field gets set to read-only, and such fields aren't shown in the panel.
-
+p
 To get the read-only fields to show up in the interface:
 
 ```python
