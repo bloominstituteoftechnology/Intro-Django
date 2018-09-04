@@ -12,12 +12,12 @@ p# Day 1: Intro
 * `[x]pipenv install django`
 * [x]`django-admin startproject djorg .`
 * `[x]django-admin startapp notes`
-* `./manage.py runserver`
-* `./manage.py showmigrations`
-* `./manage.py migrate`
-* `./manage.py runserver`
-* Add model to `notes/models.py`
-* Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py`
+* `[x]./manage.py runserver`
+* `[x]./manage.py showmigrations`
+* `[x]./manage.py migrate`
+* `[x]./manage.py runserver`
+* [x]Add model to `notes/models.py`
+*[x] Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py`
 * `./manage.py showmigrations`
 * `./manage.py makemigrations`
 * `./manage.py showmigrations`
