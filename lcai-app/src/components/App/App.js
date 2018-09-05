@@ -5,7 +5,7 @@ import logo from '../../logo.svg';
 /**
  * IMPORT OCMPONENTS: App component is the Head of all others components.
  */
-// import Component_1 from '../SideBar_/SideBar_';
+import Home from '../Home/Home';
 // import Component_2 from '../Main_/Main_';
 
 class App extends Component {
@@ -19,8 +19,7 @@ class App extends Component {
         <div className="container custom-container">
           <div className="row">
             {/* ADD COMPONENTS HERE */}
-            {/* <Component_1 />
-            <Route component={Component_2} /> */}
+            <Route exact path="/" component={Home} />
           </div>
         </div>
       </div>
