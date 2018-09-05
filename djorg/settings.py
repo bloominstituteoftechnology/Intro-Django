@@ -20,6 +20,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.spl
 # Application definition
 
 INSTALLED_APPS = [ 
+   'graphene_django',
    'notes',
    'rest_framework',
    'corsheaders',
