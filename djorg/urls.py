@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+from graphene_django.views import GraphQLView
 
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
@@ -27,5 +28,6 @@ router.register('notes', PersonalNoteViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
     re_path('api-token-auth/', views.obtain_auth_token)
 ]

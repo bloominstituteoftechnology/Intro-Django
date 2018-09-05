@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'notes',
     'rest_framework',
     'corsheaders',
+    'graphene_django',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -182,3 +183,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
+
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'  # dir.file.varname
+}
+

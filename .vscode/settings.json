@@ -1,5 +1,7 @@
 {
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.enabled": false
+    "python.linting.enabled": false,
+    "python.pythonPath": "/Users/srichaii/.local/share/virtualenvs/Intro-Django-3bRaGYm2/bin/python",
+    "git.ignoreLimitWarning": true
 }
