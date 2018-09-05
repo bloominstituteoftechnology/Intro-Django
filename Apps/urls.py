@@ -20,6 +20,9 @@ from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 from hearthstone.api import UserDeckViewSet
 
+from django.urls import path, include, re_path
+from rest_framework.authtoken import views
+
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
 router.register(r'decks', UserDeckViewSet)
@@ -27,4 +30,5 @@ router.register(r'decks', UserDeckViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    re_path(r'^api-token-auth/', views.obtain_auth_token),
 ]
