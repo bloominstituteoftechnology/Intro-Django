@@ -38,6 +38,7 @@ print(f"DB Url {config('DATABASE_URL')}")
 INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
+    'graphene_django',
     'polls.apps.PollsConfig',
     'lcai',
     'notes',
@@ -164,3 +165,9 @@ REST_FRAMEWORK = {
 
 # CORS
 CROSS_ORIGIN_ALLOW_ALL = True
+
+
+# GRAPHQL
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema',
+}

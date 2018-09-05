@@ -30,6 +30,8 @@ from lcai.api import (HomeViewSet,
 
 from rest_framework.authtoken import views
 
+from graphene_django.views import GraphQLView
+
 router = routers.DefaultRouter()
 lcai = routers.DefaultRouter()
 
@@ -61,4 +63,5 @@ urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token),
 
     path('admin/', admin.site.urls),
+    path('graphql/', GraphQLView.as_view(graphiql=True))
 ]
