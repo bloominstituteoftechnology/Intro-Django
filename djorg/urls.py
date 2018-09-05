@@ -19,6 +19,9 @@ from django.contrib import admin
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 from lcai.api import (HomeViewSet,
+                      ProjectViewSet,
+                      EventoViewSet,
+                      MiembrosViewSet,
                       DirectoraViewSet,
                       InvestigadoresViewSet,
                       DoctorandosViewSet,
@@ -32,12 +35,19 @@ lcai = routers.DefaultRouter()
 
 # build an endpoint at /api/notes
 router.register('notes', PersonalNoteViewSet)
+# router.register('lcai/home', HomeViewSet)
+# router.register('lcai/directora', DirectoraViewSet)
+# router.register('lcai/investigadores', InvestigadoresViewSet)
+
 lcai.register('home', HomeViewSet)
+lcai.register('proyectos', ProjectViewSet)
+lcai.register('eventos', EventoViewSet)
 lcai.register('directora', DirectoraViewSet)
 lcai.register('investigadores', InvestigadoresViewSet)
 lcai.register('doctorandos', DoctorandosViewSet)
 lcai.register('phd-thesis', PhdThesisViewSet)
 lcai.register('colaboradores', ColaboradoresViewSet)
+lcai.register('miembros', MiembrosViewSet)
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
