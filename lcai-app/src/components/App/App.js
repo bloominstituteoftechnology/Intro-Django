@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import logo from '../../logo.svg';
 
 /**
@@ -10,6 +10,19 @@ import Home from '../Home/Home';
 
 class App extends Component {
   render() {
+    const Page404 = (
+      <div>
+        <br />
+        <h5>Something went wrong,</h5>
+        <br />
+        <p>the page you are looking for is no here...</p>
+        <br />
+        <Link to="/">
+          <button>Go back to home.</button>
+        </Link>
+      </div>
+    );
+
     return (
       <div className="App">
         <header className="App-header">
@@ -18,8 +31,11 @@ class App extends Component {
         </header>
         <div className="container custom-container">
           <div className="row">
-            {/* ADD COMPONENTS HERE */}
-            <Route exact path="/" component={Home} />
+            <Switch>
+              {/* ADD COMPONENTS HERE */}
+              <Route exact path="/" component={Home} />
+              <Route component={() => Page404} />
+            </Switch>
           </div>
         </div>
       </div>
