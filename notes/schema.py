@@ -11,9 +11,9 @@ class PersonalNote(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     """ Describe which records we want to show."""
-    personalnotes = graphene.List(PersonalNoteType)
+    personalnotes = graphene.List(PersonalNote)
 
-    def resolve_notes(self, info):
+    def resolve_personalnotes(self, info):
         """ Decide what notes to return."""
         user = info.context.user    # Find this with the debugger
 
