@@ -12,6 +12,7 @@ gunicorn = "*"
 dj-database-url = "*"
 whitenoise = "*"
 django-cors-headers = "*"
+graphene-django = "*"
 
 [dev-packages]
 

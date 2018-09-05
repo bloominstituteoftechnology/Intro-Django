@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'notes',
     'rest_framework',
     'rest_framework.authtoken',
+    'graphene_django',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -153,3 +154,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000'
 )
+
+GRAPHENE = {
+    "SCHEMA": "notes.schema.schema"
+}
