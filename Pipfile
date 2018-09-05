@@ -5,7 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+<<<<<<< HEAD
 python-decouple = "*"
+=======
+>>>>>>> c9ce7017b6150d6141679a2e39104dfabc7a1651
 
 [dev-packages]
 
