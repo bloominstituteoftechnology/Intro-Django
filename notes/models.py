@@ -1,5 +1,7 @@
 from django.db import models
 from uuid import uuid4
+from decouple import config
+
 # Create your models here.
 class Note(models.Model):
   title = models.CharField(max_length=200)
