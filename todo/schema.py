@@ -9,8 +9,15 @@ class PersonalTodoType(DjangoObjectType):
         interfaces = (graphene.relay.Node, )
 
 class Query(graphene.ObjectType):
-    personaltodos = graphene.List(PersonalTodoType)
+    todos = graphene.List(PersonalTodoType)
 
     def resolve_todos(self, info):
         # decide which todos to return
-        pass
+        user = info.context.user
+
+        if user.is_anonymous:
+            return PersonalTodo.objects.none()
+        else:
+            return PersonalTodo.objects.filter(user=user)
+
+schema = graphene.Schema(query=Query)

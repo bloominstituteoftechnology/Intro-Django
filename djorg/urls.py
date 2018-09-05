@@ -24,8 +24,11 @@ from rest_framework.authtoken import views
 router = routers.DefaultRouter()
 router.register(r'todo', PersonalTodoViewSet)
 
+from graphene_django.views import GraphQLView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     re_path(r'^api-token-auth/', views.obtain_auth_token),
+    path('graphql/', GraphQLView.as_view(graphiql=True))
 ]

@@ -147,3 +147,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
+
+GRAPHENE = {
+    'SCHEMA': 'todo.schema.schema',
+}
