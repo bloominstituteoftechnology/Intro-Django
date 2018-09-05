@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'books',
     'rest_framework',
     'corsheaders',
+    'graphene_django',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,7 +51,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,6 +131,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+
+GRAPHENE = {
+    'SCHEMA': 'books.schema.schema'
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
