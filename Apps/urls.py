@@ -18,9 +18,11 @@ from django.urls import path, include
 
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from hearthstone.api import UserDeckViewSet
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
+router.register(r'decks', UserDeckViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
