@@ -1,14 +1,39 @@
+import logo from '../../logo.svg';
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import logo from '../../logo.svg';
+import axios from 'axios';
 
-/**
- * IMPORT OCMPONENTS: App component is the Head of all others components.
- */
+// COMPONENTS
 import Home from '../Home/Home';
-// import Component_2 from '../Main_/Main_';
+
+const API_AUTH = process.env.REACT_APP_API_AUTH_ENPOINT;
+const AUTH_USERNAME = process.env.REACT_APP_AUTH_USERNAME;
+const AUTH_PASSWORD = process.env.REACT_APP_AUTH_PASSWORD;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      superduper: '',
+    };
+  }
+
+  componentDidMount() {
+    // Mock an Auth process by passing a hardcoded user and password
+    console.log({ API_AUTH, AUTH_USERNAME, AUTH_PASSWORD });
+    const auth = axios.post(API_AUTH, { username: AUTH_USERNAME, password: AUTH_PASSWORD });
+    auth
+      .then(response => {
+        console.log('response', response);
+        // TODO Add Token to 'state'
+        const { token } = response.data;
+        this.setState({ superduper: token });
+      })
+      .catch(e => {
+        console.log('error', e);
+      });
+  }
+
   render() {
     const Page404 = (
       <div>
