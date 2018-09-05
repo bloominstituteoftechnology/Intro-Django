@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'dashboard',
     'rest_framework',
     'corsheaders',
+    'graphene_django',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,6 +84,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djorg.wsgi.application'
+
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'  # dir.file.varname
+}
 
 
 # Database
