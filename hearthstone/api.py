@@ -6,7 +6,7 @@ class UserDeckSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserDeck
         # TODO: add more fields
-        fields = ('name', 'description')
+        fields = ('name','deck_format', 'link', 'description')
 
     def create(self, validated_data):
         # import pdb; pdb.set_trace()
