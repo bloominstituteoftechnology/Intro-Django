@@ -131,4 +131,8 @@ REST_FRAMEWORK = {
     ]
 }
 
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'
+}
+
 CORS_ORIGIN_ALLOW_ALL = True
