@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'graphene_django',
     'notes',
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',
@@ -137,6 +138,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),
+}
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'
 }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
