@@ -8,6 +8,7 @@ class PersonalNoteType(DjangoObjectType):
         model = PersonalNote
         interfaces = (graphene.relay.Node,)
 
+
 class Query(graphene.ObjectType):
     notes = graphene.List(PersonalNoteType)
 
