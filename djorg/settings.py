@@ -187,4 +187,3 @@ REST_FRAMEWORK = {
 GRAPHENE = {
     'SCHEMA': 'notes.schema.schema'  # dir.file.varname
 }
-
