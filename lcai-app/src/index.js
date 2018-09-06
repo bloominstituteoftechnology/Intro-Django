@@ -11,11 +11,13 @@ import mainReducer from './reducers';
 import App from './components/App/App';
 
 const store = createStore(mainReducer, applyMiddleware(thunk, logger));
-
+console.log('process.env', process.env);
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
     </Router>
   </Provider>,
   document.getElementById('root')

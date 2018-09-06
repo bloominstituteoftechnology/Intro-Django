@@ -140,7 +140,7 @@ export const registerUser = newUser => {
         const { name, username, jwt } = response.data;
         if (!jwt) {
           throw new Error('Ups, seems that you are registered but no logged in.');
-          return;
+          // return;
         }
         localStorage.setItem('chachi', jwt);
         dispatch({
@@ -175,7 +175,7 @@ export const logInUser = credentials => {
         const { name, username, jwt } = response.data;
         if (!jwt) {
           throw new Error('Ups, seems that you are registered but no logged in.');
-          return;
+          // return;
         }
         localStorage.setItem('chachi', jwt);
         dispatch({

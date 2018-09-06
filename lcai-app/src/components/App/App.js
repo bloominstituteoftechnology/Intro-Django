@@ -5,6 +5,7 @@ import axios from 'axios';
 
 // COMPONENTS
 import Home from '../Home/Home';
+import Projects from '../Projects/Projects';
 
 const API_AUTH = process.env.REACT_APP_API_AUTH_ENPOINT;
 const AUTH_USERNAME = process.env.REACT_APP_AUTH_USERNAME;
@@ -24,10 +25,10 @@ class App extends Component {
     const auth = axios.post(API_AUTH, { username: AUTH_USERNAME, password: AUTH_PASSWORD });
     auth
       .then(response => {
-        console.log('response', response);
+        console.log('API_AUTH response', response.data);
         // TODO Add Token to 'state'
         const { token } = response.data;
-        this.setState({ superduper: token });
+        this.setState({ superduper: token }); // "9bfe8cfe1d2fca2fb7fbda2f8db79f1a2f872cf9"
       })
       .catch(e => {
         console.log('error', e);
@@ -53,12 +54,27 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
+          <p>
+            <Link to="/">
+              <b>Home </b>
+            </Link>
+            <Link to="/proyectos">
+              <b>Projects </b>
+            </Link>
+            <Link to="/eventos">
+              <b>Events </b>
+            </Link>
+            <Link to="/miembros">
+              <b>Members</b>
+            </Link>
+          </p>
         </header>
         <div className="container custom-container">
           <div className="row">
             <Switch>
               {/* ADD COMPONENTS HERE */}
               <Route exact path="/" component={Home} />
+              <Route path="/proyectos" component={Projects} />
               <Route component={() => Page404} />
             </Switch>
           </div>

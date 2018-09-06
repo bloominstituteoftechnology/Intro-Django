@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const API_DATA = process.env.REACT_APP_API_HOME;
+const API_DATA = process.env.REACT_APP_API_PROJECTS;
 
-class Home extends Component {
+class Projects extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,4 +34,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Projects;
