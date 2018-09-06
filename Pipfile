@@ -9,8 +9,5 @@ python-decouple = "*"
 djangorestframework = "*"
 gunicorn = "*"
 
-[dev-packages]
-black = "*"
-
 [requires]
 python_version = "3.6"
