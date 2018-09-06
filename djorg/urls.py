@@ -25,7 +25,7 @@ router.register(r'notes', PersonalNoteViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('graphql', GraphQLView.as_view(graphiql=True)),
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
     path('api/', include(router.urls)),
     re_path('^api-token-auth', views.obtain_auth_token)
 ]
