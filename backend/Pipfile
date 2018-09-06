@@ -8,8 +8,10 @@ django = "*"
 python-decouple = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+graphene-django = "*"
+django-graphql-jwt = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3"
