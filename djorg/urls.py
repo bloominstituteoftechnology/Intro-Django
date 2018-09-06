@@ -35,5 +35,5 @@ urlpatterns = [
     path('graphql/', GraphQLView.as_view(graphiql=True)),
     # path('rest-auth/', include('rest_auth.urls')),
     re_path(r'^rest-auth/', include('rest_auth.urls')),
-    re_path(r'^rest-auth/registration/', include('rest_auth.registration.urls'))
+    re_path(r'^rest-auth/register/', include('rest_auth.registration.urls'))
 ]

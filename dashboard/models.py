@@ -45,7 +45,6 @@ class StudentReport(models.Model):
   project_manager_id = models.ForeignKey(ProjectManager, on_delete=models.CASCADE)
   submitted_sprints = models.PositiveSmallIntegerField()
   passed_sprints = models.PositiveSmallIntegerField()
-  sprint_pass_rate = models.FloatField()
   created_at = models.DateTimeField(auto_now_add=True)
   last_modified = models.DateTimeField(auto_now=True)
     
