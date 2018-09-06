@@ -19,6 +19,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS',
 INSTALLED_APPS = [
     'notes',
     'corsheaders',
+    'graphene_django',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
