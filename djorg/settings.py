@@ -44,6 +44,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'graphene_django',
+    'rest_auth', # $ pipenv install django-rest-auth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',

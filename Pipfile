@@ -13,6 +13,7 @@ gunicorn = "*"
 dj-database-url = "*"
 whitenoise = "*"
 graphene-django = "*"
+django-rest-auth = {version = "*", extras = ["with_social"]}
 
 [dev-packages]
 
