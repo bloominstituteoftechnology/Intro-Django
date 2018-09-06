@@ -13,7 +13,7 @@ class Query(graphene.ObjectType):
     personal_notes = graphene.List(PersonalNote)
 
     def resolve_personal_notes(self, info):
-        user = info.contet.user
+        user = info.context.user
         if user.is_anonymous:
             return PersonalNoteModel.objects.none()
         return PersonalNoteModel.objects.filter(user=user)
