@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import rest_framework
+import graphene_django
 from decouple import config, Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -36,6 +37,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 INSTALLED_APPS = [
     'corsheaders',
+    'graphene-django',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -97,6 +99,9 @@ DATABASES = {
     }
 }
 
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'  # dir.file.varname
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
