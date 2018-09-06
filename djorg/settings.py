@@ -123,6 +123,11 @@ REST_FRAMEWORK = {
     ),
 }
 
+# GraphQL Configurations
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'
+}
+
 # CORS Configuration
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000'
