@@ -63,7 +63,7 @@ Mac/Linux:
 ```
 # The following makes a POST request with the given JSON payload:
 
-curl -X POST -H "Content-Type: application/json" -d '{"username":"admin", "password":"PASSWORD"}' http://127.0.0.1:8000/api-token-auth/
+curl -X POST -H "Content-Type: application/json" -d '{"username":"ckopecky", "password":"Hello world"}' http://127.0.0.1:8000/api-token-auth/
 ```
 
 Windows (or other platform if the above doesn't work):
@@ -88,13 +88,13 @@ common, and relatively easy to google for information on how to fix.
 You should get back one line with a token, for example: 
 
 ```json
-{"token":"da51ccf5274050cd7332d184246d7d0775dc79e2"}
+{"token":"44f1655bee2d18c2fe8c45b004fb0dda4a255f67"}
 ```
 
 Your token will be different.  Try it out with your token:
 
 ```
-curl -v -H 'Authorization: Token da51ccf5274050cd7332d184246d7d0775dc79e2' http://127.0.0.1:8000/api/notes/
+curl -v -H 'Authorization: Token 44f1655bee2d18c2fe8c45b004fb0dda4a255f67' http://127.0.0.1:8000/api/notes/
 ```
 
 Note that the trailing `/` matters.  You will get a 301 redirect if you don’t
