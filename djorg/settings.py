@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [    
     'django.middleware.security.SecurityMiddleware',    
-    'whitenoise.middleware.WhiteNoiseMiddleware',   # configure white noise
+    'whitenoise.middleware.WhiteNoiseMiddleware',   # configure white noise adding it to the middleware
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -123,7 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # to enable file compression and caching in white noise
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # additional configuration for white noise for django 
 
 STATIC_URL = '/static/'
 
