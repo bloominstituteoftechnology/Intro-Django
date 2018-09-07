@@ -21,18 +21,24 @@ from rest_framework.authtoken import views
 # Day 3:
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from dashboard.api import StudentReportViewSet, StudentViewSet
+
 
 from graphene_django.views import GraphQLView
 
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
+router.register(r'dashboard', StudentReportViewSet)
+router.register(r'students', StudentViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     # re_path(r'^api-token-auth/', views.obtain_auth_token),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
+    # re_path(r"^api-auth/", include("rest_framework.urls")),
     # path('rest-auth/', include('rest_auth.urls')),
     re_path(r'^rest-auth/', include('rest_auth.urls')),
     re_path(r'^rest-auth/register/', include('rest_auth.registration.urls'))

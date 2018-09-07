@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'graphene_django',
     'rest_auth', # $ pipenv install django-rest-auth
-    'django.contrib.sites',
+    'django.contrib.sites', # SITE_ID = 1 !important
     'allauth',
     'allauth.account',
     'rest_auth.registration',
@@ -162,3 +162,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+SITE_ID = 1

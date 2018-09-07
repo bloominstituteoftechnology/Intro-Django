@@ -41,12 +41,13 @@ class ProjectManager(models.Model):
 
 class StudentReport(models.Model):
   student_report_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-  student_id = models.ForeignKey(Student, on_delete=models.CASCADE)
-  project_manager_id = models.ForeignKey(ProjectManager, on_delete=models.CASCADE)
+  student = models.ForeignKey(Student, on_delete=models.CASCADE)
+  project_manager = models.ForeignKey(ProjectManager, on_delete=models.CASCADE)
   submitted_sprints = models.PositiveSmallIntegerField()
   passed_sprints = models.PositiveSmallIntegerField()
   created_at = models.DateTimeField(auto_now_add=True)
   last_modified = models.DateTimeField(auto_now=True)
+  # user = models.ForeignKey(User, on_delete=models.CASCADE)
     
 class SprintStatus(models.Model):
 

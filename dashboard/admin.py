@@ -7,7 +7,6 @@ from .models import Section, Student, ProjectManager, StudentReport, SprintStatu
 class DatesAdmin(admin.ModelAdmin):
   readonly_fields=('created_at', 'last_modified')
 
-
 admin.site.register((
     Section,
     Student, 
