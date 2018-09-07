@@ -34,6 +34,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 INSTALLED_APPS = [
     "corsheaders",
+    "dj_database_url",
     "rest_framework",
     "rest_framework.authtoken",
     "notes",
@@ -128,9 +129,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'django-frontend/build/static')
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'django-frontend/build/static')
+# ]
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
