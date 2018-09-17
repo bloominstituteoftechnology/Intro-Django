@@ -333,3 +333,7 @@ generate a new one in any Python REPL with:
 import random
 ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)]) # All one line!
 ```
+
+Challenge
+What other variables might it be useful to keep in the .env file? Why?
+- Mark: I thought that adding the AUTH_PASSWORD_VALIDATORS might be sensible to add to the .env for not having that be committed into source control (for similar reasons of putting the Secret Key in the .env of not revealing more information than necessary).
