@@ -246,7 +246,7 @@ Show migrations again to make sure they appear, then do the migration:
 
 * The input line should change to `>>>`
 
-Import the notes class into the repl:
+Impnort the notes class into the repl:
 ```python
 from notes.models import Note
 ```
