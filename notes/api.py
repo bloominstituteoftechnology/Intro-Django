@@ -6,17 +6,42 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         model = PersonalNote
         fields = ('title', 'content')
 
+    def create(self, validated_data):
+        #import pdb; pdb.set_trace()
+        user = self.context['request'].user
+        note = PersonalNote.objects.create(user=user, **validated_data)
+        return note
+
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
-    queryset = PersonalNote.objects.all()
+    queryset = PersonalNote.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_anonymous:
+            return PersonalNote.objects.none()
+        else:
+            return PersonalNote.objects.filter(user=user)
 
 
 class FavoriteMoviesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = FavoriteMovies
-        fields = ('title', 'year')
+        fields = ('title', 'year', 'imdb_link')
+
+    def create(self, validated_data):
+        import pdb; pdb.set_trace()
+        movie = FavoriteMovies.objects.create(**validated_data)
+        return movie
 
 class FavoriteMoviesViewSet(viewsets.ModelViewSet):
     serializer_class = FavoriteMoviesSerializer
-    queryset = FavoriteMovies.objects.all()
+    queryset = FavoriteMovies.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_anonymous:
+            return FavoriteMovies.objects.none()
+        else:
+            return FavoriteMovies.objects.filter(user=user)
