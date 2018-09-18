@@ -2,6 +2,8 @@ from django.db import models
 from uuid import uuid4
 # Create your models here.
 
+from django.contrib.auth.models import User
+
 class Note(models.Model):
     NOTE_TYPE = (
         ('TD', 'To-Do'),
@@ -18,7 +20,10 @@ class Note(models.Model):
         choices=NOTE_TYPE,
         default='NS'
     )
-    
+
+class PersonalNote(Note):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
 class Band(models.Model):
     # For CharField type_of_music
@@ -43,3 +48,6 @@ class Band(models.Model):
         default=ROCK,
     )
     pertinent_website = models.URLField(default="https://www.rockarchive.com/artists")
+
+class FunkBand(Band):
+    lead_singer = models.TextField(blank=True)
