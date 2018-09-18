@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Note
+from .models import Note, PersonalNote
 
 class NoteAdmin(admin.ModelAdmin):       #This class allows us to see the readonly fields we created in out Notes model
     readonly_fields=('created_at', 'last_modified')
@@ -7,4 +7,4 @@ class NoteAdmin(admin.ModelAdmin):       #This class allows us to see the readon
 # Register your models here.
 
 admin.site.register(Note, NoteAdmin)
-
+admin.site.register(PersonalNote)
