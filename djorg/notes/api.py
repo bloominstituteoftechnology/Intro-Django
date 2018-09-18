@@ -11,6 +11,18 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         # what fields should we show
         fields = ('title', 'content')
 
+    # overwrite default functionality
+    def create(self, validated_data):
+        user = self.context['request'].user
+        """
+        # default behavior
+        note = PersonalNote.objects.create(**validated_data)  # ** is kwargs
+        return note
+        """
+        note = PersonalNote.objects.create(
+            user=user, **validated_data)  # ** is kwargs
+        return note
+
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):  # get our rows
     # ties to the class to tie to the model
