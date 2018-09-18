@@ -18,9 +18,11 @@ from django.urls import path, include
 
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from nfl.api import TeamViewSet
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
+router.register('nfl', TeamViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
