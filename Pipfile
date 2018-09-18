@@ -9,6 +9,7 @@ python-decouple = "*"
 djangorestframework = "*"
 "autopep8" = "*"
 pylint = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 pylint = "<2.0.0"
