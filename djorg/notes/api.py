@@ -17,3 +17,14 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):  # get our rows
     serializer_class = PersonalNoteSerializer
     # get all the objects (rows)
     queryset = PersonalNote.objects.all()
+
+
+class BookSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Book
+        fields = ('title', 'author', 'isbn')
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    serializer_class = BookSerializer
+    queryset = Book.objects.all()
