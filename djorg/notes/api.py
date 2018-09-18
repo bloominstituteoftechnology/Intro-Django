@@ -48,4 +48,12 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
 
 class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
-    queryset = Book.objects.all()
+    queryset = Book.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return Book.objects.none()  # is none, but of PersonalNote `type`
+        else:
+            return Book.objects.all()
