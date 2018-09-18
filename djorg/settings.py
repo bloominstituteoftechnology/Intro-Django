@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'notes',
     'movies',
     'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,5 +127,9 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
   'DEFAULT_PERMISSION_CLASSES': [
     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-  ]
+  ],
+
+  'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework.authentication.TokenAuthentication',
+  )
 }
