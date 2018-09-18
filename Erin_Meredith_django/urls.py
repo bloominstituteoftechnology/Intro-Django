@@ -17,13 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 
 from rest_framework import routers
-from notes.api import PersonalNoteViewSet, FavoriteMoviesViewSet
+from notes.api import PersonalNoteViewSet, FavoriteMoviesViewSet, BreweryViewSet, BeerViewSet
 
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 router.register('movies', FavoriteMoviesViewSet)
+router.register('beer', BeerViewSet)
+router.register('breweries', BreweryViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

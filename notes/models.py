@@ -25,3 +25,23 @@ class Movie(models.Model):
 
 class FavoriteMovies(Movie):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Brewery(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    name = models.CharField(max_length=80)
+    address = models.TextField(blank=True)
+    website = models.URLField(default='http//untappd.com')
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+
+class Beer(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    name = models.CharField(max_length=80)
+    description = models.TextField(blank=True)
+    abv = models.FloatField(default=None)
+    ibu = models.IntegerField(default=None)
+    brewery = models.ForeignKey(Brewery, on_delete=models.CASCADE, default=None)
+    #def __init__(self):
+        #self.brewery = Brewery()
+
