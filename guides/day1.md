@@ -331,5 +331,9 @@ generate a new one in any Python REPL with:
 
 ```python
 import random
-''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)]) # All one line!
+'''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)]) # All one line!
 ```
+<!-- or 
+import secrets
+
+secrets.token_urlsafe() -->
