@@ -138,7 +138,7 @@ removed from another.  Check the readme in the repo for more info.
 
 We can take a look in the database with `./manage.py dbshell`.  If you get an
 error, you may need to install sqlite3 using your preferred method.
-
+     - `pipenv install pysqlite3`
 If it is working, the command prompt will change to `sqlite`.
 
 `.tables` will display a list of tables
