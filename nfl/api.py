@@ -5,7 +5,7 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Team
-        fields = ('name')
+        fields = ('name',)
 
 class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
