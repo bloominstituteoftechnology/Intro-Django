@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3"
+    "python.pythonPath": "/home/skid/.local/share/virtualenvs/Intro-Django-iuSN-WcG/bin/python",
+    "python.linting.enabled": false
 }
