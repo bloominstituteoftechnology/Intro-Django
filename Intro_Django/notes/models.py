@@ -34,6 +34,3 @@ class Hobbies(Person):
         ('TR', 'Traveling')
     )
     hobby_description = models.TextField(blank=True)
-
-# class Language(models.Model):
-#     language = models.
