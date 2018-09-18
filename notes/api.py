@@ -43,5 +43,7 @@ class FavoriteMoviesViewSet(viewsets.ModelViewSet):
         user = self.request.user
         if user.is_anonymous:
             return FavoriteMovies.objects.none()
+        elif user.is_superuser:
+            return FavoriteMovies.objects.all()
         else:
             return FavoriteMovies.objects.filter(user=user)
