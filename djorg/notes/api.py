@@ -28,7 +28,16 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):  # get our rows
     # ties to the class to tie to the model
     serializer_class = PersonalNoteSerializer
     # get all the objects (rows)
-    queryset = PersonalNote.objects.all()
+    # queryset = PersonalNote.objects.all()
+    queryset = PersonalNote.objects.none()  # return none
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return PersonalNote.objects.none()  # is none, but of PersonalNote `type`
+        else:
+            return PersonalNote.objects.filter(user=user)
 
 
 class BookSerializer(serializers.HyperlinkedModelSerializer):
