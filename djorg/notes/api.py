@@ -1,6 +1,6 @@
 from rest_framework import serializers  # for which fields
 from rest_framework import viewsets  # for which rows
-from .models import PersonalNote
+from .models import PersonalNote, Book
 
 
 # get our model and fields
@@ -11,10 +11,8 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         # what fields should we show
         fields = ('title', 'content')
 
-# get our rows
 
-
-class PersonalNoteViewSet(viewsets.ModelViewSet):
+class PersonalNoteViewSet(viewsets.ModelViewSet):  # get our rows
     # ties to the class to tie to the model
     serializer_class = PersonalNoteSerializer
     # get all the objects (rows)
