@@ -6,8 +6,13 @@ name = "pypi"
 [packages]
 django = "*"
 python-decouple = "*"
+djangorestframework = "*"
+"autopep8" = "*"
+pylint = "*"
 
 [dev-packages]
+pylint = "<2.0.0"
+"autopep8" = "*"
 
 [requires]
 python_version = "3.7"

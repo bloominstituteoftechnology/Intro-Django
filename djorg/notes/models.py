@@ -28,7 +28,7 @@ class Book(models.Model):
     isbn = models.CharField(
         'ISBN', max_length=13, help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn" target="_blank">ISBN number</a>')
     first_edition = models.BooleanField()
-    # year_published = models.DateField()
+    year_published = models.DateField()
     summary = models.TextField(max_length=1000, blank=True)
 
     PAPERBACK = 'PB'
