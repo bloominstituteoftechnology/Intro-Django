@@ -22,13 +22,12 @@ class CustomUser(User):
     permission = models.CharField(max_length= 10, choices=USER_PERMISSIONS)
 
 class PersonalNote(Note):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
 # class CodeChallenge(models.Model):
 #     id = models.UUIDField(primary_key=True, default=uuid4, editable = False)
 #     title = models.CharField(max_length = 100)
 #     description = models.TextField(blank=True)
-#     language = models.CharField(max_length = 50, default = 'python')
+#     language = models.CharField(max_length = 50, blank=True)
 #     completed = models.BooleanField(default=False)
 #     pseudocode = models.TextField(blank=True)
-#     solutions_id = models.
