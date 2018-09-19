@@ -28,5 +28,5 @@ urlpatterns = [
     path('api/', include(router.urls)),
     re_path(r'^api-token-auth/', views.obtain_auth_token),
     path('', include('notes.urls')),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
