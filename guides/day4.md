@@ -17,7 +17,7 @@ To `INSTALLED_APPS`, add `rest_framework.authtoken`.
 If you need them elsewhere, immediately before the boilerplate for `REST_FRAMEWORK`, import `SessionAuthentication`, `BasicAuthentication`, and `TokenAuthentication` from `rest_framework.authentication`
 
 ```python
-#from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 ```
 
 In `REST_FRAMEWORK`, add:
@@ -107,5 +107,5 @@ axios.post('http://127.0.0.1:8000/api/notes/', data, {
   headers: {
     'Authorization': 'Token da51ccf5274050cd7332d184246d7d0775dc79e2',
   }
-}
+})
 ```
