@@ -1,4 +1,5 @@
 from rest_framework import serializers, viewsets
+from notes.views import api_root
 from .models import PersonalNote, Note
 
 class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
@@ -31,4 +32,7 @@ class AllNotesSerializer(serializers.HyperlinkedModelSerializer):
 class AllNotesViewSet(viewsets.ModelViewSet):
     serializer_class = AllNotesSerializer
     queryset = Note.objects.all()
-    
+
+# class RootView:
+#     message = "Welcome to my notes API"
+#     return message
