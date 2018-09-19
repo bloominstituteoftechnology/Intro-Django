@@ -1,5 +1,6 @@
 from rest_framework import serializers, viewsets
 from .models import PersonalNote, Band
+from rest_framework.authtoken.models import Token
 
 class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     
@@ -44,8 +45,6 @@ class BandViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user.username
-        print(user)
-        print(type(user))
         # import pdb; pdb.set_trace()
         if user == 'admin':
             return Band.objects.all()
