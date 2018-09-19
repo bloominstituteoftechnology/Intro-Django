@@ -1,1 +1,1 @@
-web: gunicorn josh.wsgi
+web: gunicorn notes:app
