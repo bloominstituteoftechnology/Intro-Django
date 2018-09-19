@@ -20,6 +20,7 @@ from notes.api import PersonalNoteViewSet
 
 from rest_framework.authtoken import views
 from django.contrib.auth import views as auth_views
+from graphene_django.views import GraphQLView
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
@@ -29,5 +30,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),
-    path('login/', auth_views.LoginView.as_view())
+    path('login/', auth_views.LoginView.as_view()),
+    path('graphql/', GraphQLView.as_view(graphiql=True))
 ]

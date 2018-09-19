@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'notes',
     'rest_framework',
     'rest_framework.authtoken',
+    'graphene_django',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +52,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     )
+}
+
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'
 }
 
 MIDDLEWARE = [
