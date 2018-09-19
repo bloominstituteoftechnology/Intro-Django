@@ -5,8 +5,11 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = PersonalNote
-        field = ('title', 'content')
+        fields = ('title', 'content')
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
     queryset = PersonalNote.objects.all()        
+
+
+#intro_python_button-ObAqQCLd
