@@ -29,7 +29,7 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):  # get our rows
     serializer_class = PersonalNoteSerializer
     # get all the objects (rows)
     # queryset = PersonalNote.objects.all()
-    queryset = PersonalNote.objects.none()  # return none
+    queryset = PersonalNote.objects.all()  # return none
 
     def get_queryset(self):
         user = self.request.user
