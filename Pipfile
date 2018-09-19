@@ -8,6 +8,7 @@ django = "*"
 pylint = "*"
 python-decouple = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
