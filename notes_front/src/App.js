@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import Authenticate from './components/Authenticate';
 
 class App extends Component {
   constructor(props) {
@@ -12,33 +13,34 @@ class App extends Component {
   }
 
   getNotes = () => {
+    let token = 'Token ' + localStorage.getItem('token')
     axios.get('http://127.0.0.1:8000/api/notes/', {
     headers: {
-      "Authorization": "Token 246524d3f9d0ad7560a2b8423f858ae4e15dfb0f"
+      "Authorization": token
     }
     }).then(response => {
-      console.log(response.data)
+      console.log('THIS WORKED', response.data)
       this.setState({notes: response.data})
     }).catch(error => {
       console.log("YOU ERR", error)
     })
   }
 
-  componentDidMount() {
-    let data = {
-      "username":"alec_jordan",
-      "password":"suckas want beef"
-    }
-    axios.post('http://127.0.0.1:8000/api-token-auth/', data, {
-    headers: {
-      "Content-Type":"application/json"
-    }
-    }).then(response => {
-      console.log(response.data)
-    }).catch(error => {
-      console.log("YOU ERR", error)
-    })
-  }
+  // componentDidMount() {
+  //   let data = {
+  //     "username":"alec_jordan",
+  //     "password":"suckas want beef"
+  //   }
+  //   axios.post('http://127.0.0.1:8000/api-token-auth/', data, {
+  //   headers: {
+  //     "Content-Type":"application/json"
+  //   }
+  //   }).then(response => {
+  //     console.log(response.data)
+  //   }).catch(error => {
+  //     console.log("YOU ERR", error)
+  //   })
+  // }
 
   render() {
     return (
@@ -61,4 +63,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Authenticate(App);

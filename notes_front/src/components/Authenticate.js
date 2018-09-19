@@ -1,20 +1,27 @@
-import React, {Component} from 'react';
-import '../../App.css';
+import React from 'react';
+import '../App.css';
 import axios from 'axios';
+import Login from './Login';
 
-const Authenticate = ProtectedComponent => {
+const Authenticate = ProtectedComponent => 
     class InnerApp extends React.Component {
         constructor(props) {
-            super(props)
+            super(props);
             this.state = {
-                loggedIn = false
+                loggedIn: false
             }
         }
 
         componentDidMount() {
-            if localStorage.getItem('token') this.setState({
+            if (localStorage.getItem('token')) this.setState({
                 loggedIn: true
             });
         }
+
+        render() {
+            return (this.state.loggedIn ? <ProtectedComponent />: <Login />);
+        }
     }
-}
+
+
+export default Authenticate
