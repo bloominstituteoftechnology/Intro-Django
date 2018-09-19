@@ -1,1 +1,1 @@
-web: gunicorn josh
+web: gunicorn josh.wsgi
