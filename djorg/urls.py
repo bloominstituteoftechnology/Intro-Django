@@ -20,6 +20,8 @@ from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 from nfl.api import TeamViewSet
 
+from rest_framework.authtoken import views
+
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 router.register('nfl', TeamViewSet)
@@ -27,4 +29,5 @@ router.register('nfl', TeamViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
 ]
