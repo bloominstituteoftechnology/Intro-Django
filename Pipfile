@@ -9,6 +9,7 @@ python-decouple = "*"
 django-mysql = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+graphene-django = "*"
 
 [dev-packages]
 
