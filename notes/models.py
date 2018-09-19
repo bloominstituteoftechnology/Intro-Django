@@ -24,7 +24,6 @@ class Note(models.Model):
 class PersonalNote(Note):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-
 class Band(models.Model):
     # For CharField type_of_music
     ROCK = 'RO'
@@ -48,6 +47,7 @@ class Band(models.Model):
         default=ROCK,
     )
     pertinent_website = models.URLField(default="https://www.rockarchive.com/artists")
+    user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
 
 class FunkBand(Band):
     lead_singer = models.TextField(blank=True)
