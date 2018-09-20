@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "rest_framework.authtoken",
+    "graphene_django",
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'
+}
