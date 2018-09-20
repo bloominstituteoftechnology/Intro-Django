@@ -22,12 +22,14 @@ from notes.api import PersonalNoteViewSet
 from notes.api import AllNotesViewSet
 
 from rest_framework.authtoken import views
+from django.views.generic import TemplateView
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 router.register('all', AllNotesViewSet)
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),

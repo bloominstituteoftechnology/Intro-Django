@@ -61,7 +61,7 @@ ROOT_URLCONF = 'josh.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['josh/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
