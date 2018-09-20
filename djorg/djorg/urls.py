@@ -20,6 +20,7 @@ from rest_framework import routers
 from notes.api import PersonalNoteViewSet, BookViewSet
 
 from rest_framework.authtoken import views
+from django.views.generic import TemplateView
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
@@ -29,4 +30,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),
+    path('', TemplateView.as_view(template_name="home.html")),
 ]
