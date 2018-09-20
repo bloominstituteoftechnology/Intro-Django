@@ -26,6 +26,8 @@ from nfl.api import TeamViewSet
 
 from rest_framework.authtoken import views
 
+from graphene_django.views import GraphQLView
+
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 router.register('nfl', TeamViewSet)
@@ -36,4 +38,5 @@ urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token),
     path('catalog/', include('catalog.urls')),
     path('', RedirectView.as_view(url='/catalog/')),
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
