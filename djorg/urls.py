@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from templates.views import FrontendRenderView
+
 
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
@@ -35,3 +37,9 @@ urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
 ]
+
+urlpatterns += [
+    #your integrate path
+    re_path(r'(?P<path>.*)', FrontendRenderView.as_view(), name='home')
+]
+#django no longer handles 404/403/500 errors; frontend does
