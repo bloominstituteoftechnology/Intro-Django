@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from graphene_django import DjangoObjectType
 import graphene
 from .models import PersonalNote
@@ -23,5 +24,30 @@ class Query(graphene.ObjectType):
         else:
             return PersonalNote.objects.filter(user=user)
 
-# Add a schema and attach to the query
-schema = graphene.Schema(query=Query)
+# # Add a schema and attach to the query
+# schema = graphene.Schema(query=Query)
+
+class CreatePersonalNote(graphene.Mutation):
+
+    class Arguments:
+        title = graphene.String()
+        content = graphene.String()
+
+    personalnote = graphene.Field(PersonalNoteType)
+    ok = graphene.Boolean()
+    status = graphene.String()
+
+    def mutate(self, info, title, content):
+        user = info.context.user
+
+        if user.is_anonymous:
+            return CreatePersonalNote(ok=False, status="Must be logged in!")
+        else:
+            new_note = PersonalNote(title=title, content=content, user=user)
+            new_note.save()
+            return CreatePersonalNote(personalnote=new_note, ok=True, status="ok")
+
+class Mutation(graphene.ObjectType):
+    create_personal_note = CreatePersonalNote.Field()
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
