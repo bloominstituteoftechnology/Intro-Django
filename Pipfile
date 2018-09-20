@@ -7,8 +7,10 @@ name = "pypi"
 django = "*"
 python-decouple = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
 python_version = "3.7"
