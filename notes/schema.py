@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from graphene_django import DjangoObjectType
 import graphene
 from .models import PersonalNote
+from django.db.models import Q
 
 class PersonalNoteType(DjangoObjectType):
     """Describe which model we want to expose through GraphQL."""
@@ -13,16 +14,26 @@ class PersonalNoteType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     """Describe which records we want to show."""
-    personalnotes = graphene.List(PersonalNoteType)
+    personalnotes = graphene.List(PersonalNoteType, search=graphene.String())
 
-    def resolve_personalnotes(self, info):
+    def resolve_personalnotes(self, info, search=None):
         """Decide what notes to return."""
         user = info.context.user  # Find this with the debugger
 
         if user.is_anonymous:
             return PersonalNote.objects.none()
         else:
-            return PersonalNote.objects.filter(user=user)
+            userNotes = PersonalNote.objects.filter(user=user)
+
+            if search:
+                filter = (
+                    Q(title__icontains=search) | 
+                    Q(content__icontains=search)
+                )
+                return PersonalNote.objects.filter(filter)
+            else:
+                return userNotes
+            #return PersonalNote.objects.filter(user=user)
 
 # # Add a schema and attach to the query
 # schema = graphene.Schema(query=Query)
