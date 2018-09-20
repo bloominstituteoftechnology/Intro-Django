@@ -75,7 +75,7 @@ class BreweryViewSet(viewsets.ModelViewSet):
 class BeerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Beer
-        fields = ('name', 'description', 'brewery', 'abv', 'ibu')
+        fields = ('id', 'name', 'description', 'brewery', 'abv', 'ibu')
 
     def create(self, validated_data):
         #import pdb; pdb.set_trace()
