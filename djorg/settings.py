@@ -37,10 +37,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-     ### NOTES & REST ADDED
+     ### NOTES & REST ADDED & GRAPHENE
     'notes',
     'rest_framework',
     'rest_framework.authtoken',
+    'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,4 +138,9 @@ REST_FRAMEWORK = {
         'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ]
+}
+
+ ###
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema',
 }
