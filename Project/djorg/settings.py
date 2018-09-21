@@ -12,10 +12,13 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-from decouple import config
+from decouple import config, csv 
+import dj_database_url
 
 import corsheaders
 from corsheaders.defaults import default_methods
+import whitenoise
+
 
 
 
@@ -34,7 +37,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -72,6 +75,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -107,6 +111,10 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 DATABASES = {
     'default': {
+        dj_database_url.config(conn_max_age=600),
+        dj_database_url.config(default = 'sqlite:///PATH')
+        dj_database_url.parse('sqlite:///PATH', conn_max_age=600)
+
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
