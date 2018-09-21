@@ -35,7 +35,7 @@ DEBUG = False
 if DEBUG:
     SECRET_KEY = 'mysecretkey'
 else:
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS = ['*']
 
