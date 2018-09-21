@@ -8,6 +8,11 @@ django = "*"
 python-decouple = "*"
 djangorestframework = "*"
 graphene-django = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+whitenoise = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 "flake8" = "*"
