@@ -1,8 +1,9 @@
 from .models import Brewery, Beer, PersonalNote
 import graphene
-from graphene_django.fields import DjangoConnectionField, DjangoFilterConnectionField
+from graphene_django.fields import DjangoConnectionField
 from graphene_django.types import DjangoObjectType
 from django.conf import settings
+from django.db.models import Q
 
 
 class PersonalNoteNode(DjangoObjectType):
@@ -21,8 +22,7 @@ class BeerNode(DjangoObjectType):
         interfaces = (graphene.Node, )
 
 class Query(graphene.ObjectType):
-
-    personalnotes = DjangoFilterConnectionField(PersonalNoteNode, title=graphene.String())
+    personalnotes = graphene.List(PersonalNoteNode)
     all_notes = DjangoConnectionField(PersonalNoteNode)
 
     breweries = graphene.List(BreweryNode)
@@ -31,13 +31,16 @@ class Query(graphene.ObjectType):
     beers = graphene.List(BeerNode)
     all_beers = DjangoConnectionField(BeerNode)
 
-    def resolve_personalnotes(self, args, context, info):
-        title = args.get('title')
+    def resolve_personalnotes(self, info, title=None, **kwargs):
+        title = kwargs.get('title')
         user = info.context.user
         if user.is_anonymous:
             return PersonalNote.objects.none()
+        elif title:
+            filter = Q(title=title)
+            return PersonalNotes.objects.filter(filter, user=user)
         else:
-            return PersonalNote.objects.filter(user=user, title=title)
+            return PersonalNote.objects.filter(user=user)
 
     def resolve_brewery(self, info):
         return Brewery.objects.all()
