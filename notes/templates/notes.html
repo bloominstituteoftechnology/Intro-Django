@@ -1,0 +1,9 @@
+<div>
+  {%for item in notes%}
+  <div>
+    <h2>{{item.title}}</h2>
+    <p>{{item.content}}</p>
+    <p>Author: {{item.user}}</p>
+  </div>
+  {%endfor%}
+</div>
