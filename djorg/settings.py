@@ -14,6 +14,10 @@ import os
  ### BELOW LINE ADDED
 from decouple import config
 
+ ##### BELOW TWO ADDED FOR HEROKU
+from decouple import config
+import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,7 +35,11 @@ SECRET_KEY = config('SECRET_KEY')
  ### 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ ##### BELOW CHANGED FOR HEROKU
+ # ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS')
+ ###### BELOW ONE ADDED FOR CORS
+CORS_ORIGIN_ALLOW_ALL = config('CORS_ORIGIN_ALLOW_ALL', cast=bool)
 
 
 # Application definition
@@ -40,7 +48,9 @@ INSTALLED_APPS = [
      ### NOTES & REST ADDED & GRAPHENE
     'notes',
     'rest_framework',
-    'rest_framework.authtoken',
+ ##########    'rest_framework.authtoken',
+     ###### BELOW ONE FOR CORS
+    'corsheaders',
     'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,6 +62,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     ###### BELOW ONE FOR CORS
+    'corsheaders.middleware.CorsMiddleware',
+     ##### ADDED BELOW ONE FOR HEROKU
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -90,6 +104,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+ ##### BELOW LINE ADDED FOR HEROKU
+DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
+
 
 
 # Password validation
@@ -135,9 +152,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ],
-        'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ]
+ ##########        'DEFAULT_AUTHENTICATION_CLASSES': [
+ ##########        'rest_framework.authentication.TokenAuthentication',
+ ##########    ]
 }
 
  ###
