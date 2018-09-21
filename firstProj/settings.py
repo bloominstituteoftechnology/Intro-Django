@@ -14,7 +14,7 @@ import os
 
 import dj_database_url
 
-import django_heroku
+#import django_heroku
 
 from decouple import config
 
@@ -91,7 +91,7 @@ TEMPLATES = [
     },
 ]
 
-
+ALLOWED_HOSTS = ("https://firstproj-app.herokuapp.com/", '127.0.0.1')
 
 WSGI_APPLICATION = 'firstProj.wsgi.application'
 
@@ -101,12 +101,12 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
