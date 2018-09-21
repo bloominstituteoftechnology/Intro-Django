@@ -30,7 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 DATABASE_URL = config('DATABASE_URL')
-
+DATABASES['default'] = dj_database_url.config('DATABASE_URL', conn_max_age=600)
 
 
 
@@ -89,9 +89,10 @@ WSGI_APPLICATION = 'Erin_Meredith_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': dj_database_url.config('DATABASE_URL', conn_max_age=600),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -149,3 +150,5 @@ GRAPHENE = {
     'SCHEMA': 'notes.schema.schema'
 }
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
