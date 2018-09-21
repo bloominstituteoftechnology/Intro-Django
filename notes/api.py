@@ -41,7 +41,7 @@ class BandSerializer(serializers.HyperlinkedModelSerializer):
 
 class BandViewSet(viewsets.ModelViewSet):
     serializer_class = BandSerializer
-    queryset = Band.objects.all()
+    queryset = Band.objects.none()
 
     def get_queryset(self):
         user = self.request.user.username
