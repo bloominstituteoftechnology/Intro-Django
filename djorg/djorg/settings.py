@@ -82,9 +82,11 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASE_URL = "postgres://mazreyphrvcqfl:91a72df41904b92af9a7e9fd0f6a29f33e383ddd1f3fdd211c3fae95c81ec79d@ec2-54-225-241-25.compute-1.amazonaws.com:5432/dbibl68v1maarg"
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(DATABASE_URL)
+# DATABASE_URL = "sqlite:///db.sqlite3"
+DATABASE_URL = 'postgresql:///postgresql'
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.config(DATABASE_URL)
+DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 
 # DATABASES = {
 #     'default': {
