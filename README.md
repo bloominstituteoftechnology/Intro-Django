@@ -1,4 +1,4 @@
-# Intro to Django
+# Intro to Djangoj
 
 Fork this repo to use for your projects this week.
 
