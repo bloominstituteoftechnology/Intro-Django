@@ -24,7 +24,7 @@ class Login extends React.Component {
     const password = this.state.password;
     console.log(username, password);
     axios
-      .post('http://127.0.0.1:8000/api-token-auth/', {username, password}, {
+      .post('https://alec-lambda-django.herokuapp.com/api-token-auth/', {username, password}, {
           headers: {
               "Content-Type":"application/json"
           }

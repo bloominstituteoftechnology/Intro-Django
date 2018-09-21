@@ -14,7 +14,7 @@ class App extends Component {
 
   getNotes = () => {
     let token = 'Token ' + localStorage.getItem('token')
-    axios.get('http://127.0.0.1:8000/api/notes/', {
+    axios.get('https://alec-lambda-django.herokuapp.com/api/notes/', {
     headers: {
       "Authorization": token
     }
