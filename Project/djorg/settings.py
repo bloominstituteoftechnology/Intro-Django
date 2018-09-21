@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-from decouple import config, csv 
+from decouple import config, Csv 
 import dj_database_url
 
 import corsheaders
@@ -111,15 +111,14 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 DATABASES = {
     'default': {
-        dj_database_url.config(conn_max_age=600),
-        dj_database_url.config(default = 'sqlite:///PATH')
-        dj_database_url.parse('sqlite:///PATH', conn_max_age=600)
+        
+        
 
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+DATABASES['default'] = dj_database_url.config(default='sqlite:///PATH',conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
