@@ -10,6 +10,10 @@ djangorestframework = "*"
 "autopep8" = "*"
 pylint = "*"
 django-cors-headers = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [dev-packages]
 pylint = "<2.0.0"
