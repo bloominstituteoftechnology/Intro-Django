@@ -119,7 +119,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 #     }
 # }
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default='sqlite:///PATH',conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
