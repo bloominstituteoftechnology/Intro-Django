@@ -37,6 +37,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),
     path('catalog/', include('catalog.urls')),
-    path('', RedirectView.as_view(url='/catalog/')),
+    path('', RedirectView.as_view(url='/api/notes/')),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
