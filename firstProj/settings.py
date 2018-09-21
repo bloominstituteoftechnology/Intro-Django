@@ -24,7 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+#DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config('DATABASE_URL')
 
 
 
@@ -154,4 +157,4 @@ REST_FRAMEWORK = {
     )
 }
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())

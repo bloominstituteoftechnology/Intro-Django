@@ -1,3 +1,3 @@
 
 web: gunicorn firstProj.wsgi
-gunicorn firstProject.wsgi:application --preload --workers 1
+gunicorn firstPro.wsgi:application --preload --workers 1
