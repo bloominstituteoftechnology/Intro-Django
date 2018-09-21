@@ -37,8 +37,9 @@ DEBUG = config('DEBUG', cast=bool)
 
  ##### BELOW CHANGED FOR HEROKU
  # ALLOWED_HOSTS = []
- 
-ALLOWED_HOSTS = ['*']
+
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://first-heroku-app-by-tristan.herokuapp.com/']
  ###### BELOW ONE ADDED FOR CORS
 #CORS_ORIGIN_ALLOW_ALL = config('CORS_ORIGIN_ALLOW_ALL', cast=bool)
 
