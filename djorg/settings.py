@@ -65,7 +65,7 @@ MIDDLEWARE = [
      ###### BELOW ONE FOR CORS
     #'corsheaders.middleware.CorsMiddleware',
      ##### ADDED BELOW ONE FOR HEROKU
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

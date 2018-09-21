@@ -12,8 +12,9 @@ gunicorn = "*"
 "psycopg2-binary" = "*"
 dj-database-url = "*"
 django-cors-headers = "*"
+whitenoise = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6.6"
+python_version = "3.7"
