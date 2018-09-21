@@ -68,4 +68,34 @@ DATABASES = {
 web: gunicorn djorgnotes.wsgi
 ```
 
-8. Configure whitenoise by adding `'whitenoise.middleware.WhiteNoiseMiddleware',` to `MIDDLEWARE = []` in `settings.py`
+8. Configure whitenoise by adding the following: `'whitenoise.middleware.WhiteNoiseMiddleware',` to `MIDDLEWARE = []` in `settings.py`
+
+```
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+ 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+
+## Creating a Heroku project
+
+1. Makes the project and add Heroku as a remote to your git repository so you can push to it to deploy
+
+```
+$ heroku create blakes-djorg-notes
+```
+
+2. Make a PostgreSQL database associated with the project (and set the `DATABASE_URL` Heroku config var, equivalent to a local environment variable)
+
+```
+$ heroku addons:create heroku-postgresql:hobby-dev
+```
+
+3. Login to Heroku.com and set the config vars: 
+
+```
+ALLOWED_HOSTS=.herokuapp.com, 
+DEBUG=False,  
+SECRET_KEY=somenewsecret
+```
+
+4. Make sure you're all committed. Then `$ git push heroku master`
