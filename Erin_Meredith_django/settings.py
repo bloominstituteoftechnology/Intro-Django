@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
+DATABASES['default'] = dj_database_url.config('DATABASE_URL', conn_max_age=600)
 
 
 
