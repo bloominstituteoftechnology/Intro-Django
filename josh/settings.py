@@ -35,7 +35,6 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
-    'django-cors-headers',
     'notes',
     'rest_framework',
     'rest_framework.authtoken',
