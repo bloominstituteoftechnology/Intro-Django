@@ -149,8 +149,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     '127.0.0.1:9000',
 # )
 
-import dj_database_url
+# import dj_database_url
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, default='postgres://USER:PASSWORD@HOST:PORT/NAME')
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, default='postgres://USER:PASSWORD@HOST:PORT/NAME')
 
 
