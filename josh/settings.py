@@ -85,10 +85,11 @@ WSGI_APPLICATION = 'josh.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgres',
+        'NAME': os.path.join(BASE_DIR, 'db.postgres'),
     }
 }
+
 
 
 # Password validation
@@ -154,5 +155,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 # import dj_database_url
 
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600, default='postgres://USER:PASSWORD@HOST:PORT/NAME')
-
+db_from_env = dj_database_url.config()
+DATABASES[‘default’].update(db_from_env)
 
