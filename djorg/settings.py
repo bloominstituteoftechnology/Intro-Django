@@ -39,7 +39,7 @@ DEBUG = config('DEBUG', cast=bool)
  # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = config('ALLOWED_HOSTS')
  ###### BELOW ONE ADDED FOR CORS
-CORS_ORIGIN_ALLOW_ALL = config('CORS_ORIGIN_ALLOW_ALL', cast=bool)
+#CORS_ORIGIN_ALLOW_ALL = config('CORS_ORIGIN_ALLOW_ALL', cast=bool)
 
 
 # Application definition
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'rest_framework',
  ##########    'rest_framework.authtoken',
      ###### BELOW ONE FOR CORS
-    'corsheaders',
+    #'corsheaders',
     'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -63,7 +63,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
      ###### BELOW ONE FOR CORS
-    'corsheaders.middleware.CorsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
      ##### ADDED BELOW ONE FOR HEROKU
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
