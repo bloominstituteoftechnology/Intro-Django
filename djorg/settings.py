@@ -63,10 +63,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
      ###### BELOW ONE FOR CORS
-    
-     ##### ADDED BELOW ONE FOR HEROKU
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+     ##### ADDED BELOW ONE FOR HEROKU
+    'whitenoise.middleware.WhiteNoiseMiddleware',    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
