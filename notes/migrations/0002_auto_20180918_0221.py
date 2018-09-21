@@ -21,7 +21,11 @@ class Migration(migrations.Migration):
             name='title',
             field=models.CharField(blank=True, max_length=200),
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name='note',
+            name='id',
+        ),
+        migrations.AddField(
             model_name='note',
             name='id',
             field=models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False),
