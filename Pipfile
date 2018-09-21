@@ -7,6 +7,10 @@ name = "pypi"
 django = "*"
 python-decouple = "*"
 djangorestframework = "*"
+whitenoise = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
