@@ -12,6 +12,7 @@ django-cors-headers = "*"
 "psycopg2-binary" = "*"
 django = "*"
 graphene-django = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
