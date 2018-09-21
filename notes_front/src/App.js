@@ -26,21 +26,10 @@ class App extends Component {
     })
   }
 
-  // componentDidMount() {
-  //   let data = {
-  //     "username":"alec_jordan",
-  //     "password":"suckas want beef"
-  //   }
-  //   axios.post('http://127.0.0.1:8000/api-token-auth/', data, {
-  //   headers: {
-  //     "Content-Type":"application/json"
-  //   }
-  //   }).then(response => {
-  //     console.log(response.data)
-  //   }).catch(error => {
-  //     console.log("YOU ERR", error)
-  //   })
-  // }
+  logOut = () => {
+    localStorage.removeItem('token')
+    window.location.reload()
+  }
 
   render() {
     return (
@@ -53,6 +42,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={this.getNotes}>Get Notes</button>
+        <button onClick={this.logOut}>Log Out</button>
         <div>
           {this.state.notes.map((note, index) => {
             return (<h2 key={index}>title: {note.title} content: {note.content}</h2>)
