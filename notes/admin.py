@@ -8,3 +8,4 @@ class NoteAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Note, NoteAdmin)
 admin.site.register(PersonalNote)
+
