@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'notes',
     'appointments',
-    'corsheaders',
+    # 'corsheaders',
     'graphene_django',
     'rest_framework',
     'rest_framework.authtoken',
