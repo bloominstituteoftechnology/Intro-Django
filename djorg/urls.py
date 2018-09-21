@@ -39,8 +39,8 @@ urlpatterns = [
     path('/', include(router.urls))
 ]
 
-urlpatterns += [
-    #your integrate path
-    re_path(r'(?P<path>.*)', FrontendRenderView.as_view(), name='home')
-]
+# urlpatterns += [
+#     #your integrate path
+#     re_path(r'(?P<path>.*)', FrontendRenderView.as_view(), name='home')
+# ]
 #django no longer handles 404/403/500 errors; frontend does
