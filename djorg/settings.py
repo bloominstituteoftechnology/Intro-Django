@@ -26,12 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = config('DEBUG', cast=bool)
-#
-# ALLOWED_HOSTS = [
-#     'localhost',
-#     '127.0.0.1'
-# ]
+
+DEBUG = config('DEBUG', cast=bool)
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -82,6 +80,13 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 DATABASES = {
     'default': dj_database_url.config("sqlite:///db.sqlite3")
