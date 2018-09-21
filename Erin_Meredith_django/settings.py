@@ -82,7 +82,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Erin_Meredith_django.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
