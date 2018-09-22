@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
 
 #DATABASES = {}
-DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL')
-    )
-}
+#DATABASES = {
+#     'default': dj_database_url.config(default=config('DATABASE_URL')
+#     )
+# }
 
 
 
