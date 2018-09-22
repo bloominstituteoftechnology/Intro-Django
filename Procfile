@@ -1,1 +1,1 @@
-web: gunicorn djorg.wsgi
+web: gunicorn Intro-Django/djorg.wsgi
