@@ -1,7 +1,5 @@
 # Intro to Django
 
-_CS9: Don't fork or clone this repo. All others continue._
-
 Fork this repo to use for your projects this week.
 
 ## Reading
