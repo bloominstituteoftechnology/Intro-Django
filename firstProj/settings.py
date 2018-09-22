@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import dj_database_url
-#import django_heroku
+import django_heroku
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -91,11 +91,12 @@ TEMPLATES = [
     },
 ]
 
-ALLOWED_HOSTS = ("https://firstproj-app.herokuapp.com/", '127.0.0.1')
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ("https://firstproj-app.herokuapp.com/", '127.0.0.1')
 
 WSGI_APPLICATION = 'firstProj.wsgi.application'
 
-CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Database
@@ -145,7 +146,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -157,4 +158,11 @@ REST_FRAMEWORK = {
     )
 }
 
-#django_heroku.settings(locals())
+STATIC_URL = '/static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
