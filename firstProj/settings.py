@@ -21,13 +21,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-#DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycog2',
+    }
+}
 
-#DATABASES = {}
-#DATABASES = {
-#     'default': dj_database_url.config(default=config('DATABASE_URL')
-#     )
-# }
+DATABASES['default'] = dj_database_url.config(default='postgres://ewicbnsfwpoyhi:0488f9622d07835d590ba0c1014d509d4e44fab56fe872766079feab971c5c09@ec2-54-243-147-162.compute-1.amazonaws.com:5432/d61m108g0ste6l')
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 
@@ -39,8 +42,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
-
+#DEBUG = config('DEBUG', cast=bool)
+DEBUG = True
 ALLOWED_HOSTS = []
 
 
