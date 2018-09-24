@@ -27,6 +27,12 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycog2',
+    }
+}
+
 DATABASES['default'] = dj_database_url.config(default='postgres://ewicbnsfwpoyhi:0488f9622d07835d590ba0c1014d509d4e44fab56fe872766079feab971c5c09@ec2-54-243-147-162.compute-1.amazonaws.com:5432/d61m108g0ste6l')
 
 db_from_env = dj_database_url.config(conn_max_age=600)
