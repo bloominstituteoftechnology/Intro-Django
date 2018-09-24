@@ -1,1 +1,1 @@
-web: gunicorn Intro-Django.wsgi
+web: gunicorn Intro-Django.Erin_Meredith_django.wsgi
