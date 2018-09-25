@@ -105,7 +105,7 @@ ALLOWED_HOSTS = []
 
 WSGI_APPLICATION = 'firstProj.wsgi.application'
 
-#CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Database
