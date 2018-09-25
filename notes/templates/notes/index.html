@@ -5,14 +5,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>First App</title>
+    <title>Djorg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="{% static "/css/mystyle.css" %}" />
     <script src="main.js"></script>
 </head>
 
 <body>
-    <h1>Here are your access Records</h1>
+    <h1>Here are your Notes</h1>
     <div class="django-two">
         {% if note %}
         <table>
@@ -29,7 +29,7 @@
             {% endfor %}
         </table>
         {% else %}
-        <p>NO ACCESS RECORDS FOUND!</p>
+        <p>NO NOTES FOUND!</p>
         {% endif %}
 
     </div>
