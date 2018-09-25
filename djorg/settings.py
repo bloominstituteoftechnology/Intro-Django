@@ -148,6 +148,6 @@ USE_TZ = True
 #     STATIC_DIR,
 # ]
 
-STATIC_URL = '/notes/static/'
+STATIC_URL = '../notes/static/'
 
-STATIC_ROOT = '/notes/static/'
+STATIC_ROOT = '../notes/static/'
