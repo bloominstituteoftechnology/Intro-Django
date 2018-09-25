@@ -17,8 +17,8 @@ import dj_database_url
 from decouple import config
 import dj_database_url
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'] = dj_database_url.config(default='postgres://...')
 # DATABASES['default'] = dj_database_url.parse('postgres://...', conn_max_age=600)
 
