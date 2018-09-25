@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>First App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "/css/mystyle.css" %}" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>Here are your access Records</h1>
+    <div class="django-two">
+        {% if note %}
+        <table>
+            <thead>
+                <th>Title</th>
+                <th>Content</th>
+            </thead>
+
+            {% for n in note %}
+            <tr>
+                <td>{{n.title}}</td>
+                <td>{{n.content}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>NO ACCESS RECORDS FOUND!</p>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>
