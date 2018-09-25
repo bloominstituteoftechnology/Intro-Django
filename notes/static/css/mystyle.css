@@ -6,4 +6,12 @@ table,
 th,
 td {
   border: 2px solid black;
+  margin: auto;
+}
+
+body {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
 }
