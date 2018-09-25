@@ -13,6 +13,13 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from decouple import config
 # from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+import dj_database_url
+from decouple import config
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default='postgres://...')
+DATABASES['default'] = dj_database_url.parse('postgres://...', conn_max_age=600)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,7 +61,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'djorg.urls'
 
