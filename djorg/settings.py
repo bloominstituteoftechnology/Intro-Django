@@ -17,8 +17,8 @@ import dj_database_url
 from decouple import config
 import dj_database_url
 
-# DATABASES = {}
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'] = dj_database_url.config(default='postgres://...')
 # DATABASES['default'] = dj_database_url.parse('postgres://...', conn_max_age=600)
 
@@ -136,10 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-STATIC_TMP = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
 
-os.makedirs(STATIC_TMP, exist_ok=True)
+STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
