@@ -11,14 +11,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from decouple import config
+from decouple import config, Csv
 # from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 import dj_database_url
-from decouple import config
-import dj_database_url
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'] = dj_database_url.config(default='postgres://...')
 # DATABASES['default'] = dj_database_url.parse('postgres://...', conn_max_age=600)
 
@@ -35,7 +31,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ".herokuapp.com"
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 # Application definition
@@ -99,6 +97,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
