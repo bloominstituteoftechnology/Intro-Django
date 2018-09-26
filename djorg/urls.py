@@ -20,7 +20,9 @@ from rest_framework import routers
 from rest_framework.authtoken import views
 from notes.api import PersonalNoteViewSet
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
- 
+from notes import views
+
+
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 
