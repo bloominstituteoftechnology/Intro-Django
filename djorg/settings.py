@@ -16,25 +16,26 @@ from decouple import config, Csv
 
 import dj_database_url
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
-ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+MIDDLEWARE = [
+    # 'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
+    # ...
+]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 
 # Application definition
@@ -91,6 +92,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#   'default': dj_database_url.config('DATABASE_URL', default='sqlite:///db.sqlite3')
+# }
 
 
 # Password validation
