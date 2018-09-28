@@ -1,1 +1,1 @@
-web: gunicorn lssprint.wsgi
+web: gunicorn djorg.wsgi
