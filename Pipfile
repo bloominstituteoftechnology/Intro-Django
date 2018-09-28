@@ -7,6 +7,10 @@ name = "pypi"
 django = "*"
 python-decouple = "*"
 djangorestframework = "*"
+gunicorn = "*"
+django-heroku = "*"
+django-cors-headers = "*"
+whitenoise = "*"
 
 [dev-packages]
 pylint = "*"
