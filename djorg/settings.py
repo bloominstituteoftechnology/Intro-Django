@@ -104,6 +104,9 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -148,6 +151,4 @@ STATIC_URL = '/static/'
 import django_heroku
 django_heroku.settings(locals())
 
-import dj_database_url
 
-DATABASES['default'] = dj_database_url.config('sqlite:///db.sqlite3')
