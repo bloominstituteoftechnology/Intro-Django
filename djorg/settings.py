@@ -15,11 +15,6 @@ import os
 from decouple import config
 import dj_database_url
 
-MIDDLEWARE = [
-  # 'django.middleware.security.SecurityMiddleware',
-  'whitenoise.middleware.WhiteNoiseMiddleware',
-  # ...
-]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,8 +33,8 @@ DEBUG = config('DEBUG', cast = bool)
 host = os.environ.get('ALLOWED_HOSTS')
 ALLOWED_HOSTS = [host]
 
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-DATABASES['default'] = dj_database_url.config('DATABASE_URL')
+
+
 
 # Application definition
 
@@ -56,6 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -95,6 +91,14 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {}
+# # DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'] = dj_database_url.config('DATABASE_URL')
+DATABASES = {
+    'default': dj_database_url.config('DATABASE_URL'),
+}
+
 
 
 # Password validation
