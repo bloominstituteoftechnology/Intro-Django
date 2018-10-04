@@ -27,7 +27,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config("DEBUG", cast=bool)
 
-ALLOWED_HOSTS = []
+host = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = [host]
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -134,8 +136,8 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
-        #'rest_framework.authentication.SessionAuthentication',
-        #'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
 }
 
