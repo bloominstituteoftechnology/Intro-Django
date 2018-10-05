@@ -13,6 +13,8 @@ gunicorn = "*"
 "psycopg2-binary" = "*"
 whitenoise = "*"
 graphene-django = "*"
+django-filter = "*"
+django-allauth = "*"
 
 [dev-packages]
 
