@@ -2,6 +2,7 @@
 
 ## Summary
 
+
 * Get pipenv installed
 * Clone your repo
   * (If you cloned the Hello-Django repo, delete the file `requirements.txt`!)
@@ -36,6 +37,7 @@
 * `pipenv install python-decouple`
 * Add config information to `settings.py` and `.env`
     
+
 
 ## Setting up a Virtual Environment
   
