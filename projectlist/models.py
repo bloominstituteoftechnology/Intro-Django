@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from uuid import uuid4
 
 # Create your models here.
@@ -11,5 +12,8 @@ class Project(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     description = models.TextField()
     current_stage = models.CharField(max_length=200)
-    plan_board = models.URLField()
-    repo = models.URLField()
+    plan_board = models.URLField(blank=True)
+    repo = models.URLField(blank=True)
+
+class PersonalProject(Project):   # Inherits from Note!
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
