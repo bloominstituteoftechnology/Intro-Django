@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
+uuid = "*"
+python-decouple = "*"
 
 [dev-packages]
 
