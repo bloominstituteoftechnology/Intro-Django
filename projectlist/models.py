@@ -15,5 +15,5 @@ class Project(models.Model):
     plan_board = models.URLField(blank=True)
     repo = models.URLField(blank=True)
 
-class PersonalProject(Project):   # Inherits from Note!
+class PersonalProject(Project):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
