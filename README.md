@@ -1,7 +1,7 @@
 # Intro to Django
 
 Fork this repo to use for your projects this week.
-
+- for pr
 ## Reading
 
 * [Day 1: Intro](guides/day1.md)
