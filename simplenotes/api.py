@@ -1,11 +1,11 @@
 from rest_framework import serializers, viewsets
-from models import PersonalNote
+from simplenotes.models import PersonalNote
 
 
 class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PersonalNote
-        fields = ('content')
+        fields = ('content',)
 
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):
