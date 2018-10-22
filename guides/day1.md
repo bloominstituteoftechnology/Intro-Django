@@ -255,6 +255,7 @@ Create a new note with:
 ```python
 n = Note(title=”example”, content=”This is a test.”)
 ```
+t=Note(title='test', content='this is test')
 
 Check by the name of your variable to make sure worked:
 ```python
