@@ -7,6 +7,8 @@ class Game(models.Model):
     title = models.CharField(max_length=200)
     release_date = models.IntegerField(
         validators=[
-            MaxValueValidator(1900),
-            MinValueValidator(2020)
-        ])
+            MaxValueValidator(2020),
+            MinValueValidator(1900)
+        ]),
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)   
