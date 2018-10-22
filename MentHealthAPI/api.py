@@ -7,6 +7,11 @@ class PersonalPostSerializer(serializers.HyperlinkedModelSerializer):
         model = PersonalPost
         fields = ('title', 'content')
 
+    def create(self, validated_data):
+        user = self.context['request'].user
+        post = PersonalPost.objects.create(user=user, **validated_data)
+        return post
+
 
 class PersonalPostViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalPostSerializer
