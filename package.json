@@ -1,0 +1,22 @@
+{
+  "name": "intro-django",
+  "version": "1.0.0",
+  "description": "Fork this repo to use for your projects this week.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelBoegner/Intro-Django.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelBoegner/Intro-Django/issues"
+  },
+  "homepage": "https://github.com/MichaelBoegner/Intro-Django#readme",
+  "dependencies": {
+    "sqlite3": "^4.0.2"
+  }
+}
