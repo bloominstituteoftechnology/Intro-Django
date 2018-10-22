@@ -1,0 +1,2 @@
+This is a horror movie database, it is a list of horror movies that are 
+currently on streaming. 
