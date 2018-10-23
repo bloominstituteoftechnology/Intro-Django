@@ -1,11 +1,20 @@
 from rest_framework import serializers, viewsets
 from .models import PersonalNote
 
-class PersonalNoteSerializer(serializers.HyperlinkedModeSerializer):
+class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PersonalNote
         fields = ('title', 'content')
+    
+    def create(self, validated_data):
+        # import pdb; pdb.set_trace()
+        user = self.context['request'].user
+        note = PersonalNote.objects.create(user=user, **validated_data)
+        return note
+
 
 class PersonalNoteViewset(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
     queryset = PersonalNote.objects.all()
+
+    
