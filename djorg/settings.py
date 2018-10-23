@@ -122,10 +122,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#REST Framework
+# REST Framework
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
 }
+
+# CORS
+
+CORS_ORIGIN_ALLOW_ALL = True

@@ -1,5 +1,5 @@
 from rest_framework import serializers,viewsets
-from .models import PersonalFilm
+from .models import PersonalFilm, Film
 
 class PersonalFilmSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -16,4 +16,11 @@ class PersonalFilmSerializer(serializers.HyperlinkedModelSerializer):
 
 class PersonalFilmViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalFilmSerializer
-    queryset = PersonalFilm.objects.all()
+    queryset = Film.objects.none()
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return PersonalFilm.objects.none()
+        else:
+            return PersonalFilm.objects.filter(user=user)
