@@ -1,5 +1,6 @@
 from django.db import models
 from uuid import uuid4
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -16,3 +17,6 @@ class Apartment(models.Model):
     distance = models.DecimalField(max_digits=10, decimal_places=2)
     # What i'm entering to the console but it erased on me once so dind't want to risk it without typing it down
     # Name='Livable Place', Phone='3141234567', Website='LP.com', Email='LP@LP.com', Address='420 high St', Zip ='13337', distance='4.7'
+
+class DifferentApartment(Apartment):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
