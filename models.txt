@@ -1,0 +1,15 @@
+Hi,
+
+If you're reading this that must mean you want to know what you can store in this api!
+
+There is only one table and here are it's properties:
+
+- id : UUID and auto generated per project
+- project_title: a string that is at max 200 characters
+- created_at: an automatically created time stamp
+- last_modified: the last time the the database was changed as a date time object automatically generated
+- description: a text field of any size that descripts the purpose of the project
+- current_stage: a string that is at max 200 characters describing what stage the project is in
+- plan_board: a url field, may be blank, link to trello or whatever
+- repo: a url field, may be blank, link to github or whatever
+- user: a string, a foreignkey, and determines who the project shows for
