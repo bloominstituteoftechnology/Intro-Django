@@ -1,3 +1,8 @@
 {
-    "python.pythonPath": "C:\\Users\\VLeon\\.virtualenvs\\Intro-Django-D_D5JuvX\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\VLeon\\.virtualenvs\\Intro-Django-D_D5JuvX\\Scripts\\python.exe",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+      ],
+
 }
