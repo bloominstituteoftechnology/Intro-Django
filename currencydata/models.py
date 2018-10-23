@@ -9,5 +9,7 @@ class Currencydata (models.Model):
     the_low = models.FloatField()
     the_close = models.FloatField()
     bar_type = models.CharField(max_length = 7)#'bull'  'bear'  'neutral'
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
 # Currencydata(date = '2018.09.12', the_open = 1.6963, the_high = 1.69636, the_low = 1.69596, the_close = 1.69619, bar_type = 'bear')
