@@ -8,3 +8,8 @@ class Note(models.Model):
     content = models.TextField(blank=True)
     T_or_F = models.BooleanField(blank=True)
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+
+# SuperUser Accounts:
+# username: admin
+# email: admin@gmail.com
+# password: 123magic
