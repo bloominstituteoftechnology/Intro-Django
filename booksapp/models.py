@@ -10,7 +10,6 @@ class Book(models.Model):
     description = models.TextField(blank=True)
     yearPublished = models.CharField(max_length=10)
     pages = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='book_images', blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
