@@ -15,7 +15,7 @@ class Query(graphene.ObjectType):
 
     notes = graphene.List(NoteType)
 
-    def resolve_note(self, info):
+    def resolve_notes(self, info):
         return Note.objects.all()
 
 
