@@ -4,14 +4,19 @@ from uuid import uuid4
 # Create your models here.
 class Companies(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable-False)
+    ticker = models.CharField(max_length=5)
     name = models.CharField(max_length=200)
-    
+    description = models.CharField(max_length=2000)
 
 
 
-# class StockPrices(models.Model):
-#     comp_id = models.
-#     date = models.
-#     close_price = 
-#     adj_close = 
+
+
+
+class StockPrices(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable-False)
+    comp_id = models.ForeignKey(Companies,on_delete.CASCADE)
+    date = models.DateField(auto_now=False, auto_now_add=False)
+    close_price = models.DecimalField(max_digits=1000, decimal_places=2)
+    adj_close = models.DecimalField(max_digits=1000, decimal_places=2) 
 
