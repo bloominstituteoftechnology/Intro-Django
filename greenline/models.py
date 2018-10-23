@@ -7,7 +7,9 @@ class Post(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
     title = models.CharField(max_length = 200)
     content = models.TextField(blank = True)
-    date = models.DateTimeField(auto_now_add = True)
+    date_created = models.DateTimeField(auto_now_add = True)
+    date_modified = models.DateTimeField(auto_now = True)
     author = models.TextField()
+
 
 
