@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b94d6bdf-63fe-4b8d-b0eb-337c877a9473" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djrik/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djrik/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_up/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_up/admin.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,14 +29,14 @@
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="lock" value="1" />
-          <entry key="py" value="11" />
+          <entry key="py" value="14" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="11" />
+          <entry key="Python" value="14" />
           <entry key="TOML file" value="1" />
         </counts>
       </usages-collector>
@@ -50,7 +44,7 @@
         <counts>
           <entry key="env" value="22" />
           <entry key="gitignore" value="8" />
-          <entry key="py" value="60" />
+          <entry key="py" value="79" />
           <entry key="txt" value="8" />
         </counts>
       </usages-collector>
@@ -58,7 +52,7 @@
         <counts>
           <entry key=".env file" value="22" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="60" />
+          <entry key="Python" value="79" />
         </counts>
       </usages-collector>
     </session>
@@ -71,18 +65,18 @@
             <entry file="file://$PROJECT_DIR$/Pipfile">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="195">
-                  <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+                  <caret line="14" selection-start-line="14" selection-end-line="14" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/img_up/models.py">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/img_up/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+                <state relative-caret-position="105">
+                  <caret line="7" selection-start-line="7" selection-end-line="7" />
                   <folding>
-                    <element signature="e#0#28#0" expanded="true" />
+                    <element signature="e#0#24#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -112,10 +106,22 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/djrik/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+                <state relative-caret-position="422">
+                  <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
                   <folding>
                     <element signature="e#306#315#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/img_up/admin.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#0#32#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -125,11 +131,23 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/djrik/.env">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="15">
                   <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/img_up/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="11" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="11" />
+                  <folding>
+                    <element signature="e#0#28#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -153,8 +171,10 @@
         <option value="$PROJECT_DIR$/djrik/.gitignore" />
         <option value="$PROJECT_DIR$/djrik/.env" />
         <option value="$PROJECT_DIR$/notes/models.py" />
-        <option value="$PROJECT_DIR$/djrik/settings.py" />
         <option value="$PROJECT_DIR$/img_up/models.py" />
+        <option value="$PROJECT_DIR$/img_up/forms.py" />
+        <option value="$PROJECT_DIR$/djrik/settings.py" />
+        <option value="$PROJECT_DIR$/img_up/admin.py" />
       </list>
     </option>
   </component>
@@ -225,6 +245,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13601127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -319,26 +340,46 @@
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img_up/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img_up/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/djrik/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        <state relative-caret-position="422">
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
           <folding>
             <element signature="e#306#315#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img_up/models.py">
+    <entry file="file://$PROJECT_DIR$/img_up/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+        <state relative-caret-position="45">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
