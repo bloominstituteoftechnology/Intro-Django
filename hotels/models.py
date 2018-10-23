@@ -5,6 +5,8 @@ from uuid import uuid4
 
 class Apartment(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
     Name = models.CharField(max_length=64)
     Phone = models.IntegerField()
     Website = models.CharField(max_length=200)
