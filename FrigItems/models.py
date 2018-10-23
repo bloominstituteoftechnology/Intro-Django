@@ -17,4 +17,19 @@ class Note(models.Model):
 
 
 class PersonalNote(Note):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class GroceryItem(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    title = models.CharField(max_length=200)
+    content = models.TextField(blank=True)
+
+
+class Vegetable(GroceryItem):
+    vegetable_name = models.CharField(max_length=100, primary_key=True)
+
+
+class Fruit(GroceryItem):
+    fruit_name = models.ForeignKey(User, on_delete=models.CASCADE)
+
