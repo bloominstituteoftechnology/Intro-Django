@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+python-decouple = "*"
+south = "*"
+"django-tables2" = "*"
+graphene-django = "*"
 
 [dev-packages]
 
