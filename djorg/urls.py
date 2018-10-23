@@ -19,6 +19,7 @@ from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 
 
+
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
 
