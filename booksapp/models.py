@@ -11,3 +11,6 @@ class Book(models.Model):
     yearPublished = models.CharField(max_length=10)
     pages = models.IntegerField(default=0)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+
