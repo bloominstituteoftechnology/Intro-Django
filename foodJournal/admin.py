@@ -1,10 +1,13 @@
 from django.contrib import admin
-from .models import Meal
+from .models import Note, PersonalNote
 
-class MealAdmin(admin.ModelAdmin):
-    readonly_fields=('created_at', 'last_modified')
+class NoteAdmin(admin.ModelAdmin):
+    readonly_fields=('created_at', 'last_modified', 'id')
 
 # Register your models here.
-admin.site.register(Meal, MealAdmin)
+admin.site.register((Note, PersonalNote), NoteAdmin)
 
 
+# 
+
+# C:\Users\Michael\AppData\Roaming\Python\Python37\Scripts;
