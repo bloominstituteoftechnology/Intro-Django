@@ -9,6 +9,6 @@ class Game(models.Model):
         validators=[
             MaxValueValidator(2020),
             MinValueValidator(1900)
-        ]),
+        ], editable=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)   
