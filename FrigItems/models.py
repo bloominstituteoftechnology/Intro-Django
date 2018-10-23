@@ -18,6 +18,7 @@ class Note(models.Model):
 
 class PersonalNote(Note):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # new_field = models.CharField(max_length=140, default='SOME STRING')
 
 
 class GroceryItem(models.Model):
@@ -26,9 +27,13 @@ class GroceryItem(models.Model):
 
 
 class Vegetable(GroceryItem):
-    vegetable_name = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
 
 class Fruit(GroceryItem):
-    fruit_name = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
