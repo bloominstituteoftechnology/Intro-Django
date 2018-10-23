@@ -7,5 +7,7 @@ from django.db import models
 
 class Person(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    name = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    blood_type = models.CharField(max_length=2, blank=True, null=True)
     about = models.TextField(blank=True)
