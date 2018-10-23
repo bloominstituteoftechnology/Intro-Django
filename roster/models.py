@@ -7,4 +7,7 @@ class Player(models.Model):
     firstName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
     position = models.CharField(max_length=9, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
     
