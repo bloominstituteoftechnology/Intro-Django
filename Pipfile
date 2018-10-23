@@ -7,6 +7,8 @@ name = "pypi"
 django = "*"
 uuid = "*"
 python-decouple = "*"
+pillow = "*"
+graphene-django = "*"
 
 [dev-packages]
 
