@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 from OddJobBoard.api import PersonalNoteViewSet
-from django.urls import path, include
+from django.urls import path, include, re_path
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
-router.register(r'oddJobBoard', PersonalNoteViewSet)
+router.register(r'OddJobBoard', PersonalNoteViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
+    re_path(r'^api-token-auth/', views.obtain_auth_token),
 ]
 
