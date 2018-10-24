@@ -13,3 +13,9 @@ class PersonalProjectSerializer(serializers.HyperlinkedModelSerializer):
 class PersonalProjectViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalProjectSerializer
     queryset = PersonalProject.objects.all()
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     if user.is_anonymous:
+    #         return PersonalProject.objects.none()
+    #     else:
+    #         return PersonalProject.objects.filter(user=user)
