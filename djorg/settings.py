@@ -32,6 +32,7 @@ CORS_ORIGIN_ALLOW_ALL = config('CORS', cast=bool)
 
 INSTALLED_APPS = [
     'notes',
+    'recipes',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
