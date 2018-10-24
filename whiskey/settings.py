@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'whiskeyapp',
+    'rest_framework',
     'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',

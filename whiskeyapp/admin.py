@@ -6,4 +6,4 @@ class WhiskeyAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Whiskey, WhiskeyAdmin)
-admin.site.register(PersonalWhiskey)
+admin.site.register(PersonalWhiskey, WhiskeyAdmin)

@@ -14,10 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from graphene_django.views import GraphQLView
+
+from rest_framework import routers
+from whiskeyapp.api import PersonalWhiskeyViewSet
+
+router = routers.DefaultRouter()
+router.register(r'whiskey', PersonalWhiskeyViewSet)
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('graphql/', GraphQLView.as_view(graphiql=True))
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
+    path('api/', include(router.urls)),
 ]
