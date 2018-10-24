@@ -11,3 +11,6 @@ class Recipe(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
+
+class PersonalRecipe(Recipe):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

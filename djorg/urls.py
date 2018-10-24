@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import routers
 from notes.api import PersonalNoteViewset
+from recipes.api import PersonalRecipeViewset
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewset)
+router.register('recipes', PersonalRecipeViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
