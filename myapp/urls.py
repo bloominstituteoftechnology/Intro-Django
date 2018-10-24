@@ -15,16 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
 from rest_framework import routers
-from notesapp.api import NoteViewSet
-from notesapp.api import TagViewSet
+from notesapp.api import NoteViewSet, PersonalNoteViewSet, TagViewSet
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register('notes', NoteViewSet)
+router.register('personal-notes', PersonalNoteViewSet)
 router.register('tags', TagViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
 ]
