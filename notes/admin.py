@@ -4,6 +4,8 @@ from .models import PersonalNote
 
 # Register your models here.
 
+pn = PersonalNote.objects.all()
+
 class NoteAdmin(admin.ModelAdmin):
 	readonly_fields=('created_at', 'last_modified')
 
