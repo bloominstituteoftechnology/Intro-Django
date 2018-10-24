@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'horror_movies',
+    'rest_framework',
+    'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,6 +128,6 @@ GRAPHENE = {
 
 REST_FRAMEWORK ={
     'DEFAULT_PERMISSION_CLASSES':{
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly''
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     }
 }
