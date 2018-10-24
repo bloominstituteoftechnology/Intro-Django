@@ -253,7 +253,7 @@ from notes.models import Note
 
 Create a new note with:
 ```python
-n = Note(title=”example”, content=”This is a test.”)
+n = Note(title="example", content="This is a test.")
 ```
 
 Check by the name of your variable to make sure worked:
@@ -286,6 +286,7 @@ project will need a copy of, but it won’t be in the repo itself.
 
 We’re going to make use of a module called Python Decouple by installing it in
 the virtual environment:
+exit repl first..
 ```
 pipenv install python-decouple
 ```
