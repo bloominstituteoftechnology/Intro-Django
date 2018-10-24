@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cat
+from .models import Cat, PersonalCat
 
 class CatAdmin(admin.ModelAdmin):
 	readonly_fields=('created_at', 'last_modified')
@@ -7,3 +7,4 @@ class CatAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Cat, CatAdmin)
+admin.site.register(PersonalCat)
