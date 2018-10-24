@@ -25,6 +25,7 @@ REST_FRAMEWORK = {
 }
 ```
 
+
 This will allow read/write permissions for logged in users and read only for
 anonymous users.
 
