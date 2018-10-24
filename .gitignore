@@ -83,6 +83,8 @@ celerybeat-schedule
 
 # Environments
 .env
+token_command
+.token
 .venv
 env/
 venv/
