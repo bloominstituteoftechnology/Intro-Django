@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 class Recipe(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
+    description = models.CharField(max_length=200)
+    steps = models.TextField(blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
