@@ -5,8 +5,8 @@ class PersonalPlayerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = PersonalPlayer
-        fields = ('firstName', 'lastName')
+        fields = ('firstName', 'lastName', 'position', 'team')
 
 class PersonalPlayerViewSet(viewsets.ModelViewSet):
-    serializer_class = PersonalNoteSerializer
+    serializer_class = PersonalPlayerSerializer
     queryset = PersonalPlayer.objects.all()
