@@ -8,6 +8,7 @@ django = "*"
 uuid = "*"
 python-decouple = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

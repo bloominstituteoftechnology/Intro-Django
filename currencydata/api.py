@@ -1,4 +1,4 @@
-from rest_framework import serializers
+from rest_framework import serializers , viewsets
 from .models import PersonalCurrencydata
 
 class PersonalCurrencydataSerializer(serializers.HyperlinkedModelSerializer):
@@ -11,12 +11,12 @@ class PersonalCurrencydataViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalCurrencydataSerializer
     queryset = PersonalCurrencydata.objects.none()
     def get_queryset(self):
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
 
         logged_in_user = self.request.user
 
         if logged_in_user.is_anonymous:
-            return PersonalNote.objects.none()
+            return PersonalCurrencydata.objects.none()
         else:
-            return PersonalNote.objects.filter(user=logged_in_user)
+            return PersonalCurrencydata.objects.filter(user=logged_in_user)
         
