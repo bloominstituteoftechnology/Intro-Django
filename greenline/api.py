@@ -19,3 +19,12 @@ class UserPostViewSet(viewsets.ModelViewSet):
     serializer_class = UserPostSerializer
     queryset = UserPost.objects.all()
 
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return UserPost.objects.none()
+
+        else:
+            return UserPost.objects.filter(user = user)
+
