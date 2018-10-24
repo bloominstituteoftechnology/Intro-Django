@@ -1,0 +1,1 @@
+web: gunicorn Intro-Django.wsgi --log-file -
