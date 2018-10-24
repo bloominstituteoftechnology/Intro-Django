@@ -6,8 +6,3 @@ class NoteAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register((Note, PersonalNote), NoteAdmin)
-
-
-# 
-
-# C:\Users\Michael\AppData\Roaming\Python\Python37\Scripts;
