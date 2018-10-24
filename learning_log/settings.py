@@ -128,3 +128,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
 }
+
+
+#CORS
+
+CORS_ORIGIN_ALLOW_ALL = True
