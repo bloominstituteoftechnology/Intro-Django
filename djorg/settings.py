@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from decouple import config
-import dj_database_url import config
+from dj_database_url import config
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
