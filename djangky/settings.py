@@ -29,11 +29,15 @@ DEBUG=config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 # Application definition
 
 INSTALLED_APPS = [
     'kyleapp',
+    'corsheaders',
+    'rest_framework',
     'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -125,4 +130,10 @@ STATIC_URL = '/static/'
 
 GRAPHENE = {
     'SCHEMA': 'kyleapp.schema.schema'
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
