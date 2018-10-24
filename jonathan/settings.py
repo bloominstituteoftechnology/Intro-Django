@@ -46,6 +46,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
+    #This will allow read/write permissions for logged in users and read only for anonymous users. rest
 }
 
 MIDDLEWARE = [
