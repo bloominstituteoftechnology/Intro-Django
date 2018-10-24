@@ -8,8 +8,11 @@ class UserPostSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('title', 'content')
 
     def create(self, validated_data):
-        import pdb; pdb.set_trace() #starts the debugger here
-        post = UserPost.objects.create(**validated_data)
+        # import pdb; pdb.set_trace() #starts the debugger here
+        # run the server and then look in terminal
+        # check out self.context['request'] in the debugger
+        user = self.context['request'].user
+        post = UserPost.objects.create(user = user, **validated_data)
         return post
 
 class UserPostViewSet(viewsets.ModelViewSet):
