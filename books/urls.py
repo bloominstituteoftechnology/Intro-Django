@@ -19,6 +19,7 @@ from django.urls import path, include
 #from django.conf.urls.static import static
 from graphene_django.views import GraphQLView
 from rest_framework import routers
+from rest_framework.authtoken import views
 from booksapp.api import PersonalBookViewSet
 
 router = routers.DefaultRouter()
@@ -28,4 +29,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
+    path('api-token-auth/',views.obtain_auth_token),
 ]
