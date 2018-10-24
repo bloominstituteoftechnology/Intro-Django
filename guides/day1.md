@@ -12,7 +12,7 @@
 * `pipenv install django`
 * `django-admin startproject djorg .`
 * `django-admin startapp notes`
-* `./manage.py runserver`
+* `./manage.py runserver` 
 * `./manage.py showmigrations`
 * `./manage.py migrate`
 * `./manage.py runserver`
@@ -253,7 +253,7 @@ from notes.models import Note
 
 Create a new note with:
 ```python
-n = Note(title=”example”, content=”This is a test.”)
+n = Note(title='example', content='This is a test.')
 ```
 
 Check by the name of your variable to make sure worked:
