@@ -16,4 +16,13 @@ class PersonalWhiskeySerializer(serializers.HyperlinkedModelSerializer):
 
 class PersonalWhiskeyViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalWhiskeySerializer
-    queryset = PersonalWhiskey.objects.all()
+    queryset = PersonalWhiskey.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return PersonalWhiskey.objects.none()
+
+        else:
+            return PersonalWhiskey.objects.filter(user=user)
