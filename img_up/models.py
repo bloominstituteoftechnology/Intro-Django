@@ -15,4 +15,5 @@ class Epilepsy(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class EpilepsyUserInput(Epilepsy):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=30)
