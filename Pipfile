@@ -9,6 +9,9 @@ python-decouple = "*"
 south = "*"
 "django-tables2" = "*"
 graphene-django = "*"
+djangorestframework = "*"
+django-filter = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
