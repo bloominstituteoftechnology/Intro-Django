@@ -3,7 +3,11 @@ import os
 import sys
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Music.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Frig.settings')
+>>>>>>> 3545a96d17985480e9a4bab8e4951ec65f0c7472
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
