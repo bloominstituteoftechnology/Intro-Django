@@ -9,5 +9,5 @@ class Person(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    blood_type = models.CharField(max_length=2, blank=True, null=True)
+    blood_type = models.CharField(max_length=2)
     about = models.TextField(blank=True)
