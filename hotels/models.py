@@ -9,6 +9,7 @@ class Apartment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     # so what do
+    
     # cause I thought I did repeat the lines idk
     # like I thought it was just the sql request that had to change
     # you just do commands in sql and look at the results...?
