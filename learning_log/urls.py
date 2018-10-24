@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from django.urls import path, include, re_path
 
 from rest_framework import routers 
 from log.api import PersonalTopicViewSet
@@ -28,4 +29,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),
+    re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
