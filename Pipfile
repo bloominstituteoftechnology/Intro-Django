@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 graphene-django = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
