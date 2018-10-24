@@ -9,8 +9,8 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         return note
 
     def create(self, validated_data):
-        import pdb; pdb.set_trace()  # Start the debugger here
-        pass
+        #import pdb; pdb.set_trace()  # Start the debugger here
+        
 
         # self.context[‘request’].user
 
@@ -20,10 +20,10 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     #     return note
 
     # Inner class nested inside PersonalNoteSerializer
-    class Meta:
+     class Meta:
         model = PersonalNote
         fields = ('title', 'content')
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):
-    serializer_class = PersonalNoteSerializer
-    queryset = PersonalNote.objects.all()
+        serializer_class = PersonalNoteSerializer
+        queryset = PersonalNote.objects.all()
