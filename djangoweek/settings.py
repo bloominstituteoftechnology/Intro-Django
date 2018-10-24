@@ -123,3 +123,9 @@ STATIC_URL = '/static/'
 GRAPHENE = {
     'SCHEMA': 'notes.schema.schema'
 }
+
+REST_FRAMEWORK ={
+    'DEFAULT_PERMISSION_CLASSES':{
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly''
+    }
+}
