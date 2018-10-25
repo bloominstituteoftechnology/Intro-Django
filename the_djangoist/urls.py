@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from rest_framework.authtoken import views
 
 from rest_framework import routers
 from the_djangoist_clothes.api import UserGarmentViewSet
@@ -25,4 +26,5 @@ router.register(r'the_djangoist_clothes', UserGarmentViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include (router.urls)),
+        re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
