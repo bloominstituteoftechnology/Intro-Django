@@ -28,14 +28,14 @@ SECRET_KEY = 'l3g3$lfj9q@v&)#38!aeq^wp&aiolicy++ieb^(#59*8=dt_f7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sheltered-bastion-26341.herokuapp.com']
+ALLOWED_HOSTS = ['sheltered-bastion-26341.herokuapp.com','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'notes',
-    # 'corsheaders',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 MIDDLEWARE = [
@@ -91,7 +91,8 @@ DATABASES = {
     }
 }
 
-
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
 DATABASES['default'] = dj_database_url.parse('sqlite:///db.sqlite3', conn_max_age=600)
 
 # Password validation
