@@ -1,7 +1,7 @@
 from django import forms
-from models import ImgUp
+from .models import Epilepsy
 
 class DocumentForm(forms.ModelForm):
     class Meta:
-        model = ImgUp
+        model = Epilepsy
         fields = ('description', 'document', )

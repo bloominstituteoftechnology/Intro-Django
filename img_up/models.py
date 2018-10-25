@@ -1,19 +1,19 @@
 from django.db import models
-from uuid import uuid4
+import uuid
 from django.contrib.auth.models import User
 
 
 # Create your models here.
 class Epilepsy(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     admin_name = models.CharField(max_length=30)
     state = models.CharField(max_length=30)
-    numOfTotalCases = models.IntegerField()
-    numOfChildCases = models.IntegerField()
-    numOfAdultCases = models.IntegerField()
+    numOfTotalCases = models.PositiveSmallIntegerField()
+    numOfChildCases = models.PositiveSmallIntegerField()
+    numOfAdultCases = models.PositiveSmallIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
 class EpilepsyUserInput(Epilepsy):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, default=uuid.uuid4, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=30)
