@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 from hotels.api import DifferentApartmentViewSet
-from django.urls import path, include
+from django.urls import path, include, re_path
+from rest_framework.authtoken import views
+
 router = routers.DefaultRouter()
 router.register(r'apartments', DifferentApartmentViewSet)
 
@@ -25,4 +27,5 @@ router.register(r'apartments', DifferentApartmentViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
