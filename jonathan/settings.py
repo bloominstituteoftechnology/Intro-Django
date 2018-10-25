@@ -36,7 +36,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.spl
 
 
 
-DATABASE_URL = dj_database_url.config('DATABASE_URL') #added this for Heroku deployment
+#DATABASE_URL =  #added this for Heroku deployment
+db_from_env = dj_database_url.config('DATABASE_URL')
 #For the database, you want to both load the DATABASE_URL and pass it to dj_database_url.config (see documentation)
 
 # Application definition
