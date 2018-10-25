@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['sheltered-bastion-26341.herokuapp.com','127.0.0.1']
 
 INSTALLED_APPS = [
     'notes',
-    'corsheaders',
+    # 'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
 
 MIDDLEWARE = [
