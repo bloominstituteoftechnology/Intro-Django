@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'dj_database_url.parse("postgres://...", conn_max_age=600)',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgresql-crystalline-16433',
     }
 }
