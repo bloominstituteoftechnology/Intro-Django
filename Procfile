@@ -1,0 +1,1 @@
+web: gunicorn instgram_data.wsgi
