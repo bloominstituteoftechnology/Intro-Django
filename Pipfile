@@ -10,6 +10,7 @@ django = "*"
 python-decouple = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+graphene-django = "*"
 
 [requires]
 python_version = "3.6"
