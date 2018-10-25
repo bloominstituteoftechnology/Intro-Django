@@ -20,7 +20,7 @@ from rest_framework.authtoken import views
 from films.api import PersonalFilmViewSet
 
 router = routers.DefaultRouter()
-router.register(r'notes', PersonalFilmViewSet)
+router.register(r'films', PersonalFilmViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
