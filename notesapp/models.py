@@ -16,3 +16,24 @@ class PersonalNote(Note):
 
 
 # When I create a PersonalNote, it also adds it to the Note table
+# might have to cut inherit
+"""
+https://docs.graphene-python.org/projects/django/en/latest/tutorial-plain/
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Ingredient(models.Model):
+    name = models.CharField(max_length=100)
+    notes = models.TextField()
+    #***
+    category = models.ForeignKey(
+        Category, related_name='ingredients', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+"""
