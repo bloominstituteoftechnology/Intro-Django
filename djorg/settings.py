@@ -92,7 +92,7 @@ DATABASES = {
 }
 
 
-DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
+DATABASES['default'] = dj_database_url.parse('sqlite:///db.sqlite3', conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
