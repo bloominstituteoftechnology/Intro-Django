@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from horror_movies.api import PersonalMovieViewSet
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register('horror_movies', PersonalMovieViewSet)
@@ -24,5 +25,6 @@ router.register('horror_movies', PersonalMovieViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)), 
+    path('api/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token)
 ]
