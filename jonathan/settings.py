@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from decouple import config
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,17 +23,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ahe(urmoht$=0x^_qq#l3#b74yu%$8w)ck%ulbf1(3a$*5+hq@'
 SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = [
-    
-]
+#ALLOWED_HOSTS = config('ALLOWED_HOSTS') # THIS USED TO BE A LIST []  BUT i AM REFRENCING WHATS IN .ENV
+#^ may not be teh correct way 
+ALLOWED_HOSTS = [] # 
 
+DATABASE_URL = dj_database_url.config('DATABASE_URL') #added this for Heroku deployment
+#For the database, you want to both load the DATABASE_URL and pass it to dj_database_url.config (see documentation)
 
 # Application definition
 
@@ -47,8 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #permissions 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

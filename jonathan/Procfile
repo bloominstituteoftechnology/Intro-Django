@@ -1,0 +1,1 @@
+web: gunicorn jonathan.wsgi --log-file -
