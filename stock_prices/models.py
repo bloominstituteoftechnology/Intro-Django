@@ -13,11 +13,12 @@ class Companies(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
 
 
-class StockPrices(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    comp_id = models.ForeignKey(Companies, on_delete=models.CASCADE)
-    date = models.DateField(auto_now=False, auto_now_add=False)
-    close_price = models.DecimalField(max_digits=1000, decimal_places=2)
-    adj_close = models.DecimalField(max_digits=1000, decimal_places=2) 
-    created_at = models.DateTimeField(auto_now_add=True)
-    last_modified = models.DateTimeField(auto_now=True)
+# class StockPrices(models.Model):
+#     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+#     comp_id = models.ForeignKey(Companies, on_delete=models.CASCADE)
+#     date = models.DateField(auto_now=False, auto_now_add=False)
+#     close_price = models.DecimalField(max_digits=1000, decimal_places=2)
+#     adj_close = models.DecimalField(max_digits=1000, decimal_places=2) 
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     last_modified = models.DateTimeField(auto_now=True)
+ 
