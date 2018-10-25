@@ -26,8 +26,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hellluuuu</h1>
-        <div>
-        {this.state.projects.map(p => <div>{p.language}</div>)}
+        <div className="projects">
+        {this.state.projects.map(p => <div className="project"><p>Language: {p.language}</p><p>Concepts: {p.concept}</p></div>)}
         </div>
       </div>
     );

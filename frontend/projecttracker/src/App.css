@@ -2,9 +2,16 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.projects {
+  display: flex;
+  justify-content: center;
+}
+
+.project {
+  height: 100px;
+  width: 200px;
+  background: pink;
+  margin: 10px;
 }
 
 .App-header {
