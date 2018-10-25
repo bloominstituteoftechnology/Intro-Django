@@ -8,6 +8,7 @@ class Movies(models.Model):
     # id = models.AutoField(primary_key=True)
     title = models.CharField(max_length = 200)
     content = models.TextField(blank = True)
+    model_pic = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
     review = models.TextField(blank = True)
     RottenTomatoes = models.URLField(blank=True)
     url = models.URLField(blank=True)
