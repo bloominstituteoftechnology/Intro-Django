@@ -9,8 +9,7 @@ class Note(models.Model):
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-class NoteAdmin(admin.ModelAdmin):
-	readonly_fields=('created_at', 'last_modified')
+
 
 class PersonalNote(Note):   # Inherits from Note!
     user = models.ForeignKey(User, on_delete=models.CASCADE)
