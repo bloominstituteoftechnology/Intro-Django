@@ -7,6 +7,11 @@ class UserGarmentSerializer(serializers.HyperlinkedModelSerializer):
         model = UserGarment
         fields = ('name', 'description')
 
+    def create(self, validated_data):
+        user = self.context['request'].user
+        garment = UserGarment.objects.create(user=user, **validated_data)
+        return garment
+
 class UserGarmentViewSet(viewsets.ModelViewSet):
-    serialiser_class = UserGarmentSerializer
+    serializer_class = UserGarmentSerializer
     queryset = UserGarment.objects.all()
