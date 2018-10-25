@@ -1,1 +1,1 @@
-web: gunicorn instgram_data.wsgi
+web: gunicorn django_project.wsgi
