@@ -20,7 +20,9 @@ from django.urls import path
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 
-from django.urls import path, include
+from django.urls import path, include, re_path
+# Set up the route to authenticate users
+from rest_framework.authtoken import views
 
 # Make and register a default router
 router = routers.DefaultRouter()
@@ -32,4 +34,8 @@ urlpatterns = [
     # sets the path to '/api/notes'. We can use router.register to add as many paths
     # as we want without needing to add them to urlpatterns
     path('api/', include(router.urls)),
+    # add endpoint for user authentication
+    re_path(r'^api-token-auth/', views.obtain_auth_token)
+    # '^' means 'match the beginnin of the string' in a regular expression
+    # 're_path' means it is a path that interprets the endpoint as a regex instead of a fixed string    
 ]
