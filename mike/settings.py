@@ -33,12 +33,18 @@ arr = config('ALLOWED_HOSTS')
 
 ALLOWED_HOSTS = [arr ]# or '*'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 dbUrl = config('DATABASE_URL')
 
 db_from_env = dj_database_url.config(dbUrl, conn_max_age=500)
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
-# DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
+DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
 
 # Application definition
 
@@ -107,12 +113,6 @@ WSGI_APPLICATION = 'mike.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
