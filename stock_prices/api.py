@@ -12,3 +12,9 @@ class PersonalCompaniesSerializer(serializers.HyperlinkedModelSerializer):
 class PersonalCompaniesViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalCompaniesSerializer
     queryset = Companies.objects.all()
+
+
+
+
+# select * from stock_prices_companies;
+# select * from stock_prices_personalcompanies;

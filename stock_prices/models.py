@@ -13,6 +13,14 @@ class Companies(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
 
 
+class PersonalCompanies(Companies):
+    user_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+
+
+
+
 # class StockPrices(models.Model):
 #     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 #     comp_id = models.ForeignKey(Companies, on_delete=models.CASCADE)
