@@ -5,7 +5,8 @@ from simplenotes.models import PersonalNote
 class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PersonalNote
-        fields = ('content', 'id')
+        fields = ('content', 'id', 'updated_at', 'created_at')
+        read_only_fields = ('id', 'updated_at', 'created_at')
 
     def create(self, validated_data):
         user = self.context['request'].user
