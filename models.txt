@@ -13,3 +13,11 @@ There is only one table and here are it's properties:
 - plan_board: a url field, may be blank, link to trello or whatever
 - repo: a url field, may be blank, link to github or whatever
 - user: a string, a foreignkey, and determines who the project shows for
+
+
+There is now a second table! It's for users:
+
+To make a new user you should just have to post:
+
+- username: string
+- password: also a string
