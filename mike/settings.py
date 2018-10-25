@@ -32,7 +32,7 @@ DEBUG = config('DEBUG', cast=bool)
 
 arr = config('ALLOWED_HOSTS')
 
-ALLOWED_HOSTS = [arr ]# or '*'
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 DATABASES = {
     'default': {
@@ -40,6 +40,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 dbUrl = config('DATABASE_URL')
 
 db_from_env = dj_database_url.config(dbUrl, conn_max_age=500)
@@ -65,6 +66,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
