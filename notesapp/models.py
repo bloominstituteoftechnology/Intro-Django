@@ -13,3 +13,6 @@ class Note(models.Model):
 class PersonalNote(Note):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   private_content = models.TextField(blank=True)
+
+
+# When I create a PersonalNote, it also adds it to the Note table
