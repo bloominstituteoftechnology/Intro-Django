@@ -20,6 +20,7 @@ from notes.api import PersonalNoteViewSet
 from django.urls import path, include
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 urlpatterns = [
