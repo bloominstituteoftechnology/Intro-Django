@@ -91,7 +91,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME')
+DATABASES['default'] = dj_database_url.config(default='postgres://mboegner:Test1423@sheltered-bastion-26341.herokuapp.com')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
