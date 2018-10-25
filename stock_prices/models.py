@@ -14,7 +14,7 @@ class Companies(models.Model):
 
 
 class PersonalCompanies(Companies):
-    user_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    # user_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
 
