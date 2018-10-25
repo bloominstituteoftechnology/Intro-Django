@@ -133,7 +133,7 @@ router.register(r'notes', PersonalNoteViewSet)
 This is similar to setting up a route in express, but we’re saying for this
 route, this (`PersonalNoteViewSet`) is the data we want to associate with it.
 (The `r` means that this is a regular expression, and to interpret the string as
-literally as possible--somewhat overkill in this case.) 
+literally as possible--somewhat overkill in this case.)
 
 Next, we need to add the URL to the `urlpatterns` list. In order to do that,
 we'll be using a function called `include()` that we get from `django.urls`:
@@ -205,7 +205,7 @@ from the location in `self` that we just discovered. Feed it in to `PersonalNote
 
 ```python
     def create(self, validated_data):
-        user = self.context[‘request’].user
+        user = self.context['request'].user
         note = PersonalNote.objects.create(user=user, **validated_data)
         return note
 ```
@@ -269,4 +269,3 @@ CORS_ORIGIN_ALLOW_ALL = True
 ```
 
 should be enough.
-
