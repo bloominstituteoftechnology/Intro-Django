@@ -69,6 +69,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, ‘staticfiles’)
+
 CORS_ORGIN_ALLOW_ALL=True
 
 ROOT_URLCONF = 'mike.urls'
