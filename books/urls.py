@@ -28,6 +28,11 @@ router.register('booksapp', PersonalBookViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('graphql/', GraphQLView.as_view(graphiql=True)),
     path('api-token-auth/',views.obtain_auth_token),
+    #path('graphql/', GraphQLView.as_view(graphiql=True)),
+    #re_path(r'^api-token-auth/', views.obtain_auth_token),
 ]
+
+
+
+
