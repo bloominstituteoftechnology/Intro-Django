@@ -17,20 +17,19 @@ from django.contrib import admin
 from django.urls import path
 
 # import router functionality and PersonalNoteViewSet
-from rest_framwork import routers
+from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 
 from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    # sets the path to '/api/notes'. We can use router.register to add as many paths
-    # as we want without needing to add them to urlpatterns
-    path('api/', include(router.urls))
-]
 
 # Make and register a default router
 router = routers.DefaultRouter()
 # 'r' means this is a regualr expression. Interpret the string as literally as possible
 router.register(r'notes', PersonalNoteViewSet)
 
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # sets the path to '/api/notes'. We can use router.register to add as many paths
+    # as we want without needing to add them to urlpatterns
+    path('api/', include(router.urls)),
+]
