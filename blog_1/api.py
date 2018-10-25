@@ -1,7 +1,7 @@
 from rest_framework import serializers, viewsets
 from .models import PersonalBlog
 
-class PersonlBlogSerializer(serializers.HyperlinkedModelSerializer):
+class PersonalBlogSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PersonalBlog
         fields = ('title', 'content')
@@ -13,7 +13,7 @@ class PersonlBlogSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PersonalBlogViewset(viewsets.ModelViewSet):
-    serializer_class = PersonlBlogSerializer
+    serializer_class = PersonalBlogSerializer
     queryset = PersonalBlog.objects.none()
     
     def get_queryset(self):
