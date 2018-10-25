@@ -49,6 +49,7 @@ DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_ag
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -58,7 +59,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'foodJournal',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
