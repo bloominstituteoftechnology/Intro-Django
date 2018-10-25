@@ -1,15 +1,15 @@
 from rest_framework import serializers, viewsets
-from .models import Person
+from .models import Pokemon
 
-class PersonSerializer(serializers.HyperlinkedModelSerializer):
+class PokemonSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        model = Person
+        model = Pokemon
         fields = ('blood_type')
 
 
     
-class PersonViewSet(viewsets.ModelViewSet):
+class PokemonViewSet(viewsets.ModelViewSet):
 
-    serializer_class = PersonSerializer
-    queryset = Person.objects.all()
+    serializer_class = PokemonSerializer
+    queryset = Pokemon.objects.all()

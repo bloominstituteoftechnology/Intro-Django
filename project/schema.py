@@ -1,20 +1,20 @@
 from django.cong import settings
 from graphene.django import DjangoObjectType
 import graphene
-from .models import Person
+from .models import Pokemon
 
-class PersonType(DjangoObjectType):
+class PokemonType(DjangoObjectType):
 
     class Meta:
-        model = Person
+        model = Pokemon
         interfaces = (graphene.relay.Node,)
 
 
 class Query(graphene.ObjectType):
 
-    persons = graphene.List(PersonType)
+    Pokemons = graphene.List(PokemonType)
 
-    def resolve_persons(self, info):
-        return Person.objects.all
+    def resolve_Pokemons(self, info):
+        return Pokemon.objects.all
 
 schema = graphene.Schema(query=Query)

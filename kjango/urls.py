@@ -19,10 +19,10 @@ from django.contrib import admin
 from graphene_django.views import GraphQLView
 from rest_framework import routers
 from rest_framework.authtoken import views
-from project.api import PersonViewSet
+from project.api import PokemonViewSet
 
 router = routers.DefaultRouter()
-router.register('project', PersonViewSet)
+router.register('project', PokemonViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
