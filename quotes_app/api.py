@@ -4,7 +4,7 @@ from quotes_app.models import Quote
 class QuoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Quote
-        fields=('author','content')
+        fields=('id','author','content')
 class QuoteViewSet(viewsets.ModelViewSet):
     serializer_class=QuoteSerializer
     queryset=Quote.objects.all()
