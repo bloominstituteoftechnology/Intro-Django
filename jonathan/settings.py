@@ -39,9 +39,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.spl
 #DATABASE_URL =  #added this for Heroku deployment
 db_from_env = dj_database_url.config('DATABASE_URL')
 #For the database, you want to both load the DATABASE_URL and pass it to dj_database_url.config (see documentation)
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
-DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -115,6 +113,9 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
+DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
