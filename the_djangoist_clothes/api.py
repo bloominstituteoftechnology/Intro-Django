@@ -14,4 +14,12 @@ class UserGarmentSerializer(serializers.HyperlinkedModelSerializer):
 
 class UserGarmentViewSet(viewsets.ModelViewSet):
     serializer_class = UserGarmentSerializer
-    queryset = UserGarment.objects.all()
+    queryset = UserGarment.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return UserGarment.objects.none()
+        else:
+            return UserGarment.objects.filter(user=user)
