@@ -1,3 +1,11 @@
+# https://docs.djangoproject.com/en/2.1/topics/db/models/
+
+# https://www.mercurytide.co.uk/media/resources/django-cheat-sheet.pdf
+
+# add images to model
+# https://coderwall.com/p/bz0sng/simple-django-image-upload-to-model-imagefield
+
+
 from django.db import models
 from uuid import uuid4
 
@@ -11,7 +19,10 @@ class Post(models.Model):
     content = models.TextField(blank = True)
     date_created = models.DateTimeField(auto_now_add = True)
     date_modified = models.DateTimeField(auto_now = True)
-    author = models.TextField()
+    author = models.CharField(max_length = 200)
+    email = models.EmailField(max_length = 75)
+#    image = ImageField(blank = True, null = True)
+
 
 #make a subclass of posts
 class UserPost(Post):  #inherit properties from Note

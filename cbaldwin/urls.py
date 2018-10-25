@@ -18,6 +18,7 @@ from django.urls import path, include
 
 from rest_framework import routers
 from greenline.api import UserPostViewSet
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register(r'greenline', UserPostViewSet)
@@ -25,4 +26,5 @@ router.register(r'greenline', UserPostViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
 ]
