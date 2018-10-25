@@ -1,7 +1,7 @@
 # Connecting model to rest framework
 
 from rest_framework import serializers, viewsets
-from .models import Note, PersonalNote, Tag
+from .models import Note, PersonalNote
 
 class NoteSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
@@ -35,13 +35,3 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):
       return PersonalNote.objects.none()
     else:
       return PersonalNote.objects.filter(user=user)
-
-
-class TagSerializer(serializers.HyperlinkedModelSerializer):
-  class Meta:
-    model = Tag
-    fields = ('tag_name',)
-
-class TagViewSet(viewsets.ModelViewSet):
-  serializer_class = TagSerializer
-  queryset = Tag.objects.all()
