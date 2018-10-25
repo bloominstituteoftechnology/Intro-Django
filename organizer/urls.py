@@ -18,13 +18,16 @@ from django.urls import path, include, re_path
 from rest_framework import routers
 from rest_framework.authtoken import views
 from simplenotes.api import PersonalNoteViewSet
+# from simplenotes.views import register
 
 # default router
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
+# router.register(r'register', register, name='register')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    # path('register/', include('simplenotes.urls')),
     re_path(r'^api-token-auth', views.obtain_auth_token)
 ]
