@@ -5,7 +5,7 @@
 We’ll be using the django REST framework: http://www.django-rest-framework.org/
 
 Open the shell if you aren’t in it and install the framework:
-
+`(intro-django) shell`
 ```
 pipenv install djangorestframework
 ```
