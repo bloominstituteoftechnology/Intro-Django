@@ -1,0 +1,1 @@
+Database stores quotes from the Marvel Cinematic Universe.  Each quote object has an author and content the author being the character who spoke the content and the content being the quote that the author spoke.
