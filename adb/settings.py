@@ -133,6 +133,8 @@ GRAPHENE = {
     'SCHEMA': 'roster.schema.schema'
 }
 
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
@@ -140,6 +142,8 @@ REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     )
 }
 
