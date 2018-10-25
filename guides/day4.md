@@ -23,11 +23,11 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 In `REST_FRAMEWORK`, add:
 
 ```python
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-    ),
+    ],
 ```
 
 ## Set up the Route
@@ -85,7 +85,7 @@ Scroll back up and google the error displayed just under your console command
 for help troubleshooting.  Many of the errors you can get here are easy to do,
 common, and relatively easy to google for information on how to fix.
 
-You should get back one line with a token, for example: 
+You should get back one line with a token, for example:
 
 ```json
 {"token":"da51ccf5274050cd7332d184246d7d0775dc79e2"}
