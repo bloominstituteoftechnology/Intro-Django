@@ -86,11 +86,20 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 #     }
 # }
 
+from django.core.exceptions import ImproperlyConfigured
+ 
+def get_env_variable(var_name):
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = "Set the %s environment variable" % var_name
+        raise ImproperlyConfigured(error_msg)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # 'NAME': 'postgresql-crystalline-16433',
-        'NAME': 'django',
+        'NAME': get_env_variable('DATABASE_NAME'),
         'USER': 'qxirgklwpmjhbg',
         'PASSWORD': '5d677d75568f21556403edd44c8f31bddd77fb0650fcfcde77d8e42965130460',
         'HOST': 'ec2-54-225-115-234.compute-1.amazonaws.com',
