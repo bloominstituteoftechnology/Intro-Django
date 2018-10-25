@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import PersonalJob
+from .models import PersonalJob, Job
 
 class PersonalJobSerializer(serializers.HyperlinkedModelSerializer):
 
@@ -9,7 +9,7 @@ class PersonalJobSerializer(serializers.HyperlinkedModelSerializer):
 
     def create(self, validated_data):
         user = self.context['request'].user
-        job = PersonalJob.objects.create(**validated_data)
+        job = PersonalJob.objects.create(user=user, **validated_data)
         return job
 
 class PersonalJobViewSet(viewsets.ModelViewSet):

@@ -22,7 +22,7 @@ from jobs.api import PersonalJobViewSet
 
 
 router = routers.DefaultRouter()
-router.register('jobs', PersonalJobViewSet)
+router.register(r'jobs', PersonalJobViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
