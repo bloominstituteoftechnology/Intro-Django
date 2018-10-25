@@ -1,1 +1,1 @@
-web: gunicorn django_demo.wsgi
+web: gunicorn books.wsgi
