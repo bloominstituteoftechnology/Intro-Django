@@ -31,12 +31,14 @@ DEBUG = config('DEBUG', cast=bool)
 
 arr = config('ALLOWED_HOSTS')
 
-ALLOWED_HOSTS = [arr or '*']
+ALLOWED_HOSTS = [arr ]# or '*'
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
-DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
+dbUrl = config('DATABASE_URL')
+
+db_from_env = dj_database_url.config(dbUrl, conn_max_age=500)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
+# DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600)
 
 # Application definition
 
