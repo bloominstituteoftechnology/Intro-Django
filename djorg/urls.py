@@ -26,6 +26,7 @@ router.register('recipes', PersonalRecipeViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'^$', admin.site.urls, name='admin'),
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),
     re_path(r'^api-token-auth/', views.obtain_auth_token)
