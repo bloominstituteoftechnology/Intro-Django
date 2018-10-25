@@ -31,7 +31,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 #ALLOWED_HOSTS = config('ALLOWED_HOSTS') # THIS USED TO BE A LIST []  BUT i AM REFRENCING WHATS IN .ENV
 #^ may not be teh correct way 
-ALLOWED_HOSTS = [] # 
+
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')]) # 
+
+
 
 DATABASE_URL = dj_database_url.config('DATABASE_URL') #added this for Heroku deployment
 #For the database, you want to both load the DATABASE_URL and pass it to dj_database_url.config (see documentation)
@@ -65,10 +68,10 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
