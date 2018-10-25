@@ -25,8 +25,8 @@ router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api-token-auth/', views.obtain_auth_token),
+    path('login/', views.obtain_auth_token),
 ]
 
