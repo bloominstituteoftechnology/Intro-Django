@@ -5,10 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
-uuid = "*"
 python-decouple = "*"
 pillow = "*"
-graphene-django = "*"
 djangorestframework = "*"
 
 [dev-packages]

@@ -15,9 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from graphene_django.views import GraphQLView
-
 from rest_framework import routers
 from horror_movies.api import PersonalMovieViewSet
 
@@ -27,6 +24,5 @@ router.register('horror_movies', PersonalMovieViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('graphql/', GraphQLView.as_view(graphiql = True)),
     path('api/', include(router.urls)), 
 ]
