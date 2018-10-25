@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgresql-crystalline-16433',
+        # 'NAME': 'postgresql-crystalline-16433',
         'USER': 'qxirgklwpmjhbg',
         'PASSWORD': '5d677d75568f21556403edd44c8f31bddd77fb0650fcfcde77d8e42965130460',
         'HOST': 'ec2-54-225-115-234.compute-1.amazonaws.com',
