@@ -91,7 +91,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
+DATABASES['default'] = dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
