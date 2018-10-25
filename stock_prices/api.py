@@ -1,14 +1,14 @@
 from rest_framework import serializers, viewsets
-from .models import Companies, StockPrices 
+from .models import Companies 
 
 
-class PersonalStockSerializer(serializers.HyperlinkedModelSerializer):
+class PersonalCompaniesSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        model = StockPrices
+        model = Companies
         fields = ('ticker', 'closing_price')
 
 
-class PersonalStockViewSet(viewsets.ModelViewSet):
-    serializer_class = PersonalStockSerializer
-    queryset = StockPrices.objects.all()
+class PersonalCompaniesViewSet(viewsets.ModelViewSet):
+    serializer_class = PersonalCompaniesSerializer
+    queryset = Companies.objects.all()

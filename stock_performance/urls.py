@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from stock_prices.api import PersonalStockViewSet
+from stock_prices.api import PersonalCompaniesViewSet
 
 router = routers.DefaultRouter()
-router.register(r'stock_prices', PersonalStockViewSet)
+router.register(r'companies', PersonalCompaniesViewSet)
 
 
 
