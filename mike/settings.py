@@ -29,7 +29,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
+arr = config('ALLOWED_HOSTS')
+
+ALLOWED_HOSTS = [arr or '*']
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
@@ -97,7 +99,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mike.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
