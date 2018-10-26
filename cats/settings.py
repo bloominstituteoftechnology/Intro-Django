@@ -26,7 +26,7 @@ SECRET_KEY = 't4ktv_908am1m3t=xxb=_9%8&ss_j#^)74&yb=150*i1jtv&ju'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -82,9 +82,7 @@ WSGI_APPLICATION = 'cats.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:////{0}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
-    )
+    'default': dj_database_url.config(conn_max_age=600)
 }
 
 
@@ -137,5 +135,4 @@ REST_FRAMEWORK = {
     )
 }
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
