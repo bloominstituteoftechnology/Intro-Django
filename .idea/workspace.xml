@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b94d6bdf-63fe-4b8d-b0eb-337c877a9473" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djerik/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djerik/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="b94d6bdf-63fe-4b8d-b0eb-337c877a9473" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,14 +30,14 @@
           <entry key="lock" value="1" />
           <entry key="md" value="2" />
           <entry key="py" value="38" />
-          <entry key="txt" value="4" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="PLAIN_TEXT" value="10" />
           <entry key="Python" value="38" />
           <entry key="TOML file" value="2" />
         </counts>
@@ -51,13 +48,13 @@
           <entry key="env" value="24" />
           <entry key="gitignore" value="8" />
           <entry key="py" value="845" />
-          <entry key="txt" value="8" />
+          <entry key="txt" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="24" />
-          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="PLAIN_TEXT" value="33" />
           <entry key="Python" value="845" />
         </counts>
       </usages-collector>
@@ -89,7 +86,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/djerik/settings.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="623">
@@ -97,6 +94,15 @@
                   <folding>
                     <element signature="e#307#316#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/extras.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
                 </state>
               </provider>
             </entry>
@@ -143,6 +149,7 @@
         <option value="$PROJECT_DIR$/djerik/.env" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/djerik/settings.py" />
+        <option value="$PROJECT_DIR$/extras.txt" />
       </list>
     </option>
   </component>
@@ -165,11 +172,6 @@
             <path>
               <item name="Intro-Django" type="b2602c69:ProjectViewProjectNode" />
               <item name="Intro-Django" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Intro-Django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Intro-Django" type="462c0819:PsiDirectoryNode" />
-              <item name="djerik" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -430,6 +432,13 @@
           <folding>
             <element signature="e#307#316#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>

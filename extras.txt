@@ -1,0 +1,6 @@
+
+Heroku:
+https://epilepsy.herokuapp.com/ | https://git.heroku.com/epilepsy.git
+
+Created postgresql-crystalline-84870 as DATABASE_URL
+Use heroku addons:docs heroku-postgresql to view documentation
