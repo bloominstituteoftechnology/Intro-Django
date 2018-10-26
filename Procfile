@@ -1,0 +1,1 @@
+web: gunicorn djerik.wsgi --log-file -
