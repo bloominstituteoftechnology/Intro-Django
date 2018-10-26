@@ -137,7 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # static?
 # CORS Configuration
 CORS_ORIGIN_ALLOW_ALL = True
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
