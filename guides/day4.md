@@ -42,10 +42,7 @@ from rest_framework.authtoken import views
 ```
 
 Then add the endpoint in `urls.py` by adding the `api-token-auth/` route to
-`urlpatterns`:
-
-```python
-    re_path(r'^api-token-auth/', views.obtain_auth_token)
+`urlpatte 
 ```
 
 The `^` is means "match the beginning of the string" in a regular expression.
