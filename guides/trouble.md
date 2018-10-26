@@ -34,6 +34,9 @@ _Chief. Windows_
 
 Make sure you have your SQLite3 package installed and in your path.
 
+A recommended way to install SQLite3 on Windows is [with
+chocolatey](https://chocolatey.org/packages?q=sqlite).
+
 ## VS Code not recognizing Django imports properly
 
 Enable Django linting by adding the following to your VS Code workplace
