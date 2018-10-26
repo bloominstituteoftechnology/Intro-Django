@@ -79,13 +79,9 @@ WSGI_APPLICATION = 'quotes.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default':{
-
     }
-}
 
-DATABASES['default']['NAME']=dj_database_url.config(config('DATABASE_URL'))
-DATABASES['default']['ENGINE']=config('ENGINE')
+DATABASES['default']=dj_database_url.config(config('DATABASE_URL'))
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
