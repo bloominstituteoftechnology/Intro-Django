@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 CORS_ORIGIN_ALLOW_ALL=True
 
@@ -62,7 +62,7 @@ MIDDLEWARE = [
 
 ]
 
-ROOT_URLCONF = 'OddJobBoard.urls'
+ROOT_URLCONF = 'apps.urls'
 
 TEMPLATES = [
     {
@@ -92,6 +92,11 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+DATABASES = {
+    'default': dj_database_url.config(default = config('DATABASE_URL')),
+}
+
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
