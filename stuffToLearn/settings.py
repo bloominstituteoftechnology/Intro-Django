@@ -94,13 +94,13 @@ WSGI_APPLICATION = 'stuffToLearn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-DATABASES = dj_database_url.parse('postgres://esxwybpqtomjro:0524f54f0ecbd59bb2ba9882b3e81854f683850c2cfdab6d183cd7b407f74fef@ec2-75-101-138-26.compute-1.amazonaws.com:5432/dd34k4sjikb47v')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+DATABASES['default'] = dj_database_url.parse('postgres://esxwybpqtomjro:0524f54f0ecbd59bb2ba9882b3e81854f683850c2cfdab6d183cd7b407f74fef@ec2-75-101-138-26.compute-1.amazonaws.com:5432/dd34k4sjikb47v')
 
 
 # Password validation
