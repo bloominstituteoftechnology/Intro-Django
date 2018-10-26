@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
+import django_heroku
 from decouple import config
 import dj_database_url
 
@@ -139,5 +139,5 @@ REST_FRAMEWORK = {
 }
 
 # Configure Django App for Heroku.
-import django_heroku
+
 django_heroku.settings(locals())

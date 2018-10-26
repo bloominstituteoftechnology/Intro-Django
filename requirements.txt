@@ -7,5 +7,6 @@ psycopg2-binary==2.7.5
 python-decouple==3.1
 pytz==2018.5
 whitenoise==4.1
+django-heroku
 
 pip freeze > requirements.txt
