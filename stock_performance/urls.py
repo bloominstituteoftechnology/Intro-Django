@@ -21,6 +21,7 @@ from rest_framework import routers
 from stock_prices.api import PersonalCompaniesViewSet
 
 router = routers.DefaultRouter()
+router.register(r'/', PersonalCompaniesViewSet)
 router.register(r'companies', PersonalCompaniesViewSet)
 re_path(r'^api-token-auth/', views.obtain_auth_token)
 

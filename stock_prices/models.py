@@ -8,7 +8,7 @@ class Companies(models.Model):
     ticker = models.CharField(max_length=5)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=2000)
-    shares_outstanding = models.DecimalField(max_digits=100000000000, decimal_places=0)
+    shares_outstanding = models.BigIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
