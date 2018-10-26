@@ -20,3 +20,5 @@ When it came to tackling the sprint challenge, I started of a bit rocky and had 
 I was able to follow the instructions and do some troubleshooting to get around some errors. I feel that is one skill I'm getting a bit better at and enjoy a little. I like sharpening my google fu and finding some solution and then testing it and it works is a great feeling to have.
 
 The tricky parts would be not knowing for sure if certain pieces of code will work or if you need any extra piece of code at all. Sure the documentation can guide you to say whether or not you need it, but I guess it depends on programmer and the overall project.
+
+Overall, a stressful and yet enjoyable week.
