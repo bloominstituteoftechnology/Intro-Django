@@ -1,0 +1,1 @@
+web: gunicorn stock_performance.wsgi --log-file -
