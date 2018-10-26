@@ -1,0 +1,1 @@
+web: gunicorn djangoweek.wsgi --log-file -
