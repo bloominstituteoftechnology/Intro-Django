@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from decouple import config
+from decouple import config, Csv
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework import serializers
 import dj_database_url
@@ -31,7 +31,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda str: [s.strip() for s in str.split(',')])
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+print('ALLOWED_HOSTS:', ALLOWED_HOSTS)
 
 # Application definition
 
