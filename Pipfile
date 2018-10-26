@@ -11,6 +11,10 @@ python-decouple = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 graphene-django = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"
