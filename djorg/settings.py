@@ -30,8 +30,9 @@ DEBUG = config('DEBUG', cast=bool)
 CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = [
-    "localhost",
-    ".herokuapp.com"
+    'localhost',
+    '.herokuapp.com',
+    '127.0.0.1',
 ]
 
 
@@ -107,7 +108,8 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(default='DATABASE_URL')
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -146,3 +148,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
