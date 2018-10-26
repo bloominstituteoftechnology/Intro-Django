@@ -83,13 +83,24 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+# DATABASES['default'] = dj_database_url.parse('postgres://...', conn_max_age=600)
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd53os80bnmurof',
+        'USER': 'kosalktpbnjqcs',
+        'PASSWORD': '7f24fbeeffc7b437aa7608aa2ea7a8713254d419884dec368621d63dc76f4029',
+        'HOST': 'ec2-54-225-115-234.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-# DATABASES['default'] = dj_database_url.parse('postgres://...', conn_max_age=600)
 
 
 # Password validation
