@@ -13,8 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from decouple import config, Csv
 import dj_database_url
-from dj_database_url import parse as db_url
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -49,7 +48,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     # 'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'djerik.urls'
 
@@ -91,20 +89,29 @@ WSGI_APPLICATION = 'djerik.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASE_URL = config('DATABASE_URL')
 
 DATABASES = {
-    'default': config(
-        'DATABASE_URL',
-        default='sqlite:///' + BASE_DIR.child('db.sqlite3'),
-        cast=db_url
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+db_config = dj_database_url.config()
+if db_config:
+    DATABASES['default'] = db_config
+
+
+#
+# DATABASES = {
+#     'default': config(
+#         'DATABASE_URL',
+#         default=DATABASE_URL,
+#         # cast=db_url
+#     )
+# }
+
 
 
 # Password validation
@@ -142,8 +149,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
