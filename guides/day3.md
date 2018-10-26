@@ -192,12 +192,12 @@ In `api.py`, `PersonalNoteSerializer`:
 ```
 
 Run this and use the debugger to the data present at this breakpoint.  If you
-dig into `self`, you will find eventually find a context with a request.  As an
+dig into `self`, you will eventually find a context with a request.  As an
 educated guess, using what we’ve previously learned about requests, it is fair
 to hypothesize that a user is associated with the request.  Try it out:
 
 ```python
-self.context[‘request’].user
+self.context['request'].user
 ```
 
 Exit the debugger and add a new variable in `create` to store the user retrieved
@@ -205,7 +205,7 @@ from the location in `self` that we just discovered. Feed it in to `PersonalNote
 
 ```python
     def create(self, validated_data):
-        user = self.context[‘request’].user
+        user = self.context['request'].user
         note = PersonalNote.objects.create(user=user, **validated_data)
         return note
 ```
