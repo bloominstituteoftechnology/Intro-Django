@@ -5,7 +5,7 @@ class PersonalPlayerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = PersonalPlayer
-        fields = ('firstName', 'lastName', 'position', 'team')
+        fields = ('firstName', 'lastName', 'position', 'team', 'nickName')
 
     def create(self, validated_data):
         # import pdb; pdb.set_trace()
