@@ -16,3 +16,12 @@ class NotNote(models.Model):
 
 class PersonalNotNote(NotNote): #Inherits from NotNote!
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class TaskList(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    task = models.CharField(max_length=200, default="the todo goes here!")
+    description = models.TextField(blank=True)
+    due_date = models.DateTimeField(auto_now=False, auto_now_add=False)
+    completed = models.NullBooleanField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
