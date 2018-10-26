@@ -29,7 +29,12 @@ DEBUG = config('DEBUG', cast=bool)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = [.herokuapp.com]
+ALLOWED_HOSTS = [
+    "localhost",
+    ".herokuapp.com"
+]
+
+
 
 
 # Application definition
