@@ -9,3 +9,7 @@ class NoteAdmin(admin.ModelAdmin):
 
 admin.site.register(Note, NoteAdmin)
 admin.site.register(PersonalNote, NoteAdmin)
+
+
+# admin.site.register(Note)
+# admin.site.register(PersonalNote)

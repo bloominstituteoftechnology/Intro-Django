@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken import views
 
 from graphene_django.views import GraphQLView
 
@@ -22,11 +23,12 @@ from rest_framework import routers
 from kyleapp.api import PersonalNoteViewSet
 
 router = routers.DefaultRouter()
-router.register(r'notes', PersonalNoteViewSet)
+router.register('kyleapp', PersonalNoteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token)
 ]
 

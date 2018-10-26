@@ -29,6 +29,8 @@ DEBUG=config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = []
 
+# not sure if this is the best place for this 
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'kyleapp',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -135,5 +138,10 @@ GRAPHENE = {
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+        'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
 }
