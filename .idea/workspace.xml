@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b94d6bdf-63fe-4b8d-b0eb-337c877a9473" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djerik/.env" beforeDir="false" afterPath="$PROJECT_DIR$/djerik/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djerik/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djerik/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +48,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="6" />
-          <entry key="env" value="24" />
+          <entry key="env" value="41" />
           <entry key="gitignore" value="8" />
           <entry key="py" value="919" />
           <entry key="txt" value="19" />
@@ -56,7 +56,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key=".env file" value="24" />
+          <entry key=".env file" value="41" />
           <entry key="PLAIN_TEXT" value="33" />
           <entry key="Python" value="919" />
         </counts>
@@ -80,7 +80,7 @@
             <entry file="file://$PROJECT_DIR$/djerik/.env">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
-                  <caret line="3" column="12" selection-start-line="3" selection-end-line="3" selection-end-column="12" />
+                  <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -92,8 +92,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/djerik/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+                <state relative-caret-position="-166">
+                  <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
                   <folding>
                     <element signature="e#307#316#0" expanded="true" />
                   </folding>
@@ -151,10 +151,10 @@
         <option value="$PROJECT_DIR$/img_up/admin.py" />
         <option value="$PROJECT_DIR$/img_up/forms.py" />
         <option value="$PROJECT_DIR$/img_up/models.py" />
-        <option value="$PROJECT_DIR$/djerik/.env" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/extras.txt" />
         <option value="$PROJECT_DIR$/djerik/settings.py" />
+        <option value="$PROJECT_DIR$/djerik/.env" />
       </list>
     </option>
   </component>
@@ -430,20 +430,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/djerik/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="12" selection-start-line="3" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/djerik/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+        <state relative-caret-position="-166">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
           <folding>
             <element signature="e#307#316#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/djerik/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
