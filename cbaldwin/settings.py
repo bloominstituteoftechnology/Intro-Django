@@ -132,9 +132,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# # ------ deployment code -----
-# # Static File Config/Whitenoise
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# ------ deployment code -----
+# Static File Config/Whitenoise:  http://whitenoise.evans.io/en/stable/ 
+# whitenoise relates to the presentation of the app, particularly styles
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 REST_FRAMEWORK = {
