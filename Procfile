@@ -1,1 +1,1 @@
-web: gunicorn shelterdogs.wsgi --log-file -
+web: gunicorn djarg.wsgi --log-file -

@@ -13,6 +13,7 @@ gunicorn==19.9.0
 pipenv==2018.10.13
 promise==2.2.1
 psycopg2==2.7.5
+psycopg2-binary==2.7.5
 python-decouple==3.1
 pytz==2018.6
 Rx==1.6.1
