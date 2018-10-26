@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for djorg project.
 
@@ -27,23 +29,24 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS')
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS')
+ALLOWED_HOSTS = ['localhost','127.0.0.1','.herokuapp.com','127.0.0.1:8000']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
 INSTALLED_APPS = [
+    'notes',
+    'rest_framework',
+    'corsheaders',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'notes',
-    'rest_framework',
-    'corsheaders',
-    'rest_framework.authtoken',
 ]
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
@@ -102,8 +105,12 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
+DATABASES = {}
+
+DATABASES['default'] = dj_database_url.config(
+    default=config('DATABASE_URL'), conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -143,3 +150,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+django_heroku.settings(locals())
