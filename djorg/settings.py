@@ -29,13 +29,7 @@ DEBUG = config('DEBUG', cast=bool)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '.herokuapp.com',
-    '127.0.0.1',
-]
-
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 
 # Application definition
@@ -148,4 +142,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
