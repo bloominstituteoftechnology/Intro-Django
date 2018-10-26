@@ -1,1 +1,1 @@
-web: gunicorn catsdirectory.wsgi
+web: gunicorn django_project.wsgi
