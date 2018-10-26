@@ -90,8 +90,9 @@ WSGI_APPLICATION = 'cbaldwin.wsgi.application'
 
 # ------ code for deployment -----
 # https://github.com/kennethreitz/dj-database-url
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age = 600)
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age = 600)
+}
 
 
 # Password validation
