@@ -1,0 +1,1 @@
+web: gunicorn whiskey.wsgi --log-file -
