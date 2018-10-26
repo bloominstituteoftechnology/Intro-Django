@@ -78,8 +78,7 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):
 Link this back to the serializer class we made previously:
 
 ```python
-    serializer_class = PersonalNoteSerializer
-```
+    serializer_class = PersonalNoteSerializer ```
 
 Next, add which records to search for.  We could use filters here, but for now,
 grab all of them:
@@ -120,8 +119,7 @@ We’ll need to import two things here: router functionality for Django, and the
 
 ```python
 from rest_framework import routers
-from notes.api import PersonalNoteViewSet
-```
+from notes.api import PersonalNoteViewSet ```
 
 Next, make a default router from the routers package, then register that router:
 
