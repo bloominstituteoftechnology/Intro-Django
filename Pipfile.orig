@@ -6,10 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 python-decouple = "*"
-<<<<<<< HEAD
 djangorestframework = "*"
-=======
->>>>>>> 3545a96d17985480e9a4bab8e4951ec65f0c7472
 
 [dev-packages]
 
