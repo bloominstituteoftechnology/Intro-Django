@@ -80,12 +80,9 @@ WSGI_APPLICATION = 'quotes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }}
 
-DATABASES['default']['NAME']=dj_database_url.config(config('DATABASE_URL'))
-DATABASES['default']['ENGINE']=config('ENGINE')
+DATABASES['default']=dj_database_url.config(default=config('DATABASE_URL'),conn_max_age=600)
 
 
 # Password validation
