@@ -1,1 +1,11 @@
+dj-database-url==0.5.0
+Django==2.1.2
+django-cors-headers==2.4.0
+djangorestframework==3.9.0
+gunicorn==19.9.0
+psycopg2-binary==2.7.5
+python-decouple==3.1
+pytz==2018.5
+whitenoise==4.1
+
 pip freeze > requirements.txt
