@@ -5,5 +5,5 @@ class NoteAdmin(admin.ModelAdmin):
 	readonly_fields=('created_at', 'last_modified')
 
 # Register your models here.
-registry = (Note, NoteAdmin, PersonalNote)
-admin.site.register(registry)
+admin.site.register(Note, NoteAdmin)
+admin.site.register(PersonalNote)
