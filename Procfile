@@ -1,0 +1,1 @@
+web: gunicorn MentHealth.wsgi --log-file -
