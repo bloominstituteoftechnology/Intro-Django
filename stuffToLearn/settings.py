@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'stuffToLearn.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DATABASES['default'] = dj_database_url.parse('postgres://esxwybpqtomjro:0524f54f0ecbd59bb2ba9882b3e81854f683850c2cfdab6d183cd7b407f74fef@ec2-75-101-138-26.compute-1.amazonaws.com:5432/dd34k4sjikb47v')
+DATABASES = dj_database_url.parse('postgres://esxwybpqtomjro:0524f54f0ecbd59bb2ba9882b3e81854f683850c2cfdab6d183cd7b407f74fef@ec2-75-101-138-26.compute-1.amazonaws.com:5432/dd34k4sjikb47v')
 
 
 # Password validation
