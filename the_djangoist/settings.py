@@ -14,7 +14,7 @@ import os
 from decouple import config
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config(default='postgres://pshnqjlwsnizqj:dd9b82d966c27537c4f54121dd37247a8c38d553789c8786c30f0dbf31c836d5@ec2-54-225-98-131.compute-1.amazonaws.com:5432/d50fgq3716dsi8', conn_max_age=600)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -91,6 +91,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+DATABASES['default'] = dj_database_url.config(default='postgres://pshnqjlwsnizqj:dd9b82d966c27537c4f54121dd37247a8c38d553789c8786c30f0dbf31c836d5@ec2-54-225-98-131.compute-1.amazonaws.com:5432/d50fgq3716dsi8', conn_max_age=600)
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 REST_FRAMEWORK = {
