@@ -18,7 +18,6 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -28,11 +27,10 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast = bool)
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 # ----- Code for deployment -----
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast = lambda str: [s.strip() for s in str.split(',')])
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast = lambda str: [s.strip() for s in str.split(',')])
 
 # Application definition
 
@@ -83,16 +81,17 @@ WSGI_APPLICATION = 'cbaldwin.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
-# # ------ code for deployment -----
-# DATABASES = {}
-# DATABASES['default'] = dj_database_url.config(conn_max_age = 600)
+# ------ code for deployment -----
+# https://github.com/kennethreitz/dj-database-url
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age = 600)
 
 
 # Password validation
