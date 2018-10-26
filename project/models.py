@@ -33,7 +33,7 @@ class Pokemon(models.Model):
         (GRASS, "Grass"),
         (ICE, "Ice"),
         (FIGHTING, "Fighting"),
-        (POISON, "POISON"),
+        (POISON, "Poison"),
         (GROUND, "Ground"),
         (FLYING, "Flying"),
         (PSYCHIC, "Psychic"),
@@ -46,9 +46,28 @@ class Pokemon(models.Model):
         (FAIRY, "Fairy")
     )
 
+    KANTO = 'Kanto'
+    JOHTO = 'Johto'
+    HOENN = 'Hoenn'
+    SINNOH = 'Sinnoh'
+    UNOVA = 'Unova'
+    KALOS = 'Kalos'
+    ALOLA = 'Alola'
+
+    REGION = (
+        (KANTO, 'Kanto'),
+        (JOHTO, 'Johto'),
+        (HOENN, 'Hoenn'),
+        (SINNOH, 'Sinnoh'),
+        (UNOVA, 'Unova'),
+        (KALOS, 'Kalos'),
+        (ALOLA, 'Alola'),
+    )
+
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=50)
-    region = models.CharField(max_length=50)
+    region = models.CharField(choices=TYPING, max_length=50)
     primary = models.CharField(choices=TYPING, max_length=20)
     secondary = models.CharField(choices=TYPING, max_length=20)
     about = models.TextField(blank=True)
+

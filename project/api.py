@@ -5,7 +5,7 @@ class PokemonSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Pokemon
-        fields = ('blood_type')
+        fields = ('typing')
 
 
     

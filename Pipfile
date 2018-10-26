@@ -9,6 +9,10 @@ graphene-django = "*"
 djangorestframework = "*"
 python-decouple = "*"
 django-cors-headers = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [dev-packages]
 

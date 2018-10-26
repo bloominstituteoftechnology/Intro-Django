@@ -1,0 +1,1 @@
+web: gunicorn kjango.wsgi --log-file -
