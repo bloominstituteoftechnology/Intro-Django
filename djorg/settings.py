@@ -58,7 +58,7 @@ MIDDLEWARE = [
 
 ]
 CORS_ORIGIN_ALLOW_ALL = True
-ROOT_URLCONF = 'notes.urls'
+ROOT_URLCONF = 'djorg.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'notes.wsgi.application'
+WSGI_APPLICATION = 'djorg.wsgi.application'
 
 
 # Database
