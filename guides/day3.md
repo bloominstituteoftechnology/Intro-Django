@@ -262,7 +262,7 @@ In order to get your site to run well with a front-end, you might need to set up
 
 https://github.com/ottoyiu/django-cors-headers
 
-After installation, setting:
+After installation (_follow the instructions at the link, above!_), setting:
 
 ```python
 CORS_ORIGIN_ALLOW_ALL = True
