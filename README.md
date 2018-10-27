@@ -9,11 +9,13 @@ Fork this repo to use for your projects this week.
 * [Day 3: Setting up a RESTful API](guides/day3.md)
 * [Day 4: Token Auth for REST](guides/day4.md)
 
+
 ## Deliverables
 
 * Implement an app similar to the `notes` app, but with data of your choosing.
 * Submit a file `models.txt` that describes (to other developers) what data you are storing in the database.
 * The app needs to support authentication and expose a RESTful API to the data.
+
 
 ## Additional Deliverables
 
