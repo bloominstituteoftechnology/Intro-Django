@@ -62,7 +62,7 @@ Mac/Linux:
 curl -X POST -H "Content-Type: application/json" -d '{"username":"admin", "password":"PASSWORD"}' http://127.0.0.1:8000/api-token-auth/
 ```
 
-Windows (or other platform if the above doesn't work):
+Windows command prompt (or other platform if the above doesn't work):
 
 ```
 # Windows needs some more double quotes and escaping of the payload
@@ -93,8 +93,14 @@ Your token will be different.  Try it out with your token:
 curl -v -H 'Authorization: Token da51ccf5274050cd7332d184246d7d0775dc79e2' http://127.0.0.1:8000/api/notes/
 ```
 
-Note that the trailing `/` matters.  You will get a 301 redirect if you don’t
-add it here.
+Or, in PowerShell:
+
+```
+Invoke-WebRequest http://localhost:8000/api/notes/ -Headers @{"Authorization"="Token da51ccf5274050cd7332d184246d7d0775dc79e2"}
+```
+
+Note that the trailing `/` on the URL matters.  You will get a 301 redirect if
+you don’t add it here.
 
 When using Axios to send the request, set the header here:
 
