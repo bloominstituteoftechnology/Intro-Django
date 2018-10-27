@@ -37,6 +37,17 @@ Make sure you have your SQLite3 package installed and in your path.
 A recommended way to install SQLite3 on Windows is [with
 chocolatey](https://chocolatey.org/packages?q=sqlite).
 
+## `curl` not working from PowerShell
+
+By default, PowerShell uses `curl` as an alias for its own `Invoke-WebRequest`. If you've installed `curl` and want to use it instead, you have to unalias it with
+
+```powershell
+Remove-Item alias:curl
+```
+
+[Here are some instructions for removing the alias
+permanently](https://superuser.com/questions/883914/how-do-i-permanently-remove-a-default-powershell-alias)
+
 ## VS Code not recognizing Django imports properly
 
 Enable Django linting by adding the following to your VS Code workplace
