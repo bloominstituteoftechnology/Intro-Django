@@ -56,3 +56,8 @@ settings:
 ```
 "python.linting.pylingArgs":["--load-plugins","pylint_django"]
 ```
+
+## Using PowerShell in VS Code terminal
+
+If you prefer it, [here are some instructions on setting it
+up](https://code.visualstudio.com/docs/editor/integrated-terminal).
