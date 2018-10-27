@@ -11,6 +11,10 @@ Fork this repo to use for your projects this week.
 * [Day 3: Setting up a RESTful API](guides/day3.md)
 * [Day 4: Token Auth for REST](guides/day4.md)
 
+### External links
+
+* [Virtual Environments Primer](https://realpython.com/python-virtual-environments-a-primer/)
+
 ## Deliverables
 
 * Implement an app similar to the `notes` app, but with data of your choosing.
