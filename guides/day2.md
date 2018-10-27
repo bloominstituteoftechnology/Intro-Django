@@ -47,6 +47,14 @@ admin.site.register(Note)
 Return to the site admin page.  `Notes` should now be present.  Try adding
 and/or editing a few.
 
+If you want to register more models, you can do so with additional `register()`
+calls:
+
+```python
+admin.site.register(Note)
+admin.site.register(PersonalNote)   # etc.
+```
+
 ## Migrations with New Fields
 
 It would also be nice to track created and modified dates.  
