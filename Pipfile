@@ -13,6 +13,7 @@ whitenoise = "==4.1"
 django-cors-headers = "==2.4.0"
 pytz = "==2018.6"
 Django = "==2.1.2"
+django-heroku = "*"
 
 [dev-packages]
 
