@@ -30,14 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 # DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = [
-    'google.com',
-    'hostname.example.com',
-    'localhost:8000',
-    '127.0.0.1:8000',
-    'localhost',
-    '127.0.0.1'
-    ]
+ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = config('CORS_ORIGIN_WHITELIST', cast=lambda str:[s.strip() for s in str.split(',')])
 # CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
