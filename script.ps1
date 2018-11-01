@@ -1,0 +1,1 @@
+pipenv install; pipenv shell; pipenv install django; django-admin startproject djorg .; django-admin startapp notes; ./manage.py runserver; ./manage.py showmigrations; ./manage.py migrate; ./manage.py runserver

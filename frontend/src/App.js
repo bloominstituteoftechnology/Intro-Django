@@ -13,17 +13,17 @@ class App extends Component {
     notes: [{}]
   };
 
-  handle_input = (e) => {
+  handle_input = e => {
     let temp = JSON.parse(JSON.stringify(this.state.user));
     temp[e.target.name] = e.target.value;
     this.setState({ user: temp });
   };
 
-  handle_sign_in = (e) => {
+  handle_sign_in = e => {
     let user = this.state.user;
     axios
       .post("http://mykealkennydjorg.herokuapp.com/api-token-auth/", user)
-      .then((response) => {
+      .then(response => {
         let header = {
           Authorization: "Token " + response.data.token
         };
@@ -33,16 +33,16 @@ class App extends Component {
             `http://mykealkennydjorg.herokuapp.com/graphql/?query={notes{${properties}}}`,
             header
           )
-          .then((notes_res) => {
+          .then(notes_res => {
             console.log(notes_res);
             let my_notes = Array.from(notes_res.data.data.notes);
             this.setState({ notes: my_notes });
           })
-          .catch((notes_err) => {
+          .catch(notes_err => {
             console.log(notes_err);
           });
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   };
