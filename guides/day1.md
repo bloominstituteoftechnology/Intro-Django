@@ -195,7 +195,7 @@ class Note(models.Model):
     content = models.TextField(blank=True)
 ```
 
-Add any additional fields you would like as well.
+Add any additional fields you would like as well. Check out the [Django docs](https://docs.djangoproject.com/es/2.1/ref/models/fields/) for more details on what fields the Model class makes available to us.
 
 We also need something to serve as a unique identifier for each record. We’ll
 use something called a UUID for this:
