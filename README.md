@@ -1,7 +1,11 @@
 # Intro to Django
 
 Fork this repo to use for your projects this week.
+<<<<<<< HEAD
 Initial commit and pull request
+=======
+The Python Parrot Bomb (PPB) is a very sophisticated piece of software
+>>>>>>> c3f20f9d748ca42907e5aae81353107c10efb3ab
 
 ## Reading
 
