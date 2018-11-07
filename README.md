@@ -1,6 +1,7 @@
 # Intro to Django
 
 Fork this repo to use for your projects this week.
+Initial commit and pull request
 
 ## Reading
 
