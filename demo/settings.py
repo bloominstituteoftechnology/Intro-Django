@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# okay cool, we're back in Python. So why are we passing in the __file__ param
+# with the double dunder scores?
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -32,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'notes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

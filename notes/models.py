@@ -3,10 +3,11 @@ from uuid import uuid4
 
 # Create your models here.
 class Note(models.Model):
-    id =  models.UUIDField(primery_key = True, default = uuid4, editable = False)
+    id =  models.UUIDField(primary_key = True, default = uuid4, editable = False)
     title = models.CharField(max_length = 30)
     body = models.TextField(blank = True)
-    author = models.CharField(max_length = None)
+    author = models.CharField(max_length = 30)
     date = models.DateField(auto_now=False, auto_now_add=False)
+    completed = models.BooleanField(default = False)
 
 
