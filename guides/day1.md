@@ -49,6 +49,8 @@ Check Pip version and install or upgrade if less than 10.x.
     
 
 Check Pipenv version and install or upgrade if less than 2018.x
+<br>*(2018.10.13 as of November 6, 2018)*
+
 
 Normally you'd make a repo with a README and a Python gitignore, but since we're
 going to be using pull requests to turn things in, just fork this repo instead.
