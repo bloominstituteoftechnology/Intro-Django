@@ -13,6 +13,14 @@ TypeError: 'module' object is not callable
 it might be time to upgrade `pipenv`. Make sure that `pipenv --version` is
 outputting at least `2018.10.13`.
 
+## `pipenv` error `Found existing installation: [package name]`
+
+Add the following option to ignore existing installs: `--ignore-installed`
+
+```
+pip install pipenv --upgrade --ignore-installed
+```
+
 ## `./manage.py` error `from exc`
 
 If you get this:
