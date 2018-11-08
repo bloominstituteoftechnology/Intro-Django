@@ -7,7 +7,7 @@ class Note(models.Model):
     title = models.CharField(max_length = 30)
     body = models.TextField(blank = True)
     author = models.CharField(max_length = 30)
-    date = models.DateField(auto_now=False, auto_now_add=False)
+    date = models.DateField(auto_now=True)
     completed = models.BooleanField(default = False)
 
 
