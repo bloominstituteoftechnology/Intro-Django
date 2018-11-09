@@ -9,8 +9,7 @@ class NoteAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Author)
-admin.site.register(Note)
-admin.site.register(NoteAdmin)
+admin.site.register(Note, NoteAdmin)
 
 
 
