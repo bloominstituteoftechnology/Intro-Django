@@ -313,7 +313,7 @@ We should also move `DEBUG` to the config file. Because the file is a string,
 and `DEBUG` expects a bool, we need to cast it:
 ```python
 DEBUG = config('DEBUG', cast=bool)
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool) # from online docs
 ```
 
 We do this not for security, but so that it can be changed as needed on a
