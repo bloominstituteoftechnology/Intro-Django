@@ -1,0 +1,6 @@
+*Django Docs links referenced tonight*
+• ModelAdmin - https://docs.djangoproject.com/en/2.1/ref/contrib/admin/#custom-template-options
+• Field options - https://docs.djangoproject.com/es/2.1/ref/models/fields/#field-options
+• DateField options - https://docs.djangoproject.com/es/2.1/ref/models/fields/#datefield
+• User objects - https://docs.djangoproject.com/es/2.1/topics/auth/default/#topics-auth-creating-users
+• Model relationships - https://docs.djangoproject.com/en/1.11/topics/db/examples/
