@@ -4,7 +4,7 @@ from .models import Author, Note, PersonalNote
 
 class NoteAdmin(admin.ModelAdmin):
     list_display = ('title', 'written_by', 'last_updated')
-    list_filter = ('last_updated', 'completed', )
+    list_filter = ('last_updated' )
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -13,7 +13,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 class PersonalNoteAdmin(admin.ModelAdmin):
     list_display = ('title', 'written_by', 'last_updated')
-    list_filter = ('last_updated', 'completed', )
+    list_filter = ('last_updated' )
 
 
 # Register your models here.  
