@@ -13,14 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
 
+router = routers.DefaultRouter()
+router.register('notes', PersonalNoteViewSet)
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('api', include(router.urls)),
 ]
-
-router = routers.DefaultRouter()
-router.register(r'notes', PersonalNoteViewSet)
