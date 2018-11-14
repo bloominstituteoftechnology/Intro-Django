@@ -17,6 +17,6 @@ class PersonalNoteAdmin(admin.ModelAdmin):
 
 
 # Register your models here.  
-admin.site.register(Note, NoteAdmin)
-admin.site.register(Author, AuthorAdmin)
-admin.site.register(PersonalNote, PersonalNoteAdmin)
+admin.site.register(Note)
+admin.site.register(Author)
+admin.site.register(PersonalNote)
