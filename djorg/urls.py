@@ -23,5 +23,5 @@ router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('api', include(router.urls)),
+    url('api/', include(router.urls)),
 ]
