@@ -17,9 +17,11 @@ class Note(models.Model):
     author     = models.ForeignKey(Author, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    completed  = models.BooleanField(default=False)
     body       = models.TextField(blank=True)
 
+
+class PersonalNote(Note):
+    completed  = models.BooleanField(default=False)
+
     def written_by(self):
-        # why is username on `author.user` instead of just `author` ?
         return self.author.user.username
