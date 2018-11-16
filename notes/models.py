@@ -25,12 +25,12 @@ class PersonalNote(Note):
     def __str__(self):
         return self.title
 
-# class Author(models.Model):
-#     id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
-#     name = models.CharField(max_length = 33)
+class Author(models.Model):
+    id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
+    name = models.CharField(max_length = 33)
     
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
 
 
