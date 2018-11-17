@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Note (models.Model):
     id = models.UUIDField( primary_key = True, default = uuid4, editable = False)
     title = models.CharField(max_length = 30)
-    body = models.TextField(blank = True)
+    content = models.TextField(blank = True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     # date = models.DateTimeField(auto_now=False, auto_now_add=False)
