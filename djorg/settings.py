@@ -28,15 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-DATABASES['default'] = dj_database_url.config('DATABASE_URL')
-# DATABASES['default'] = dj_database_url.parse('sqlite:///db.sqlite3', conn_max_age=600)
-
 ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"]
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 # Application definition
 
@@ -149,4 +141,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+DATABASES['default'] = dj_database_url.config(default='DATABASE_URL')
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
