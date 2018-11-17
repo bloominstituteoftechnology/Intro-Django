@@ -20,10 +20,12 @@ from django.urls import path, include
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
-router.register('api', PersonalNoteViewSet)
+# router.register('api', PersonalNoteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    # path('notes/', include('notes.urls'))
+    # do I have to remigrate? caps?
 ]
 
