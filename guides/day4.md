@@ -67,7 +67,7 @@ Windows command prompt (or other platform if the above doesn't work):
 ```
 # Windows needs some more double quotes and escaping of the payload
 
-curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"admin\", \"password\":\"PASSWORD\"}" http://127.0.0.1:8000/api-token-auth/
+curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"admin\", \"password\":\"qazxswedcvfrtgbnhy\"}" http://127.0.0.1:8000/api-token-auth/
 ```
 
 PowerShell has its own thing independent of `curl`:

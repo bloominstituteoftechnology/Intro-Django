@@ -9,6 +9,9 @@ name = "pypi"
 django = "*"
 python-decouple = "*"
 djangorestframework = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "2.7"
