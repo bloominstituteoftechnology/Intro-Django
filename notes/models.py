@@ -8,3 +8,6 @@ class Note(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True)
     pub_date = models.DateTimeField('date_published')
+
+    def __str__(self):
+        return F"Title: {self.title}, Content: {self.content}"
