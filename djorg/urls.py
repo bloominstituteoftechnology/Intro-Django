@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# day 4 mvp completed will work on stretch tomorrow
 from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework.authtoken import views
