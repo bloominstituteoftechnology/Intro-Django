@@ -3,14 +3,14 @@ from users_app.models import User
 
 #home page view
 def index(request):
-    return render(request, 'users_app/index.html')
+    return render(request, 'users/index.html')
 
 #users view
 def users(request):
 
     user_list = User.objects.order_by('first_name')
     user_dict = {'users':user_list}
-    return render(request, 'users_app/users.html', context=user_dict)
+    return render(request, 'users/users.html', context=user_dict)
 
 
 #get rid of no such object error:
