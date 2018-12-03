@@ -1,5 +1,5 @@
 # Intro to Django
-
+ 
 Fork this repo to use for your projects this week.
 
 ## Reading
