@@ -7,6 +7,11 @@ class Note(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True)
 
+    # Model update
+    # Now must makemigrations, then migrate
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_editted = models.DateTimeField(auto_now=True)
+
 class URLS(models.Model):
     title = models.CharField(max_length=100)
     url = models.URLField(max_length=200)
@@ -22,6 +27,8 @@ class URLS(models.Model):
 #   think of scope locality
 
 # One advantage to using Django, you can create data quick and easily in the ./manage.py shell
+# Normally users would delete records manually through the GUI, but we can do it faster by filtering certain ID's in the shell
+
 """
 for i in range(0, 40):
     n = Note(title=f"Title{i}", content="Details")
