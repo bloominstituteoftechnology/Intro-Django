@@ -1,12 +1,18 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Django Blue</title>
+        <link rel="stylesheet" href="{% static "css/mystyle.css"%}"/>
 
     </head>
     <body>
+        
         <h1>Working!</h1>
-        <h2>Go to /users to see the user list!</h2>
+        <img src="{%static "images/blueb.jpg"%}" alt="didn't show">
+        <h2>Go to <em> /users </em> to see the user list!</h2>
+        <h2> Go to <em> /admin </em> to log in! </h2>
+        
     </body>
 </html>
