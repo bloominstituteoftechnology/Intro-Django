@@ -19,9 +19,11 @@ from django.urls import path, include, re_path
 from rest_framework.authtoken import views
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from polls.api import QuestionViewSet
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
+router.register(r'questions', QuestionViewSet)
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
