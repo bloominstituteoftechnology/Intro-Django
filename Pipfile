@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 decouple = "*"
 python-decouple = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"

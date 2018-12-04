@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Note, PersonalNote
+from .models import Note, PersonalNote, SecretNote
 # . means look in the current directory
 
 class NoteAdmin(admin.ModelAdmin):
@@ -8,4 +8,5 @@ class NoteAdmin(admin.ModelAdmin):
 # Register your models here.
 
 admin.site.register(Note, NoteAdmin)
-admin.site.register(PersonalNote)
+admin.site.register(PersonalNote, NoteAdmin)
+admin.site.register(SecretNote)

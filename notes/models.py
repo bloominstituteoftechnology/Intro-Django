@@ -20,6 +20,9 @@ class URLS(models.Model):
 class PersonalNote(Note):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+class SecretNote(PersonalNote):
+    very_secretive = models.BooleanField()
+
 
 # In instances where Models need to be updated,
 #  you must ./manage.py makemigration, then ./manage.py migrate to update the model
