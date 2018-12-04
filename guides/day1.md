@@ -16,8 +16,8 @@
 * `./manage.py showmigrations` DONE!
 * `./manage.py migrate` DONE!
 * `./manage.py runserver` DONE!
-* Add model to `notes/models.py` 
-* Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py`
+* Add model to `notes/models.py` DONE!
+* Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py` DONE!
 * `./manage.py showmigrations`
 * `./manage.py makemigrations`
 * `./manage.py showmigrations`
