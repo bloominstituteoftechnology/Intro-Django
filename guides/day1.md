@@ -24,7 +24,7 @@
 * `./manage.py migrate`
 * `./manage.py shell`
   * `from notes.models import Note`
-  * `n = Note(title=”example”, content=”This is a test.”)`
+  * `n = Note(title="example", content="This is a test.")`
   * `n.save()`
   * `exit()`
 * `./manage.py shell`
