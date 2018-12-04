@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0bb3b331760d823d01166b55e53cd9c02ded57f108f27a6e4dd739e3ed291a1f"
+            "sha256": "66ae26b5ceb64944a93ce2f4a7f2490412aead988120af51f34ee73aa830d544"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,13 @@
             ],
             "index": "pypi",
             "version": "==2.1.4"
+        },
+        "pysqlite3": {
+            "hashes": [
+                "sha256:cdb2c3566f5b4fb1dbbe46d6b82c004f7a3746c5dd5e10000475f85624ccb7e8"
+            ],
+            "index": "pypi",
+            "version": "==0.2.0"
         },
         "python-decouple": {
             "hashes": [
