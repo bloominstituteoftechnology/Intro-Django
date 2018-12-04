@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'notes',
+    'smurfs',
     'rest_framework',
     'rest_framework.authtoken', # we want to use the authtoken code within the rest framework
     'corsheaders', # part of setting up CORS
