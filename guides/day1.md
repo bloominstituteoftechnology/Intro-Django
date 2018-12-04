@@ -4,37 +4,37 @@
 
 * Get pipenv installed
 * Clone your repo
-  * (If you cloned the Hello-Django repo, delete the file `requirements.txt`!)
+  * (If you cloned the Hello-Django repo, delete the file `requirements.txt`!) DONE!
 * Go to your repo root directory
-* `pipenv --three`
-* `pipenv install`
-* `pipenv shell`
-* `pipenv install django`
-* `django-admin startproject djorg .`
-* `django-admin startapp notes`
-* `./manage.py runserver`
-* `./manage.py showmigrations`
-* `./manage.py migrate`
-* `./manage.py runserver`
-* Add model to `notes/models.py`
-* Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py`
-* `./manage.py showmigrations`
-* `./manage.py makemigrations`
-* `./manage.py showmigrations`
-* `./manage.py migrate`
-* `./manage.py shell`
-  * `from notes.models import Note`
-  * `n = Note(title=”example”, content=”This is a test.”)`
-  * `n.save()`
-  * `exit()`
-* `./manage.py shell`
-  * `from notes.models import Note`
-  * `x = Note.objects.all()`
-  * `x[0]`
-  * `x[0].content`
-  * `exit()`
-* `pipenv install python-decouple`
-* Add config information to `settings.py` and `.env`
+* `pipenv --three` DONE!
+* `pipenv install` DONE!
+* `pipenv shell` DONE!
+* `pipenv install django` DONE!
+* `django-admin startproject djorg .` DONE!
+* `django-admin startapp notes` DONE!
+* `./manage.py runserver` DONE!
+* `./manage.py showmigrations` DONE!
+* `./manage.py migrate` DONE!
+* `./manage.py runserver` DONE!
+* Add model to `notes/models.py` DONE!
+* Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py` DONE!
+* `./manage.py showmigrations` DONE!
+* `./manage.py makemigrations` DONE!
+* `./manage.py showmigrations` DONE!
+* `./manage.py migrate` DONE!
+* `./manage.py shell` DONE!
+  * `from notes.models import Note` DONE!
+  * `n = Note(title=”example”, content=”This is a test.”)` DONE!
+  * `n.save()` DONE!
+  * `exit()` DONE!
+* `./manage.py shell` DONE!
+  * `from notes.models import Note` DONE!
+  * `x = Note.objects.all()` DONE!
+  * `x[0]` DONE!
+  * `x[0].content` DONE!
+  * `exit()` DONE!
+* `pipenv install python-decouple` DONE!
+* Add config information to `settings.py` and `.env` DONE!
     
 
 ## Setting up a Virtual Environment
