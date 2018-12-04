@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+li a, a:visited {
+    font-size: 30px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    padding: 20px 0;
+    width: 400px;
+    border: 2px solid #333;
+    border-radius: 17px;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+
+}
