@@ -5,7 +5,7 @@ from .models import City
 class CitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = City
-        fields = ("country", "capital")
+        fields = ("country", "capital", "wiki", "visited")
 
 
 class CityViewSet(viewsets.ModelViewSet):
