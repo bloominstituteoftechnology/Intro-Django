@@ -14,8 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include # add include()
+
+from rest_framework import routers # router functionality for Django
+from notes.api import PersonalNoteViewSet # PersonalNoteViewSet we just created
+
+router = routers.DefaultRouter() # make a default router from the routers package
+router.register(r'notes', PersonalNoteViewSet) # register the router with the endpoint name 'notes' and the viewset
+# The r means that this is a regular expression, and to interpret the string as literally as possible
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)), # this will set the path to /api/notes
+                                        # We can use router.register to add as many paths as we want this way
+                                        # without needing to add them to urlpatterns
 ]
