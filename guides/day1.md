@@ -6,17 +6,17 @@
 * Clone your repo
   * (If you cloned the Hello-Django repo, delete the file `requirements.txt`!) DONE!
 * Go to your repo root directory
-* `pipenv --three`
-* `pipenv install`
-* `pipenv shell`
-* `pipenv install django`
-* `django-admin startproject djorg .`
-* `django-admin startapp notes`
-* `./manage.py runserver`
-* `./manage.py showmigrations`
-* `./manage.py migrate`
-* `./manage.py runserver`
-* Add model to `notes/models.py`
+* `pipenv --three` DONE!
+* `pipenv install` DONE!
+* `pipenv shell` DONE!
+* `pipenv install django` DONE!
+* `django-admin startproject djorg .` DONE!
+* `django-admin startapp notes` DONE!
+* `./manage.py runserver` DONE!
+* `./manage.py showmigrations` DONE!
+* `./manage.py migrate` DONE!
+* `./manage.py runserver` DONE!
+* Add model to `notes/models.py` 
 * Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py`
 * `./manage.py showmigrations`
 * `./manage.py makemigrations`
