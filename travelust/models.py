@@ -8,3 +8,6 @@ class Country(models.Model):
     capital = models.TextField(blank=True)
     visited = models.BooleanField(default=False)
     wiki = models.URLField()
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
