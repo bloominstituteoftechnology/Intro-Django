@@ -1,5 +1,6 @@
 from django.db import models
 from uuid import uuid4
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Note(models.Model):
@@ -15,6 +16,10 @@ class Note(models.Model):
 class URLS(models.Model):
     title = models.CharField(max_length=100)
     url = models.URLField(max_length=200)
+
+class PersonalNote(Note):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
 # In instances where Models need to be updated,
 #  you must ./manage.py makemigration, then ./manage.py migrate to update the model
