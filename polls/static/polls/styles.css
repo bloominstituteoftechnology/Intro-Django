@@ -1,10 +1,24 @@
 body {
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #443355;
+    color: #fff;
 }
 
 .container {
     width: 800px;
     margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-left: 20px;
+    color: #fff;
+
 }
 
 li a, a:visited {
@@ -14,7 +28,7 @@ li a, a:visited {
     display: inline-block;
     text-align: center;
     margin: 10px;
-    padding: 20px 0;
+    padding: 20px 5px;
     width: 400px;
     border: 2px solid #333;
     border-radius: 17px;

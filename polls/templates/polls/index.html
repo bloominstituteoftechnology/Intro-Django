@@ -1,8 +1,8 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
-<h1>Questions</h1>
 
 <div class="container">
+    <h1>Questions</h1>
 {% if latest_question_list %}
     <ul class="detail">
     {% for question in latest_question_list %}
