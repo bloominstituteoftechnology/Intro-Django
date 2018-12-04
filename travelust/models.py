@@ -8,4 +8,3 @@ class Country(models.Model):
     capital = models.TextField(blank=True)
     visited = models.BooleanField(default=False)
     wiki = models.URLField()
-
