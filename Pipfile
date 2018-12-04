@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 graphene-django = "*"
 djangorestframework = "*"
+python-decouple = "*"
 
 [dev-packages]
 
