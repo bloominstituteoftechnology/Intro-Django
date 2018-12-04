@@ -15,4 +15,14 @@ class CitySerializer(serializers.HyperlinkedModelSerializer):
 
 class CityViewSet(viewsets.ModelViewSet):
     serializer_class = CitySerializer
-    queryset = City.objects.all()
+    queryset = City.objects.none()
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return City.objects.none()
+
+        else:
+            return City.objects.filter(user=user)
+
