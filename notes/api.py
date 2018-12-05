@@ -6,6 +6,6 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         model = PersonalNote
         fields = ('title', 'content')
 
-class PersonalNoteViewSet(viewsets/ModelViewSet):
+class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
     queryset = PersonalNote.objects.all()
