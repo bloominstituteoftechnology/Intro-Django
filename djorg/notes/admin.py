@@ -3,4 +3,9 @@ from .models import Note
 
 # Register your models here.
 
-admin.site.register(Note)
+
+class NoteAdmin(admin.ModelAdmin):
+    readonly_fields = ('created_at', 'last_modified')
+
+
+admin.site.register(Note, NoteAdmin)
