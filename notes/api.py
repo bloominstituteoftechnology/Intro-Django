@@ -6,6 +6,14 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
         model = PersonalNote
         fields = ('title', 'content')
 
+    def create(self, validated_data):
+        # DEBUGGER
+        # import pdb; pdb.set_trace()
+        # pass
+        user = self.context['request'].user
+        note = PersonalNote.objects.create(user=user, **validated_data)
+        return note
+
 class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
     queryset = PersonalNote.objects.all()
