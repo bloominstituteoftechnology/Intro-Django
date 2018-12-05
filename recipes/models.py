@@ -11,6 +11,7 @@ class Recipe(models.Model):
 		return self.recipe_name
 
 class Ingredient(models.Model):
+	id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 	ingredient_name = models.CharField(max_length=50)
 	recipe_id = models.ManyToManyField(Recipe)
 	def __str__(self):
