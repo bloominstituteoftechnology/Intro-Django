@@ -14,3 +14,7 @@ class Smurf(models.Model): # This gives our new class access to all of the built
   size = models.CharField(max_length=200)
   created_at = models.DateTimeField(auto_now_add=True) # track created dates, auto_now_add only sets create
   last_modified = models.DateTimeField(auto_now=True) # track modified dates, auto_now sets both create and update
+
+class UsersSmurf(Smurf): # subclass that inherits all the fields in Smurf
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
