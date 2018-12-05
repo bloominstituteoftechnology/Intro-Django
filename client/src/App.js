@@ -3,11 +3,25 @@ import logo from './logo.svg'
 import styled from 'styled-components'
 import Login from './components/Login'
 class App extends Component {
+  state = {
+    isLoggedIn: false
+  }
+
+  login = (username, password) => {
+    console.log(username, password)
+  }
+
   render() {
     return (
       <Div1>
         <Img1 src={logo} alt="logo" />
-        <Login />
+        {
+          this.state.isLoggedIn ?
+            <h1>Logged In</h1>
+            : (<Login
+              login={this.login}
+            />)
+        }
       </Div1>
     )
   }

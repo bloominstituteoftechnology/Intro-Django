@@ -1,26 +1,56 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Login = () => {
-  return (
-    <Form1>
-      <Label>
-        <Input
-          name="username"
-          type="text"
-          placeholder="👤 username"
-        />
-      </Label>
-      <Label>
-        <Input
-          name="password"
-          type="password"
-          placeholder="🔑 password"
-        />
-      </Label>
-      <Button>Submit</Button>
-    </Form1>
-  )
+class Login extends React.Component {
+  state = {
+    username: "",
+    password: "",
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.login(this.state.username, this.state.password)
+    this.setState({
+      username: "",
+      password: ""
+    })
+  }
+
+  render() {
+    return (
+      <Form1 onSubmit={this.handleSubmit}>
+        <Label>
+          <Input
+            name="username"
+            type="text"
+            placeholder="👤 username"
+            onChange={this.handleChange}
+            value={this.state.username}
+          />
+        </Label>
+        <Label>
+          <Input
+            name="password"
+            type="password"
+            placeholder="🔑 password"
+            onChange={this.handleChange}
+            value={this.state.password}
+          />
+        </Label>
+        <Button
+          type="submit"
+        >
+          Submit
+        </Button>
+      </Form1>
+    )
+  }
 }
 
 const Form1 = styled.form`
