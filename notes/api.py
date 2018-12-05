@@ -25,4 +25,13 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
 class PersonalNoteViewSet(viewsets.ModelViewSet): # --> This is where we decide which records to return
   # --> Attach it to serializer we made
   serializer_class = PersonalNoteSerializer
-  queryset = PersonalNote.objects.all() # --> Retrieve everything
+  queryset = PersonalNote.objects.none() # --> Retrieve none
+
+  def get_queryset(self): # --> Looking to over-ride the queryset so we can only have notes for their own user
+    user = self.request.user
+
+    if user.is_anonymous: # --> Not logged in
+      return PersonalNote.objects.none() # --> Return empty array
+    else:
+      return PersonalNote.objects.filter(user = user) # --> We want to filter all the notes
+      # --> Its filtering based on the user that is logged in
