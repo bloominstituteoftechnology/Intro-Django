@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from users_app.models import User
+from users_app.models import User, Note, PersonalNote
 
 #home page view
 def index(request):
