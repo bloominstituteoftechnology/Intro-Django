@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
+    'practice',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',

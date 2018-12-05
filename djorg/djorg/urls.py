@@ -18,16 +18,18 @@ from django.urls import path, include, re_path
 
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from practice.api import PersonViewSet
 
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
+router.register('person', PersonViewSet)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('api/', include(router.urls)), 
     re_path(r'^api-token-auth/', views.obtain_auth_token),
     
 ]
