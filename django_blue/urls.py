@@ -19,7 +19,14 @@ from django.conf.urls import include
 from django.urls import path
 from users_app import views
 
+from rest_framework import routers
+from users_app.api import PersonalNoteViewSet
+
+router = routers.DefaultRouter()
+router.register(r'users_app', PersonalNoteViewSet)
+
 urlpatterns = [
+    path('api/', include(router.urls)),
     url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     url(r'^users/', include('users_app.urls')),
