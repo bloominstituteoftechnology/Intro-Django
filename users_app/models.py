@@ -4,9 +4,11 @@ from django.db import models
 # Create your models here.
 
 
+class MyUUIDModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 class User(models.Model):
-
-#    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    unique_id = MyUUIDModel()
+    # id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     first_name = models.CharField(max_length=128)
     last_name = models.CharField(max_length=128)
     email = models.EmailField(max_length=264, unique=True)
