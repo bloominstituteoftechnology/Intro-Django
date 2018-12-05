@@ -27,3 +27,16 @@ class UsersSmurfViewSet(viewsets.ModelViewSet): # this will tell us which row we
   # add which records to search for
   # for now we are searching all the records
   queryset = UsersSmurf.objects.all()
+  
+  # overrides queryset to be more specific
+  # has access to the request directly, so it can be found with self.request.user
+  def get_queryset(self): 
+    user = self.request.user
+
+    # If user.is_anonymous
+    if user.is_anonymous:
+      # return an empty dictionary of notes
+      return UsersSmurf.objects.none()
+    else:
+      # use a filter to return only the correct ones with Note.objects.filter(user=user)
+      return UsersSmurf.objects.filter(user=user)
