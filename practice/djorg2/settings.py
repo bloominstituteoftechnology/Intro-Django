@@ -38,11 +38,14 @@ DATABASES = {}
 
 DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 # Application definition
 
 INSTALLED_APPS = [
     'notes2',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -54,8 +57,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
