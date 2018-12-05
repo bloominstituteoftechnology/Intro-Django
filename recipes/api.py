@@ -7,12 +7,18 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 		fields = ['recipe_name']
 	def create(self, validated_data):
 		user = self.context['request'].user
-		recipe = Recipe.objects.create(user=user, **validated_data)
-		return recipe
+		note = Recipe.objects.create(user=user, **validated_data)
+		return note
 
 class RecipeViewSet(viewsets.ModelViewSet):
 	serializer_class = RecipeSerializer
-	queryset = Recipe.objects.all()
+	queryset = Recipe.objects.none()
+	def get_queryset(self):
+		user = self.request.user
+		if user.is_anonymous:
+			return Recipe.objects.none()
+		else:
+			return Recipe.objects.filter(user=user)
 
 
 class IngredientSerializer(serializers.HyperlinkedModelSerializer):
