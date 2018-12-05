@@ -16,12 +16,7 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):
     serializer_class = PersonalNoteSerializer
-    queryset = PersonalNote.objects.none()
-
-    # queryset = PersonalNote.objects.all()
-
-
-# django calls the below itself, so we dont need to personally call it
+    queryset = PersonalNote.objects.all()
 
     def get_queryset(self):
         # import pdb; pdb.set_trace()

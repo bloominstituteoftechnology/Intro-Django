@@ -1,5 +1,6 @@
 from uuid import uuid4
 from django.db import models
+#from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -8,8 +9,6 @@ from django.db import models
 
 
 class User(models.Model):
-    #unique_id = MyUUIDModel()
-    # id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     first_name = models.CharField(max_length=128)
     last_name = models.CharField(max_length=128)
     email = models.EmailField(max_length=264, unique=True)
@@ -19,7 +18,6 @@ class Note(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 

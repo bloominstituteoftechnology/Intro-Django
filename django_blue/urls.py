@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 from django.conf.urls import include
-from django.urls import path
-from users_app import views
+from django.urls import path, re_path
+#from users_app import views
 
 from rest_framework import routers
+from rest_framework.authtoken import views
 from users_app.api import PersonalNoteViewSet
 
 router = routers.DefaultRouter()
@@ -27,7 +28,10 @@ router.register(r'users_app', PersonalNoteViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
-    url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     url(r'^users/', include('users_app.urls')),
+    re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
+
+
+#    url(r'^$', views.index, name='index'),
