@@ -18,12 +18,15 @@ from django.urls import path, include # add include()
 
 from rest_framework import routers # router functionality for Django
 from notes.api import PersonalNoteViewSet # PersonalNoteViewSet we just created
+from smurfs.api import UsersSmurfViewSet # UsersSmurfViewSet we just created
 
 from django.urls import path, include, re_path # Import re_path from django.urls
 from rest_framework.authtoken import views # and views from rest_framework.authtoken
 
 router = routers.DefaultRouter() # make a default router from the routers package
 router.register(r'notes', PersonalNoteViewSet) # register the router with the endpoint name 'notes' and the viewset
+# The r means that this is a regular expression, and to interpret the string as literally as possible
+router.register(r'smurfs', UsersSmurfViewSet) # register the router with the endpoint name 'smurfs' and the viewset
 # The r means that this is a regular expression, and to interpret the string as literally as possible
 
 urlpatterns = [
