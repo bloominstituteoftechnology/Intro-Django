@@ -12,6 +12,15 @@ class UsersSmurfSerializer(serializers.HyperlinkedModelSerializer):
         model = UsersSmurf
         fields = ('name', 'age', 'size')
 
+    def create(self, validated_data): # overrides the default creates functionality
+      # import pdb; pdb.set_trace()  # Start the debugger here
+
+      user = self.context['request'].user
+      # make a new persoinal note with the validated_data
+      smurf = UsersSmurf.objects.create(user=user, **validated_data)
+        # return the smurf
+      return smurf
+
 class UsersSmurfViewSet(viewsets.ModelViewSet): # this will tell us which row we are interested in showing
   # Links it back to the serializer class we made, UsersSmurfSerializer
   serializer_class = UsersSmurfSerializer
