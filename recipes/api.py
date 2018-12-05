@@ -4,7 +4,7 @@ from .models import Recipe, Ingredient
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:	# Inner class nested inside RecipeSerializer
 		model = Recipe
-		fields = ('recipe_name')
+		fields = ['recipe_name']
 	def create(self, validated_data):
 		user = self.context['request'].user
 		recipe = Recipe.objects.create(user=user, **validated_data)
@@ -12,19 +12,13 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 
 class RecipeViewSet(viewsets.ModelViewSet):
 	serializer_class = RecipeSerializer
-	queryset = Recipe.objects.none()
-	def get_queryset(self):
-		user = self.request.user
-		if user.is_anonymous:
-			return Recipe.objects.none()
-		else:
-			return Recipe.objects.filter(user=user)
+	queryset = Recipe.objects.all()
 
 
 class IngredientSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:	# Inner class nested inside IngredientSerializer
 		model = Ingredient
-		fields = ('ingredient_name')
+		fields = ['ingredient_name']
 	def create(self, validated_data):
 		user = self.context['request'].user
 		ingredient = Ingredient.objects.create(user=user, **validated_data)
@@ -32,10 +26,4 @@ class IngredientSerializer(serializers.HyperlinkedModelSerializer):
 
 class IngredientViewSet(viewsets.ModelViewSet):
 	serializer_class = IngredientSerializer
-	queryset = Ingredient.objects.none()
-	def get_queryset(self):
-		user = self.request.user
-		if user.is_anonymous:
-			return Ingredient.objects.none()
-		else:
-			return Ingredient.objects.filter(user=user)
+	queryset = Ingredient.objects.all()
