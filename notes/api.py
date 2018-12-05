@@ -16,11 +16,13 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
     fields = ('title', 'content')
   
   def create(self, validated_data): 
-    note = PersonalNote.objects.create(**validated_data) # --> Pass in data as kwargs || use some more review on kwargs
+    # --> Validated_data looks like {'title': 'title_stuff', 'content': 'content_stuff'}
+    user = self.context['request'].user # --> Found via debugger
+    note = PersonalNote.objects.create(user = user, **validated_data) # --> Pass in data as kwargs || use some more review on kwargs
     return note
 
 
-class PersonalNoteViewSet(viewsets.ModelViewSet): # --> ?
+class PersonalNoteViewSet(viewsets.ModelViewSet): # --> This is where we decide which records to return
   # --> Attach it to serializer we made
   serializer_class = PersonalNoteSerializer
   queryset = PersonalNote.objects.all() # --> Retrieve everything
