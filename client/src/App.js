@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import logo from './logo.svg'
 import Login from './components/Login'
+import Home from './components/Home'
 class App extends Component {
   state = {
     isLoggedIn: false
@@ -24,16 +25,18 @@ class App extends Component {
       });
   }
 
+  logout = (e) => {
+    e.preventDefault()
+    localStorage.clear()
+    this.setState({ isLoggedIn: false })
+  }
+
   render() {
     return (
       <Div1>
         <Img1 src={logo} alt="logo" />
         {
-          this.state.isLoggedIn ?
-            <h1>Logged In</h1>
-            : (<Login
-              login={this.login}
-            />)
+          this.state.isLoggedIn ? (<Home logout={this.logout} />) : (<Login login={this.login} />)
         }
       </Div1>
     )
