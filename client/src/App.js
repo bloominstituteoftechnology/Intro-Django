@@ -1,14 +1,27 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import styled from 'styled-components'
+import axios from 'axios'
+import logo from './logo.svg'
 import Login from './components/Login'
 class App extends Component {
   state = {
     isLoggedIn: false
   }
 
+  componentDidMount() {
+    const token = localStorage.getItem('token')
+    if (token) { this.setState({ isLoggedIn: true }) }
+  }
+
   login = (username, password) => {
-    console.log(username, password)
+    axios.post('http://127.0.0.1:8000/api-token-auth/', { username, password })
+      .then(resp => {
+        localStorage.setItem('token', resp.data.token)
+        this.setState({ isLoggedIn: true })
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
