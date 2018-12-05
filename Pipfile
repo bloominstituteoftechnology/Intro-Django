@@ -12,6 +12,7 @@ faker = "*"
 python-decouple = "*"
 decouple = "*"
 uuid = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
