@@ -1,8 +1,6 @@
 from django.contrib import admin
 from users_app.models import User, Note, PersonalNote
 
-
-admin.site.register(User)
 # Register your models here.
 
 
@@ -11,3 +9,4 @@ class NoteAdmin(admin.ModelAdmin):
     
 admin.site.register(Note, NoteAdmin)
 admin.site.register(PersonalNote, NoteAdmin)
+admin.site.register(User)

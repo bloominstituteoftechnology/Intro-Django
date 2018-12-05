@@ -17,21 +17,24 @@ from django.contrib import admin
 from django.conf.urls import url
 from django.conf.urls import include
 from django.urls import path, re_path
-#from users_app import views
 
 from rest_framework import routers
 from rest_framework.authtoken import views
 from users_app.api import PersonalNoteViewSet
+from things.api import PersonalThingViewSet
+from users_app import views as views2
 
 router = routers.DefaultRouter()
 router.register(r'users_app', PersonalNoteViewSet)
+router.register(r'things', PersonalThingViewSet)
 
 urlpatterns = [
+    url(r'^$', views2.index, name='index'),
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     url(r'^users/', include('users_app.urls')),
+    url(r'^things/', include('things.urls')),
     re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
 
 
-#    url(r'^$', views.index, name='index'),

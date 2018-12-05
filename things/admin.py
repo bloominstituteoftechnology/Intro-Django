@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Thing
+from things.models import Thing, PersonalThing
 # Register your models here.
 
 
-admin.site.register(Thing)
+class ThingAdmin(admin.ModelAdmin):
+    readonly_fields = ('created_at', 'last_modified')
+
+
+admin.site.register(Thing, ThingAdmin)
+admin.site.register(PersonalThing, ThingAdmin)
+
