@@ -6,6 +6,9 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
         model = Person
         fields = ('first_name', 'last_name', 'age', 'zombie')
 
+    def create(self, validated_data):
+        person = Person.objects.create(**validated_data)
+
 class PersonViewSet(viewsets.ModelViewSet):
     serializer_class = PersonSerializer
     queryset = Person.objects.none()
