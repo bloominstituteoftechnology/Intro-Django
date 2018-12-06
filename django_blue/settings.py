@@ -138,9 +138,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    '/var/www/static/',
-]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
