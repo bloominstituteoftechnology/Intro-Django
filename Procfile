@@ -1,1 +1,1 @@
-web: gunicorn django_blue.wsgi
+web: gunicorn django_blue.wsgi --log-file -
