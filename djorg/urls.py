@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from rest_framework.authtoken import views
+from django.urls import re_path
 
 # Make a default router from the routers package, then register that router:
 router = routers.DefaultRouter()
@@ -26,4 +28,6 @@ router.register(r'notes', PersonalNoteViewSet) # r means regular expression
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),  # ends up creating api/notes route ???
+    path('api-token-auth/', views.obtain_auth_token),
+    re_path(r'^api-token-auth/', views.obtain_auth_token),
 ]
