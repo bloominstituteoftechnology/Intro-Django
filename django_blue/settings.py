@@ -44,6 +44,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
+    'users_app',
+    'things',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,8 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'users_app',
-    'things',
 ]
 
 MIDDLEWARE = [
