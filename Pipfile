@@ -16,6 +16,8 @@ dj-database-url = "*"
 django-cors-headers = "*"
 gunicorn = "*"
 fcntl = "*"
+psycopg2-binary = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
