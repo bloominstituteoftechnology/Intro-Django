@@ -25,6 +25,7 @@ from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
+router.register(r'Contact', PersonalNoteViewSet)
 
 
 urlpatterns = [
