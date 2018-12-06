@@ -24,19 +24,19 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'n+&+*_b$cx+__fnr692j=t$7e-gxv0t9_m=#j4^5-ffnsc4m=y'
+# SECRET_KEY = config('SECRET_KEY')
 
 # DATABASES= {}
 # DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
 
-DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = 'postgres://vzingqgtkceanj:02251977db3553a6f28ac7255fd0118d074813f269e3829a5588e08499878633@ec2-54-243-150-10.compute-1.amazonaws.com:5432/d4t8t4le90a01a'
 dj_database_url.config(default=DATABASE_URL)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].replace(
-    '"', '').replace("'", '').split(',')
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
 
 print(ALLOWED_HOSTS)
 CORS_ORIGIN_ALLOW_ALL = True
