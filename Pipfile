@@ -12,6 +12,7 @@ faker = "*"
 python-decouple = "*"
 uuid = "*"
 djangorestframework = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7"
