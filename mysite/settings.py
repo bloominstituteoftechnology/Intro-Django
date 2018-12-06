@@ -26,7 +26,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = [
-    'localhost,127.0.0.1'
+    'localhost,127.0.0.1',
+    'heroku-django-app.herokuapp.com',
 ]
 
 
@@ -85,7 +86,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # ****** SPRINT ******
-DATABASES['default'] = dj_database_url.config(default='DATABASE_URL')
+DATABASES = {}
+
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
+
 
 # DATABASES = {
 #     'default': {

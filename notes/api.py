@@ -34,4 +34,3 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):
 
         else:
             return personal.objects.filter(user=user)
-            
