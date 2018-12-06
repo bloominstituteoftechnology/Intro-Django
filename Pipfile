@@ -13,6 +13,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7"
