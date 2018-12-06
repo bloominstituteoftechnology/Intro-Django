@@ -17,8 +17,8 @@ class App extends Component {
     }
   }
 
-  login = (username, password) => {
-    axios.post('http://127.0.0.1:8000/api-token-auth/', { username, password })
+  login = (userInfo) => {
+    axios.post('http://127.0.0.1:8000/api-token-auth/', userInfo)
       .then(resp => {
         localStorage.setItem('token', resp.data.token)
         this.setState({ isLoggedIn: true })
@@ -30,7 +30,8 @@ class App extends Component {
 
   getData = () => {
     const token = localStorage.getItem('token')
-    axios.get('http://127.0.0.1:8000/api/countries/', { headers: { Authorization: `Token ${token}` } })
+    const headers = { headers: { Authorization: `Token ${token}` } }
+    axios.get('http://127.0.0.1:8000/api/countries/', headers)
       .then(resp => this.setState({ countries: resp.data }))
   }
 
