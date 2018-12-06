@@ -10,6 +10,7 @@ django = "*"
 python-decouple = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.6"
