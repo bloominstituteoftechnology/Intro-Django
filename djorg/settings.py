@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 from decouple import config
+import dj_database_url
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
