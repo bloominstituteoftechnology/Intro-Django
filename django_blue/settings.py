@@ -44,6 +44,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
+    'templates',
     'users_app',
     'things',
     'corsheaders',
