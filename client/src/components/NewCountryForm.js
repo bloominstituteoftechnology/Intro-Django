@@ -22,6 +22,14 @@ class CountryForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    const newCountry = {
+      "country": this.state.country,
+      "capital": this.state.capital,
+      "wiki": this.state.wiki,
+      "visited": this.state.visited
+    }
+    this.props.addCountry(newCountry)
+    this.props.toggleCreate(e)
     this.setState({
       country: "",
       capital: "",

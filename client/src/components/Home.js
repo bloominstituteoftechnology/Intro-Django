@@ -24,6 +24,7 @@ class Home extends React.Component {
             <Div1>
               <NewCountryForm
                 toggleCreate={this.toggleCreate}
+                addCountry={this.props.addCountry}
               />
               <Button1 onClick={e => this.toggleCreate(e)}>Cancel</Button1>
             </Div1>

@@ -25,13 +25,23 @@ class App extends Component {
       })
       .catch(function (error) {
         console.log(error);
-      });
+      })
   }
 
   getData = () => {
     const token = localStorage.getItem('token')
     axios.get('http://127.0.0.1:8000/api/countries/', { headers: { Authorization: `Token ${token}` } })
       .then(resp => this.setState({ countries: resp.data }))
+  }
+
+  addCountry = (newCountry) => {
+    const token = localStorage.getItem('token')
+    const headers = { headers: { 'Authorization': `Token ${token}` } }
+    axios.post('http://127.0.0.1:8000/api/countries/', newCountry, headers)
+      .then(resp => this.getData())
+      .catch(function (error) {
+        console.log(error);
+      })
   }
 
   logout = (e) => {
@@ -53,6 +63,7 @@ class App extends Component {
               <Button1 onClick={e => this.logout(e)}> Logout</Button1>
               <Home
                 getData={this.getData}
+                addCountry={this.addCountry}
                 countries={this.state.countries}
               />
             </>
