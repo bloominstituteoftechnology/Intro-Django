@@ -15,6 +15,7 @@ djangorestframework = "*"
 dj-database-url = "*"
 django-cors-headers = "*"
 gunicorn = "*"
+fcntl = "*"
 
 [requires]
 python_version = "3.7"
