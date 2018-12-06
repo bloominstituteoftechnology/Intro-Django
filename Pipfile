@@ -14,6 +14,7 @@ uuid = "*"
 djangorestframework = "*"
 dj-database-url = "*"
 django-cors-headers = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
