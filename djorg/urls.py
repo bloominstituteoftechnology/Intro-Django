@@ -18,11 +18,13 @@ from django.urls import path, include, re_path
 
 from rest_framework import routers
 from notes.api import PersonalNoteViewSet
+from contacts.api import PersonalContactViewSet
 
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
+router.register('contacts', PersonalContactViewSet)
 
 
 urlpatterns = [

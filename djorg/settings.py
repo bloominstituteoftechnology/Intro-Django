@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'notes',
     'rest_framework',
     'corsheaders',
+    'contacts',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
