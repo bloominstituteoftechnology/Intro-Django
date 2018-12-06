@@ -1,11 +1,8 @@
 from uuid import uuid4
 from django.db import models
-#from django.contrib.auth.models import User
-# Create your models here.
+from django.contrib.auth.models import User as User2
 
 
-#class MyUUIDModel(models.Model):
-#    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
 
 class User(models.Model):
@@ -23,4 +20,4 @@ class Note(models.Model):
 
 
 class PersonalNote(Note):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User2, on_delete=models.CASCADE)

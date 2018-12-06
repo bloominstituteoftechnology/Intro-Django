@@ -19,11 +19,9 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):
     queryset = PersonalNote.objects.all()
 
     def get_queryset(self):
-        # import pdb; pdb.set_trace()
+        user = self.request.user
 
-        logged_in_user = self.request.user
-
-        if logged_in_user.is_anonymous:
+        if user.is_anonymous:
             return PersonalNote.objects.none()
         else:
-            return PersonalNote.objects.filter(user=logged_in_user)
+            return PersonalNote.objects.filter(user=user)
