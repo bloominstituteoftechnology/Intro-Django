@@ -78,6 +78,8 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
