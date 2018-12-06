@@ -1,5 +1,5 @@
 from decouple import config
-import dj_databases_url
+import dj_database_url
 
 """
 Django settings for djorg project.
@@ -75,9 +75,9 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+DATABASES = {}
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
