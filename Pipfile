@@ -15,7 +15,6 @@ djangorestframework = "*"
 dj-database-url = "*"
 django-cors-headers = "*"
 gunicorn = "*"
-fcntl = "*"
 psycopg2-binary = "*"
 whitenoise = "*"
 
