@@ -27,6 +27,9 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 #SECRET_KEY = 'fo6+@ayb0=)2o89-azzagmsd&5q@v4lh^#=97prycv#93#4j=%'
 SECRET_KEY = config('SECRET_KEY')
 
+# DATABASES= {}
+# DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
+
 DATABASE_URL = config('DATABASE_URL')
 dj_database_url.config(default=DATABASE_URL)
 
