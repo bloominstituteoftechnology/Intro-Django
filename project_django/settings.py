@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'notes',
     'rest_framework',
     'rest_framework.authtoken',
+    'addresses',
 ]
 
 MIDDLEWARE = [
