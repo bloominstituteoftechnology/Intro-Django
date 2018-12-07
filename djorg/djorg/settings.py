@@ -1,3 +1,4 @@
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 """
 Django settings for djorg project.
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
