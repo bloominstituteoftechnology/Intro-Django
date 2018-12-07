@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from decouple import config
+from decouple import dj_databse_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
