@@ -27,7 +27,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+ALLOWED_HOSTS = ['.herokuapp.com']
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -109,7 +111,7 @@ DATABASES = {
     # }
 }
 
-DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'))
+DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
 
 
 # Password validation
@@ -150,3 +152,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
