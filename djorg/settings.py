@@ -103,14 +103,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     # 'NAME': './database.sqlite3'
-    #     # OLD VALUE
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-}
+DATABASES = {}
 
 DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
 
@@ -153,6 +146,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# django_heroku.settings(locals())
-# del DATABASES['default']['OPTIONS']['sslmode']
