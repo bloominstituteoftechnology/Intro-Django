@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import PersonalNote
+from .models import PersonalNote, Note
 
 class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
 
@@ -23,4 +23,3 @@ class PersonalNoteViewSet(viewsets.ModelViewSet):
             return PersonalNote.objects.none()
         else:
             return PersonalNote.objects.filter(user=user)
-
