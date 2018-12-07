@@ -1,5 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "C:\\Users\\Sasha .DESKTOP-EQMKT4L\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
 }
