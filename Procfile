@@ -1,0 +1,1 @@
+web: gunicorn Intro.wsgi --log-file -
