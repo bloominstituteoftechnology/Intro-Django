@@ -1,1 +1,1 @@
-web: gunicorn djorg.wsgi --log-file - 
+web: gunicorn Intro-Django.wsgi --log-file - 
