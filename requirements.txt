@@ -1,0 +1,3 @@
+pip freeze > requirements.txt
+dj-database-url 
+psycopg2
