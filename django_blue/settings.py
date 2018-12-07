@@ -35,7 +35,7 @@ DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), co
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').replace(
     '"', '').replace("'", '').split(',')
