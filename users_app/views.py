@@ -5,7 +5,7 @@ from django.http import HttpResponse
 #home page view
 def index(request):
     return HttpResponse("""
-         <a href="https://djorn-brian-ruff.herokuapp.com/admin/">Admin</a>
+         <a href="https://django-blue.herokuapp.com/admin/">Admin</a>
     """)
     #render(request, 'users/index.html')
 
