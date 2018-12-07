@@ -28,7 +28,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost', '127.0.0.1', '.herokuapp.com'
+]
 
 
 # Application definition
@@ -87,6 +89,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
