@@ -11,6 +11,7 @@ class PersonalNoteSerializer(serializers.HyperlinkedModelSerializer):
 		# import pdb; pdb.set_trace()
 		user = self.context['request'].user
 		note = PersonalNote.objects.create(user=user,**validated_data)
+		print(f"New PersonalNote initialized by {user.email}")
 		return note
 
 class PersonalNoteViewSet(viewsets.ModelViewSet):

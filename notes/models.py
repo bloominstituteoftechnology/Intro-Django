@@ -13,5 +13,4 @@ class Note(models.Model):
 
 class PersonalNote(Note):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	print(f"New PersonalNote initialized by {User.email}")
 
