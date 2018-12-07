@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from decouple import config
+from decouple import config, Csv
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -29,7 +29,11 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = [] # I need to change this based on .env
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv()) # currently returns ['localhost,127.0.0.1']
+startup = 0
+while startup < 1:
+    print(ALLOWED_HOSTS)
+    startup += 1
 
 CORS_ORIGIN_ALLOW_ALL = True
 
