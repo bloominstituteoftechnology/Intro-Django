@@ -20,6 +20,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 print(TEMPLATE_DIR)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #
 
 # Quick-start development settings - unsuitable for production
@@ -36,7 +37,7 @@ DATABASES['default'] = dj_database_url.config(default=config('DATABASE_URL'), co
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
-DEBUG = False
+DEBUG = false
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').replace(
     '"', '').replace("'", '').split(',')
@@ -142,7 +143,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 
