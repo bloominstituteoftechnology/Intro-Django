@@ -4,10 +4,10 @@ from .models import PersonalQuote, Quote
 class PersonalQuoteSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:	
 		model = PersonalQuote
-		fields = ('Author', 'Quote')
+		fields = ('author', 'quote')
 	def create(self, validated_data):
 		user = self.context['request'].user
-		note = PersonalQuote.objects.create(user=user, **validated_data)
+		quote = PersonalQuote.objects.create(user=user, **validated_data)
 		return Quote
 
 
