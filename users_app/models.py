@@ -1,4 +1,4 @@
-import uuid
+from uuid import uuid4
 from django.db import models
 from django.contrib.auth.models import User as User2
 
@@ -12,7 +12,7 @@ class User(models.Model):
 
 
 class Note(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.UUID4, editable=False)
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
