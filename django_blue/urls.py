@@ -22,14 +22,15 @@ from rest_framework import routers
 from rest_framework.authtoken import views
 from users_app.api import PersonalNoteViewSet
 from things.api import PersonalThingViewSet
-from users_app import views as views2
+#from users_app import views as views2
+from users_app.views import index
 
 router = routers.DefaultRouter()
 router.register(r'users_app', PersonalNoteViewSet)
 router.register(r'things', PersonalThingViewSet)
 
 urlpatterns = [
-    url(r'^$', views2.index, name='index'),
+    path('', index),
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     url(r'^users/', include('users_app.urls')),
