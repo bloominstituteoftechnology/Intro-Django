@@ -2,12 +2,12 @@ from django.shortcuts import render
 from users_app.models import User
 from users_app.models import Note, PersonalNote
 from django.http import HttpResponse
+
 #home page view
 def index(request):
     return HttpResponse("""
-         <a href="https://django-blue.herokuapp.com/admin/">Admin</a>
-    """)
-    #render(request, 'users/index.html')
+        <a href="https://django-blue.herokuapp.com/admin/">Admin</a>
+    """) #render(request, 'users/index.html')
 
 #users view
 def users(request):
