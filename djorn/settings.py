@@ -27,9 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=list)
-
-# ALLOWED_HOSTS = ['djorn-brian-ruff.herokuapp.com']
+ALLOWED_HOSTS = ['djorn-brian-ruff.herokuapp.com']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
