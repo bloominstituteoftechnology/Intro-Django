@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'notes',
+    'FoodDiary',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
