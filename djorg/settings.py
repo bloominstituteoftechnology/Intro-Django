@@ -27,7 +27,7 @@ SECRET_KEY = 'bx8pxy42p4r9h3ysw($hp-j%jlt#w#ir&z^dj^==d(l5r8j&mm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['notes-huthman.herokuapp.com']
 
 
 # Application definition
