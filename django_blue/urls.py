@@ -36,5 +36,3 @@ urlpatterns = [
     url(r'^things/', include('things.urls')),
     re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
-
-
