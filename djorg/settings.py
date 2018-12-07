@@ -27,7 +27,7 @@ SECRET_KEY = '66c9a1tcv0vlgxnd%(px-sn7%#vcna9hm9&r(0zye+$y9g!udi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['okokok333.herokuapp.com']
+ALLOWED_HOSTS = ['okokok444.herokuapp.com']
 #CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
