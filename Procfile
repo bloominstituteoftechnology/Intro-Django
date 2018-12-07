@@ -1,2 +1,2 @@
 
-web: gunicorn djorg.wsgi --log-file -
+web: gunicorn okokok333.wsgi --log-file -
