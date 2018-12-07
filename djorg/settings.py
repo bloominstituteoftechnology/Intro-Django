@@ -29,7 +29,7 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-# DATABASES['default'] = dj_database_url.config('DATABASES')
+DATABASES['default'] = dj_database_url.config('DATABASES')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
