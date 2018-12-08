@@ -70,7 +70,8 @@
             2. `git commit -m "descriptive message"`
             3. `git push`
         - After that push to heroku
-            1. `git push heroku master`
+            1. `heroku create app_name`
+            2. `git push heroku master`
         - Once deployed you need to run model migrations via:
             `heroku run ./manage.py migrate` - for existing migrations. If you have new migrations then run `heroku run ./manage.py makemigrations` like you would locally and then migrate afterwards.
             - Next create a super user for the heroku postgresql database via:
