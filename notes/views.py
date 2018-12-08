@@ -5,6 +5,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
+
+def highlights(request):
+    return render(request, 'notes/highlights.html', {})
+
 def index(request):
     return HttpResponse("""
         <b>1.</b> <a href="https://notes-huthman.herokuapp.com/admin/">Admin</a><br><br>
