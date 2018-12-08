@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from users_app.models import User
-from users_app.models import Note, PersonalNote
 from django.http import HttpResponse
+from users_app.models import User
 
 #home page view
 def index(request):
@@ -25,4 +24,3 @@ def users(request):
 
 
 # ], }
-# in users setting/vs 
