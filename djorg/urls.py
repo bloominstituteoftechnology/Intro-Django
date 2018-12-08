@@ -19,7 +19,7 @@ from rest_framework import routers
 from rest_framework.authtoken import views
 from notes.api import PersonalNoteViewSet
 from quotes.api import PersonalQuoteViewSet
-from notes.views import index
+from notes.views import index, highlights
 
 router = routers.DefaultRouter()
 router.register(r'notes', PersonalNoteViewSet)
@@ -30,7 +30,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     re_path(r'^api-token-auth/', views.obtain_auth_token),
     path('api-token-auth/', views.obtain_auth_token),
-    path('', index),
+    path('', index, highlights),
 ]
 
 
