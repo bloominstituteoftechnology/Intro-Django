@@ -18,5 +18,4 @@ class Note(models.Model):
 
 
 class PersonalNote(Note):
-    isd = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     user = models.ForeignKey(User2, on_delete=models.CASCADE)
