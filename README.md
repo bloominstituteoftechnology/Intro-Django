@@ -31,3 +31,17 @@ Fork this repo to use for your projects this week.
 * Add a Django front end to the data.
 * Brainstorm a list of 10 additional features users would find useful.
 * Implement the brainstormed list.
+
+
+Added additional code to settings.py to connect table on heroku. 
+
+in settings.py (at end of file)
+-----
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
+
+in requirements.txt
+------
+dj-database-url 
+psycopg2
