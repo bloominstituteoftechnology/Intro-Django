@@ -9,4 +9,4 @@ from django.http import HttpResponse
 
 def index(request):
     
-    return render(request, 'highlights.html', context=context)
+    return render(request, 'highlights.html')
