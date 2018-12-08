@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib.auth.models import User as User2
 
 class User(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     first_name = models.CharField(max_length=128)
     last_name = models.CharField(max_length=128)
     email = models.EmailField(max_length=264, unique=True)
