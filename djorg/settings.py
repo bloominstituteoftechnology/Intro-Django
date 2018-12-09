@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 host = os.environ.get('ALLOWED_HOSTS')
-ALLOWED_HOST = [host]
+ALLOWED_HOSTS = [host]
 
 
 # Application definition
