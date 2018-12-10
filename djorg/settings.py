@@ -37,7 +37,7 @@ SECRET_KEY = config('SECRET_KEY')
 # DEBUG = config('DEBUG', cast=bool)
 DEBUG = False 
 
-ALLOWED_HOSTS='michelleok.heroku.com'
+ALLOWED_HOSTS='michelleok-djorg.herokuapp.com'
 # OR
 #  ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
