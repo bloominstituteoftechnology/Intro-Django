@@ -21,7 +21,7 @@ from django.urls import path, include, re_path
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
-router.register(r'notes', PersonalNoteViewSet)
+router.register('notes', PersonalNoteViewSet)
 # This is similar to setting up a route in express, but we’re saying for this
 # route, this (`PersonalNoteViewSet`) is the data we want to associate with it.
 # (The `r` means that this is a regular expression, and to interpret the string as
@@ -30,5 +30,5 @@ router.register(r'notes', PersonalNoteViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    re_path(r'^api-token-auth/', views.obtain_auth_token),
+    re_path('^api-token-auth/', views.obtain_auth_token),
 ]
