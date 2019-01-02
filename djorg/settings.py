@@ -29,7 +29,7 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 CORS_ORIGIN_ALLOW_ALL = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shrouded-beyond-49052.herokuapp.com']
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
