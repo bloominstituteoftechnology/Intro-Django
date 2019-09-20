@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url(./sheetmusic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.login {
+  border: 1px solid black;
+  padding: 60px 30px;
+  background-color: rgb(225, 234, 236);
+}
+.username-wrapper{
+  display:flex;
+  justify-content: center;
+  width: 500px;
+  margin-bottom: 20px;
+}
+.password-wrapper{
+  display:flex;
+  justify-content: center;
+  width: 500px;
+}
+
+.user-id {
+  width: 100px;
+}
+
+.password {
+  width: 100px;
+}
+
+.input {
+  width: 200px;
+  border: 1px solid grey;
+}
+
+.submit-div {
+  display:flex;
+  justify-content: center;
+}
+.submit-button {
+  margin-top: 20px;
+  padding:10px;
+  background-color: white;
+  width: 50px;
+  border: 1px solid gray;
+}
+
+.link-submit {
+  text-decoration: none;
+}
+
+.submit-button:hover {
+  background-color: black;
+  color:white !important;
+}
+.account-sign-up {
+  text-align:center;
+  padding: 20px;
+}
+.try-again {
+  width:100%;
+  margin-top: 20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main-note-container {
+  display:flex;
+  flex-wrap:wrap;
+}
+.note-indiv {
+  width: 150px;
+  height: 175px;
+  background-color: rgb(225, 234, 236);
+  display:flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 30px;
+  overflow: hidden;
+
+}
+
+.note-title {
+  font-size: 1rem;
+}
+
+.note-composer {
+  font-size: .9rem;
+  line-height: 15px;
+  font-weight: lighter;
+}
+
+.note-publisher {
+  font-size: .7rem;
+  line-height: 1px;
+  font-weight: lighter;
+}
+
+.note-notes {
+  font-size: .5rem;
+  line-height: 5px;
+  font-weight: lighter;
+}
+
+

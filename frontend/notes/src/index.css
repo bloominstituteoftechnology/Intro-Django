@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  font-family: 'Homemade Apple', cursive;
+  background-image: url(./art-artist-black-and-white-265047.jpg);
+  background-size:cover;
+}
+.main-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: rotate(-15deg);
+  height: 100vh;
+  width: 100%;
+  padding-right: 10px;
+}
+.header-link {
+  text-decoration: underline;
+  color: black;
+}
+.main-note-container {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  height: 450px;
+  width: 100%;
+  line-height: 10px;
+  margin-top: -50px;
+  margin-left: 100px;
+  transform:rotate(-5deg);
+}
+
+.note-indiv {
+  width: 600px;
+  height: 250px;
+  line-height: 19px;
+  padding-right:90px;
+}
+
+.house-pic {
+  width:50px;
+  height:auto;
+  transform: rotate(-30deg);
+  margin-top:150px;
+  margin-left: 150px;
+}
+.create-link {
+display:flex;
+justify-content: flex-end;
+transform: rotate(10deg);
+margin-right:200px;
+margin-bottom:250px;
+font-size: 20px;
+color:black;
+text-decoration: underline;
+}
+
+.create-note-wrapper{
+  width: 100%;
+  height: 100vh;
+  margin:185px;
+  margin-left: 225px;
+
+}
+.input-title {
+  width: 70%;
+  margin-right: 40px;
+  height:30px;
+  display:flex;
+  align-items: flex-end;
+}
+.label-title {
+  margin-bottom: 20px;
+  margin-right: 40px;
+  width:100px;
+  height: 30px;
+}
+
+.label-body {
+  margin-right: 40px;
+  margin-top: 20px;
+  width:100px;
+  height: 500px;
+}
+.input-body {
+  width: 70%;
+  height: 40vh;
+}
+.new-note-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+}
+.login-button {
+  background-color: paleturquoise;
+  color: grey;
+  box-shadow: 2px 2px grey;
+  width: 200px;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 100px;
+}

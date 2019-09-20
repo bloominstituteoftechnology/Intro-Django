@@ -1,0 +1,30 @@
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static './notes/style.css' %}">
+
+{% csrf_token %}
+<script type="text/javascript">
+// using jQuery
+var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+</script>
+
+{% if latest_note_list %}
+<p class="token" style="display:none">{ csrftoken }</p>
+<ul class="notes-container" style="background-color:aqua; padding: 10px;">
+
+{% for note in latest_note_list %}
+    <li class="note" style="background-color: white; margin:10px; box-shadow: 4px 2px grey";>
+        <a href="{% url 'notes:detail' note.id %}" style="color:black;">{{ note.title}}</a>
+        <br/>&emsp;&emsp;
+        {{note.created_on}}
+        <br/>
+        <br/>
+    </li>
+{% endfor %}
+
+</ul>
+<a href="http://127.0.0.1:8000/admin" style="color:black">Visit the Admin page</a><br/>
+<a href="http://127.0.0.1:8000/api"style="color:black">Visit the Notes API</a>
+{% else %}
+No notes are available.
+
+{% endif %}
