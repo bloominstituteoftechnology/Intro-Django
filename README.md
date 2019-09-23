@@ -4,7 +4,7 @@ Fork this repo to use for your projects this week.
 
 ## Reading
 
-* [Common Errors and Troubleshooting](guides/trouble.md)
+* [Read Me First: Common Errors, Gotchas, and Troubleshooting](guides/trouble.md)
 
 * [Day 1: Intro](guides/day1.md)
 * [Day 2: Admin Interface and SQL](guides/day2.md)
