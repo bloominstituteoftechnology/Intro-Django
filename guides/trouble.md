@@ -1,4 +1,11 @@
-# Common Errors and Troubleshooting
+# Common Errors, Gotchas, and Troubleshooting
+
+Django is a powerful tool, but it can be a bit finicky.  This doubles when trying to deploy to Heroku.  Below are some common mistakes, errors, and resolutions.
+
+## Common Mistakes
+* Don't forget to include the `.` when creating your project!  If you miss this, everything will work until you try to deploy, then you will have a large number of problems with commands not working as documented.
+* The deployment instructions require you to consult outside documentation is several spots to properly configure some of the third party packages we will be using.
+* You will be using Sqlite3 locally and Postgres when deployed to Heroku.  This very rarely causes minor issues, such as Postgres having a smaller max INT than Sqlite3.  However, it is much easier than trying to get Postgres working locally.
 
 ## `pipenv` error `'module' object is not callable`
 
