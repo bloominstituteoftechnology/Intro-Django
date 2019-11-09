@@ -185,7 +185,9 @@ We can use the admin interface to add more users in the user table, if we want.
 
 For now, create a personal note for the admin account.
 
+```
 Go back to the sql shell, and take a look at the `notes_personalnote` table.
+```
 
 You’ll need to use the same three commands as above to display the table.  Note
 that the info here is very different.  Instead of having everything, it just has

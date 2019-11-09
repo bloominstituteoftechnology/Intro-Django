@@ -46,7 +46,6 @@ Check Pip version and install or upgrade if less than 10.x.
 * Mac/Linux - Option A: `sudo -H pip3 install --upgrade pip`
 * Mac/Linux - Option B: `brew upgrade python`
 * PC - `python -m pip install --upgrade pip`
-    
 
 Check Pipenv version and install or upgrade if less than 2018.x
 <br>*(2018.10.13 as of November 6, 2018)*
