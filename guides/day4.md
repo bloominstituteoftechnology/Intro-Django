@@ -10,7 +10,7 @@ http://www.django-rest-framework.org/api-guide/authentication/#authentication
 
 ## Set up Token Authentication
 
-Open `settings.py`.
+Open `settings.py`. 
 
 To `INSTALLED_APPS`, add `rest_framework.authtoken`.
 
@@ -109,5 +109,5 @@ axios.post('http://127.0.0.1:8000/api/notes/', data, {
   headers: {
     'Authorization': 'Token da51ccf5274050cd7332d184246d7d0775dc79e2',
   }
-}
+})
 ```
