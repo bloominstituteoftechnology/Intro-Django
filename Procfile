@@ -1,0 +1,1 @@
+web: gunicorn dtsai.wsgi --log-file -
