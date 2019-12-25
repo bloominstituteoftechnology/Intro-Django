@@ -1,0 +1,6 @@
+In my Hearthstone Deck Model, I have 5 properties:
+1. Id, uneditable.
+2. Name of the deck.
+3. Which Format is the deck in, Standard, Wild, Brawl?
+4. A link to a Hearthpwn page for the deck.
+5. A description of what the deck does.
