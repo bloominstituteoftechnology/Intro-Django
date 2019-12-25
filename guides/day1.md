@@ -12,22 +12,22 @@
 * `pipenv install django`
 * `django-admin startproject djorg .`
 * `django-admin startapp notes`
-* `./manage.py runserver`
-* `./manage.py showmigrations`
-* `./manage.py migrate`
-* `./manage.py runserver`
+* `python manage.py runserver`
+* `python manage.py showmigrations`
+* `python manage.py migrate`
+* `python manage.py runserver`
 * Add model to `notes/models.py`
 * Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py`
-* `./manage.py showmigrations`
-* `./manage.py makemigrations`
-* `./manage.py showmigrations`
-* `./manage.py migrate`
-* `./manage.py shell`
+* `python manage.py showmigrations`
+* `python manage.py makemigrations`
+* `python manage.py showmigrations`
+* `python manage.py migrate`
+* `python manage.py shell`
   * `from notes.models import Note`
   * `n = Note(title="example", content="This is a test.")`
   * `n.save()`
   * `exit()`
-* `./manage.py shell`
+* `python manage.py shell`
   * `from notes.models import Note`
   * `x = Note.objects.all()`
   * `x[0]`
