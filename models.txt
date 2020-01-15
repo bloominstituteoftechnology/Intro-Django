@@ -1,0 +1,12 @@
+User Model - 
+      UserId - String (PK)
+      Email - String
+      password - String
+  
+User - One-To-Many - Note
+
+Note Model -
+      NoteId - String (PK)
+      UserId - String -> FK -> User
+      Title - String
+      Content - String
