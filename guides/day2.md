@@ -157,7 +157,7 @@ If it is working, the command prompt will change to `sqlite`.
 `.headers on` and `.mode column` will adjust some settings to clean up the
 presentation if we open a table.
 
-`SELECT * FROM notes_note;` is a sql command that will select all of the columns
+`SELECT * FROM notes_notgooglee;` is a sql command that will select all of the columns
 in the notes_note table and display the data present.  By convention, sql
 commands are often uppercase, but it is actually case insensitive.
 
