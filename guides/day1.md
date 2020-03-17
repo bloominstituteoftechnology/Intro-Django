@@ -19,7 +19,7 @@
 * Add model to `notes/models.py`
 * Add `'notes'` to `INSTALLED_APPS` in `djorg/settings.py`
 * `./manage.py showmigrations`
-* `./manage.py makemigrations`
+* `./manage.py makemigrations` looks at models and determines if new     migrations are needed
 * `./manage.py showmigrations`
 * `./manage.py migrate`
 * `./manage.py shell`
