@@ -1,5 +1,8 @@
 # Intro to Django
 
+## Heroku: http://whiskey-app.herokuapp.com/admin/
+
+
 Fork this repo to use for your projects this week.
 
 ## Reading
