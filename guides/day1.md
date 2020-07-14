@@ -1,4 +1,4 @@
-# Day 1: Intro
+ Day 1: Intro
 
 ## Summary
 
