@@ -1,7 +1,7 @@
 # Intro to Django
 
 Fork this repo to use for your projects this week.
-
+- for pr
 ## Reading
 
 * [Read Me First: Common Errors, Gotchas, and Troubleshooting](guides/trouble.md)
