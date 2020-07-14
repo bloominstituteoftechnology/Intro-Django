@@ -211,7 +211,7 @@ from the location in `self` that we just discovered. Feed it in to `PersonalNote
 ```
 
 This will add the needed data to the create method and allow the form to work.
-Return to the `/api/notes/` page and test.  
+Return to the `/api/notes/` page and test.  I must have missed something here.
 
 You will receive a `201 Created` that may appear at first as if the data is
 being overwritten.  Return to the main list page to confirm that everything is
