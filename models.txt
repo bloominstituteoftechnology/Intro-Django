@@ -1,0 +1,16 @@
+Description of data stored in the database.
+
+Notes App
+- Note stores details for each individual note
+- PersonalNote stores the one to many relationship between User and Notes respectively
+
+NFL App
+- Team stores the names of NFL teams
+- Game stores the match results between two teams
+
+Catalog App
+- Genre stores book genres
+- Language stores the book's language
+- Book stores details for each individual book
+- BookInstance stores the status of a specific copy of a book
+- Author stores details for each individual author
