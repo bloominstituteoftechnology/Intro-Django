@@ -1,0 +1,9 @@
+{
+    "python.linting.enabled": true,
+    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "python.linting.pylintEnabled": true
+}
