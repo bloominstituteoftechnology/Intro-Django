@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+python-decouple = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+gunicorn = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+whitenoise = "*"
+graphene-django = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
