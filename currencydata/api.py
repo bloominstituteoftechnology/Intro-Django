@@ -1,0 +1,27 @@
+from rest_framework import serializers , viewsets
+from .models import PersonalCurrencydata
+
+class PersonalCurrencydataSerializer(serializers.HyperlinkedModelSerializer):
+    
+    class Meta:
+        model = PersonalCurrencydata
+        fields = ('date', 'the_open', 'the_high', 'the_low', 'the_close', 'bar_type', 'created_at', 'last_modified')
+    
+    def create(self, validated_data):
+        user = self.context['request'].user
+        post = PersonalCurrencydata.objects.create(user=user, **validated_data)
+        return post
+        
+class PersonalCurrencydataViewSet(viewsets.ModelViewSet):
+    serializer_class = PersonalCurrencydataSerializer
+    queryset = PersonalCurrencydata.objects.none()
+    def get_queryset(self):
+        #import pdb; pdb.set_trace()
+
+        logged_in_user = self.request.user
+
+        if logged_in_user.is_anonymous:
+            return PersonalCurrencydata.objects.none()
+        else:
+            return PersonalCurrencydata.objects.filter(user=logged_in_user)
+        
