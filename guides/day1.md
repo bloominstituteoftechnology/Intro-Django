@@ -1,3 +1,4 @@
+| (• ◡•)| (❍ᴥ❍ʋ) 
 # Day 1: Intro
 
 ## Summary
