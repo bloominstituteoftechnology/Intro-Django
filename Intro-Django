@@ -1,0 +1,17 @@
+ Volume in drive C is Windows
+ Volume Serial Number is B860-4D95
+
+ Directory of C:\Users\Cuales Family\LambdaSchool-ComputerScience\Intro-Django
+
+28/08/2018  04:30 AM    <DIR>          .
+28/08/2018  04:30 AM    <DIR>          ..
+27/08/2018  11:00 PM             1,203 .gitignore
+28/08/2018  04:29 AM    <DIR>          djorg
+27/08/2018  11:00 PM    <DIR>          guides
+28/08/2018  04:30 AM                 0 Intro-Django
+28/08/2018  04:29 AM               552 manage.py
+28/08/2018  03:38 AM               151 Pipfile
+28/08/2018  03:38 AM             1,051 Pipfile.lock
+27/08/2018  11:00 PM               326 README.md
+               6 File(s)          3,283 bytes
+               4 Dir(s)  553,663,733,760 bytes free
