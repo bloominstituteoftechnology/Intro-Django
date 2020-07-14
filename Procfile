@@ -1,0 +1,1 @@
+web: gunicorn adb.wsgi --log-file -
