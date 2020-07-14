@@ -1,6 +1,6 @@
 # Day 2: Admin Interface and SQL
 
-## Admin Interface
+## Admin Interfaces ##
 
 Now let’s take a look at the admin functions.
 
