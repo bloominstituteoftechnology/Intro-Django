@@ -1,5 +1,5 @@
 # Day 1: Intro
-
+     > python manage.py 
 ## Summary
 
 * Get pipenv installed
@@ -13,7 +13,9 @@
 * `django-admin startproject djorg .`
 * `django-admin startapp notes`
 * `./manage.py runserver`
+       - PYTHON MANAGE.PY RUNSERVER
 * `./manage.py showmigrations`
+       - LOOK AT SQL: python manage.py sqlmigrate auth 0001_initial
 * `./manage.py migrate`
 * `./manage.py runserver`
 * Add model to `notes/models.py`
@@ -27,6 +29,7 @@
   * `n = Note(title="example", content="This is a test.")`
   * `n.save()`
   * `exit()`
+       - CTRL Z + ENTER
 * `./manage.py shell`
   * `from notes.models import Note`
   * `x = Note.objects.all()`
