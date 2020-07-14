@@ -1,0 +1,26 @@
+The 'djorg' project has two apps: 'notes' and 'recipes'.
+
+Notes app:
+	Table 'notes_note':
+		id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+		title = models.CharField(max_length=200)
+		content = models.TextField(blank=True)
+		created_at = models.DateTimeField(auto_now_add=True)
+		last_modified = models.DateTimeField(auto_now=True)
+	Table 'notes_personalnote':
+		user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+
+Recipes app:
+	Table 'recipes_recipe':
+		id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+		recipe_name = models.CharField(max_length=100)
+		created_at = models.DateTimeField(auto_now_add=True)
+		last_modified = models.DateTimeField(auto_now=True)
+		user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+	Table 'recipes_ingredient':
+		id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+		ingredient_name = models.CharField(max_length=50)
+	Table 'recipes_ingredient_recipe_id':
+		id = integer NOT NULL PRIMARY KEY AUTOINCREMENT
+		ingredient_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+		recipe_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
