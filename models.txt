@@ -1,0 +1,2 @@
+In the database I store data for standard web notes functionality.In both of the apps I added uniq identifier for each record. 
+Calling the a function, will generate a uniqe identifier. We never want to change the key, so we set "editable" to false.

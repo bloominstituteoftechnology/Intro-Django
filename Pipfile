@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+
+[packages]
+django = "*"
+faker = "*"
+python-decouple = "*"
+uuid = "*"
+djangorestframework = "*"
+dj-database-url = "*"
+django-cors-headers = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
+whitenoise = "*"
+
+[requires]
+python_version = "3.7"
