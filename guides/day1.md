@@ -1,3 +1,5 @@
+# cs13
+
 # Day 1: Intro
 
 ## Summary
@@ -35,10 +37,10 @@
   * `exit()`
 * `pipenv install python-decouple`
 * Add config information to `settings.py` and `.env`
-    
+
 
 ## Setting up a Virtual Environment
-  
+
 Check Python version and install or upgrade if less than 3.5.x.
 
 Check Pip version and install or upgrade if less than 10.x.
@@ -46,7 +48,7 @@ Check Pip version and install or upgrade if less than 10.x.
 * Mac/Linux - Option A: `sudo -H pip3 install --upgrade pip`
 * Mac/Linux - Option B: `brew upgrade python`
 * PC - `python -m pip install --upgrade pip`
-    
+
 
 Check Pipenv version and install or upgrade if less than 2018.x
 <br>*(2018.10.13 as of November 6, 2018)*
@@ -54,10 +56,10 @@ Check Pipenv version and install or upgrade if less than 2018.x
 
 Normally you'd make a repo with a README and a Python gitignore, but since we're
 going to be using pull requests to turn things in, just fork this repo instead.
-  
+
 
 Clone repo on to local machine.
-  
+
 In the terminal, navigate to root folder of repo.
 
 Create pipenv virtual environment:
@@ -68,7 +70,7 @@ pipenv --three
 
 * The `--three` option tells it to use Python3
 * This is similar to using `npm`/`yarn`
-    
+
 
 Verify that the `Pipfile` was created in the root of the repo.
 
@@ -80,7 +82,7 @@ Activate pipenv with `pipenv shell`
 * We are using pipenv because it is newer and more robust. Uses a lockfile
   similar to npm/yarn. Easier to get into and out of shell.
 * To get back in, use `pipenv shell` from the root directory of the project.
-    
+
 ## To Start a Django Project and App
 
 Once you are in the virtual environment, install django:
@@ -92,7 +94,7 @@ pipenv install django
 * We are using a virtual environment instead of installing globally because
   installing globally would be like using npm/yarn install globally and
   installing all the packages on everything.
-    
+
 Add `Pipfile` and `Pipfile.lock` to the repo with `git add Pipfile*` and commit
 with `git commit -m "added pipfiles"`.
 
@@ -102,20 +104,20 @@ Start a project with `django-admin startproject [name_of_project] .`
 * The . tells it to create the project in the current directory. Otherwise, it
   would create a project in a subdirectory called [name_of_project]. We don’t
   need that because we want the repo folder to be the root
-    
+
 Verify that the [name_of_project] folder was created and has boilerplate files
 such as `__init__.py`.
 
 The project is what it was named above. A project is made up of a collection of
 apps. It can have one or many.
 
-  
+
 Create an app with `django-admin startapp [name_of_app]`
 
 * For the first project, we are naming the app notes
 * Name it differently as appropriate if you are following this to set up, but
   working on something else.
-    
+
 ## Start the Server
 
 Verify that the [name_of_app] subdirectory has been created
@@ -125,7 +127,7 @@ Test by navigating to the project folder root/[name_of_project] and running
 
 * This should launch the animated rocket default page
 * Take note of the warning about unapplied migrations. We will fix that in a moment
-    
+
 Django makes it easier to make changes to databases. This is called migration(s).
 
 
@@ -142,7 +144,7 @@ curious--which should be you!_
 ./manage.py sqlmigrate [package_name] [migration_id]
 ```
 
-for example 
+for example
 
 ```
 ./manage.py sqlmigrate admin 0001_initial
@@ -154,7 +156,7 @@ for example
 * These are all the data structures that your python code has created. Django
   turns this into sql tables, etc. for you. (If you’ve ever done this manually,
   you know how awesome that is :) )
-    
+
 
 To actually run the migrations, use:
 
@@ -211,13 +213,13 @@ Add a UUID to serve as a key for each record.
   ```python
   id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
   ```
-    
+
 * Primary key is how the database tracks records.
 * Default calls a function to randomly generate a unique identifier.
 * We make editable false because we never want to change the key.
 * Put it at the top of the list of fields because it’s sort of like the index
   for the record.
-    
+
 Next, we need to tell the project that the app exists. Open `settings.py` from
 the project folder.
 
