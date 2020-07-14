@@ -5,7 +5,7 @@
 We’ll be using the django REST framework: http://www.django-rest-framework.org/
 
 Open the shell if you aren’t in it and install the framework:
-
+`(intro-django) shell`
 ```
 pipenv install djangorestframework
 ```
@@ -192,7 +192,7 @@ In `api.py`, `PersonalNoteSerializer`:
 ```
 
 Run this and use the debugger to the data present at this breakpoint.  If you
-dig into `self`, you will find eventually find a context with a request.  As an
+dig into `self`, you will eventually find a context with a request.  As an
 educated guess, using what we’ve previously learned about requests, it is fair
 to hypothesize that a user is associated with the request.  Try it out:
 

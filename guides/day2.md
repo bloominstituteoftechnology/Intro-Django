@@ -114,8 +114,7 @@ admin.site.register(Note, NoteAdmin)
 
 ## Personal (per-user) Notes
 
-Next we want to add the ability to handle multiple users, and allow them to have
-their own personal notes.
+Next we want to add the ability to handle multiple users, and allow them to have their own personal notes.
 
 First, we will create a new model that inherits from another: personal notes.
 Open up `notes/models.py`
@@ -130,7 +129,7 @@ to have it inherit from it and just add the additional fields we need.
 
 ```python
 class PersonalNote(Note):   # Inherits from Note!
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)︐︐︐︐̓
 ```
 
 What this is doing is importing Django’s built in user class model with
@@ -148,6 +147,7 @@ We can take a look in the database with `./manage.py dbshell`.  If you get an
 error, you may need to install sqlite3 using your preferred method.
 
 If it is working, the command prompt will change to `sqlite`.
+`yarn add sqlite`
 
 `.tables` will display a list of tables
 
@@ -178,8 +178,10 @@ We also want personal notes to show up on the admin page. Open `admin.py` then
 import and register the new class.  Remember, you can use tuples for both of
 these.  Don’t forget to use the extra parentheses inside the register function.
 
+#TODO
 Take a look at it in `admin`.  It should be the same as before, but now we have
 a `user` field that is automatically populated.
+
 
 We can use the admin interface to add more users in the user table, if we want.
 
@@ -207,7 +209,7 @@ Import personal notes: `from notes.models import PersonalNote`
 
 Pull the list into a variable: `pn = PersonalNote.objects.all()`
 
-Take a look at the name of the 0th record: `pn[0].user`.  Try other fields as
+Take a look at the name of the 0th record: `pn[0].user`.  Try other field as
 well.
 
 Django lets us access information that is in multiple tables relatively easily.
