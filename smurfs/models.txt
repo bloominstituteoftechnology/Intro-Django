@@ -1,0 +1,21 @@
+"""
+There are 4 types of data that are being stored in our smurf database.
+ID, Text, Number, and Date/Time.
+
+UUIDField used in 'id' is a char(32) data type.
+It creates a text column, where the length is fixed at 32 characters.
+
+CharField used in 'name' is a varchar(50) data type.
+It creates a text column, where the max_length argument is required 
+to specify the maximum length in characters. 
+In this case, it has been limited to upto 50 characters.
+
+PositiveSmallIntegerField used in 'age' and 'size' are number data types,
+more specifically, smallint unsigned data types.
+They enforce values from 0 to 32767.
+It works just like IntegerField, which takes in an integer / number value,
+but the specialized PositiveIntegerField limits numbers to a smaller positive range.
+
+DateTimeField used for 'created_at' and 'last_modified' are datetime data types.
+They create a datetime field to store dates with times. 
+"""
