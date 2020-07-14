@@ -1,0 +1,7 @@
+Entry represents a diary entry into a Food Diary.
+
+id - unique id that is auto generated for a new Entry
+item - name of the item
+servings - number of servings for the item
+was_enjoyed - whether the food was enjoyed
+date_added - automatically adds current date when Entry is added
